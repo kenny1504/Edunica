@@ -76,6 +76,7 @@
     <Compile Include="Activity_Admin_Usuario.cs" />
     <Compile Include="Activity_Docente_Asistencia_Estudiante.cs" />
     <Compile Include="Activity_Docente.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MenuActivity.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />

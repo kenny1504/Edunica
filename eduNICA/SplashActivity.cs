@@ -37,17 +37,21 @@ namespace eduNICA
         }
         void abrir()
         {
-            if (tipouser == "Admin")
+            if (Global.u.tipo == 1) //si el usuario es Administrador
+            { 
+                Intent i = new Intent(this, typeof(MenuActivity));
+                StartActivity(i);
+            }
+            else if (Global.u.tipo == 2) //si el usuario es Docente
             {
                 Intent i = new Intent(this, typeof(MenuActivity));
                 StartActivity(i);
             }
-            else
+            else if (Global.u.tipo == 3) //si el usuario es Institucion
             {
-                Intent i = new Intent(this, typeof(Activity_Docente));
+                Intent i = new Intent(this, typeof(MenuActivity));
                 StartActivity(i);
             }
-
         }
     }
 }

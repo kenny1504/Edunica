@@ -17,6 +17,6 @@ namespace eduNICA.Resources.Intarface
    public  interface LoginInterface
     {
         [Get("/login")] //tipo de peticion y nombre del metodo
-        Task<int> Autenticar( [Body] userview user); //metodo a utilizar dentro de la app
+        Task<List<usuariosview>> Autenticar( [Body] userview user); //metodo a utilizar dentro de la APP
     }
 }

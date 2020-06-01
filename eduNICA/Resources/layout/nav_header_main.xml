@@ -25,10 +25,11 @@
         android:textAlignment="center"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Jose Armando Sandino Betanco"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:id="@+id/NombreUsuario" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TipoUsuario"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

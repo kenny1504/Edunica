@@ -65,11 +65,11 @@ namespace eduNICA.Resources.Intarface
         }
 
         /// <inheritdoc />
-        Task<int> LoginInterface.Autenticar(userview user)
+        Task<List<usuariosview>> LoginInterface.Autenticar(userview user)
         {
             var arguments = new object[] { user };
             var func = requestBuilder.BuildRestResultFuncForMethod("Autenticar", new Type[] { typeof(userview) });
-            return (Task<int>)func(Client, arguments);
+            return (Task<List<usuariosview>>)func(Client, arguments);
         }
     }
 }

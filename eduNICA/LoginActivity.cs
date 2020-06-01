@@ -8,6 +8,7 @@ using eduNICA.Resources.Intarface;
 using Android.Util;
 using Refit;
 using eduNICA.Resources.Model;
+using System.Collections.Generic;
 
 namespace eduNICA
 {
@@ -51,17 +52,24 @@ namespace eduNICA
                 userview.username = user.Text;
 
                 //hacemos peticion mediante el metodo de la interface 
-                int result = await login.Autenticar(userview);
-
-                Intent i = new Intent(this, typeof(SplashActivity));
-                (i).PutExtra(SplashActivity.user, user.Text);
-                StartActivity(i);
+                List <usuariosview> usuariosview = await login.Autenticar(userview);
 
 
-                Toast.MakeText(this, "" + result, ToastLength.Short).Show();
+                if (usuariosview!=null) //si la consulta retorna una coincidencia 
+                {
+                    Global.u = usuariosview[0];
+                    Intent i = new Intent(this, typeof(SplashActivity));
+                    (i).PutExtra(SplashActivity.user, user.Text);
+                     StartActivity(i);
+                }
+                else //si no encontro registros muestra toast
+                {
+                    Toast.MakeText(this, "Favor verifique las credenciales", ToastLength.Short).Show();
+                }
+
 
             }
-            catch (System.Exception ex)
+            catch (System.Exception ex) //captura algun error en la session
             {
 
                 Toast.MakeText(this, "" + ex.Message, ToastLength.Short).Show();

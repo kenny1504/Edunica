@@ -9,17 +9,20 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Widget;
 
 namespace eduNICA
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
     public class MenuActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+      
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -30,6 +33,25 @@ namespace eduNICA
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            View headerView = navigationView.GetHeaderView(0); 
+            //Intancias para establecer el tipo de usuario y nombre de Usuario
+            TextView navUsername = (TextView)headerView.FindViewById(Resource.Id.NombreUsuario);
+            TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);
+
+            toolbar.Title = Global.u.Institucion; //estable la institucion a la que pertenece el usuario
+
+
+            navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
+
+            //Define y pone el tipo de usuario que esta en session
+            if (Global.u.tipo == 1)
+                navUserTpo.Text = "Administrador";
+            else if (Global.u.tipo == 2)
+                navUserTpo.Text = "Docente";
+            else if (Global.u.tipo == 3)
+                navUserTpo.Text = "Institucion";
+
         }
 
         public override void OnBackPressed()

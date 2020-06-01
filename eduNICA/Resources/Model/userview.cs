@@ -18,4 +18,13 @@ namespace eduNICA.Resources.Model
         public string username { get; set; }
 
     }
+    public class usuariosview //Manejo de datos de usuario en sesion
+    {
+        public string NombreDeUsuario { get; set; }
+        public string Nombre { get; set; }
+        public string Id { get; set; }
+        public int tipo { get; set; }
+        public String Cedula { get; set; }
+        public String Institucion { get; set; }
+    }
 }
