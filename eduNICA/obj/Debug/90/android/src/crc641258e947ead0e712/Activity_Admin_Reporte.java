@@ -1,0 +1,47 @@
+package crc641258e947ead0e712;
+
+
+public class Activity_Admin_Reporte
+	extends android.app.Activity
+	implements
+		mono.android.IGCUserPeer
+{
+/** @hide */
+	public static final String __md_methods;
+	static {
+		__md_methods = 
+			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"";
+		mono.android.Runtime.register ("eduNICA.Activity_Admin_Reporte, eduNICA", Activity_Admin_Reporte.class, __md_methods);
+	}
+
+
+	public Activity_Admin_Reporte ()
+	{
+		super ();
+		if (getClass () == Activity_Admin_Reporte.class)
+			mono.android.TypeManager.Activate ("eduNICA.Activity_Admin_Reporte, eduNICA", "", this, new java.lang.Object[] {  });
+	}
+
+
+	public void onCreate (android.os.Bundle p0)
+	{
+		n_onCreate (p0);
+	}
+
+	private native void n_onCreate (android.os.Bundle p0);
+
+	private java.util.ArrayList refList;
+	public void monodroidAddReference (java.lang.Object obj)
+	{
+		if (refList == null)
+			refList = new java.util.ArrayList ();
+		refList.add (obj);
+	}
+
+	public void monodroidClearReferences ()
+	{
+		if (refList != null)
+			refList.clear ();
+	}
+}
