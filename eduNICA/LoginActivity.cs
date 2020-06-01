@@ -43,38 +43,44 @@ namespace eduNICA
 
         private async void BtnEntrar_Click(object sender, System.EventArgs e)
         {
-           
-            try
+
+
+            if (pass.Text == "" && user.Text == "") //VALIDAMOS si los campos estan vacios manda mensaje
+                Toast.MakeText(this, "Favor Complete los campos", ToastLength.Short).Show();
+            else
             {
                 // instancia de la clase user para enviar parametros a la peticion 
                 userview userview = new userview();
-                userview.password = pass.Text; 
+                userview.password = pass.Text;
                 userview.username = user.Text;
 
-                //hacemos peticion mediante el metodo de la interface 
-                List <usuariosview> usuariosview = await login.Autenticar(userview);
-
-
-                if (usuariosview!=null) //si la consulta retorna una coincidencia 
+                try
                 {
-                    Global.u = usuariosview[0];
-                    Intent i = new Intent(this, typeof(SplashActivity));
-                    (i).PutExtra(SplashActivity.user, user.Text);
-                     StartActivity(i);
-                }
-                else //si no encontro registros muestra toast
-                {
-                    Toast.MakeText(this, "Favor verifique las credenciales", ToastLength.Short).Show();
-                }
+                    //hacemos peticion mediante el metodo de la interface 
+                    List<usuariosview> usuariosview = await login.Autenticar(userview);
 
+
+                    if (usuariosview.Count>0) //si la consulta retorna una coincidencia 
+                    {
+                        Global.u = usuariosview[0];
+                        Intent i = new Intent(this, typeof(SplashActivity));
+                        (i).PutExtra(SplashActivity.user, user.Text);
+                        StartActivity(i);
+                    }
+                    else //si no encontro registros muestra toast
+                    {
+                        Toast.MakeText(this, "Favor verifique las credenciales", ToastLength.Short).Show();
+                    }
+
+
+                }
+                catch (System.Exception ex) //captura algun error en la session
+                {
+
+                    Toast.MakeText(this, "" + ex.Message, ToastLength.Short).Show();
+                }
 
             }
-            catch (System.Exception ex) //captura algun error en la session
-            {
-
-                Toast.MakeText(this, "" + ex.Message, ToastLength.Short).Show();
-            }
-            
         }
         public override void OnBackPressed()
         {
