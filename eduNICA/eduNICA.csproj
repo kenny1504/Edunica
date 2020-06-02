@@ -74,8 +74,6 @@
     <Compile Include="Activity_Admin_Nota.cs" />
     <Compile Include="Activity_Admin_Reporte.cs" />
     <Compile Include="Activity_Admin_Usuario.cs" />
-    <Compile Include="Activity_Docente_Asistencia_Estudiante.cs" />
-    <Compile Include="Activity_Docente.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MenuActivity.cs" />
@@ -84,7 +82,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
-    <Compile Include="Activity_Docente_nota_estudiante.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -196,16 +193,6 @@
     <AndroidResource Include="Resources\drawable\admin.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Docente_nota_estudiante.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\mainDocente.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\menu\activity_main_drawer1.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -222,16 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\navigation.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\nav_header_main_docente.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Docente_Asistencia_Estudiante.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Admin_Usuario.xml">
@@ -270,16 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Admin_Administrar.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\content_main_docente.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\app_bar_main_docente.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
