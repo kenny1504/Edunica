@@ -16,5 +16,7 @@ namespace eduNICA
     public class Global //clase global para guardar usuario en session 
     {
         public static usuariosview u;
+        public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
     }
+
 }

@@ -24,6 +24,7 @@ namespace eduNICA.Resources.Model
         public string Id { get; set; }
         public int tipo { get; set; }
         public String Cedula { get; set; }
+        public int Id_Institucion { get; set; }
         public String Institucion { get; set; }
     }
 }

@@ -64,6 +64,7 @@ namespace eduNICA
                     {
                         Global.u = usuariosview[0];
                         Intent i = new Intent(this, typeof(SplashActivity));
+                        //borrar esto
                         (i).PutExtra(SplashActivity.user, user.Text);
                         StartActivity(i);
                     }

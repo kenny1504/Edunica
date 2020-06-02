@@ -23,6 +23,7 @@ namespace eduNICA
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -45,13 +46,7 @@ namespace eduNICA
             navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
 
             //Define y pone el tipo de usuario que esta en session
-            if (Global.u.tipo == 1)
                 navUserTpo.Text = "Administrador";
-            else if (Global.u.tipo == 2)
-                navUserTpo.Text = "Docente";
-            else if (Global.u.tipo == 3)
-                navUserTpo.Text = "Institucion";
-
         }
 
         public override void OnBackPressed()
@@ -125,16 +120,7 @@ namespace eduNICA
                 Intent i = new Intent(this, typeof(Activity_Admin_Asignatura));
                 StartActivity(i);
             }
-            else if (id == Resource.Id.reporte)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Reporte));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.administrar)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Administrar));
-                StartActivity(i);
-            }
+
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;

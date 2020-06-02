@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+  <item android:title="  Menu de Navegacion"/>
+  <group android:checkableBehavior="single">
+    <item
+              android:id="@+id/asistencia"
+              android:icon="@drawable/asistencia"
+              android:title="Asistencia" />
+    <item
+      android:id="@+id/asignatura"
+      android:icon="@drawable/asignaturas"
+      android:title="Asignatura"/>
+    <item
+      android:id="@+id/docente"
+      android:icon="@drawable/docente"
+      android:title="Docente"/>
+    <item
+    android:id="@+id/matricula"
+    android:icon="@drawable/matricula"
+    android:title="Matricula" />
+    <item
+    android:id="@+id/nota"
+    android:icon="@drawable/nota"
+    android:title="Nota" />
+    <item
+            android:id="@+id/usuario"
+            android:icon="@drawable/usuario"
+            android:title="Usuario" />
+  </group>
+</menu>

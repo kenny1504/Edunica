@@ -28,13 +28,6 @@
             android:id="@+id/asignatura"
             android:icon="@drawable/asignaturas"
             android:title="Asignatura"/>
-      <item
-            android:id="@+id/reporte"
-            android:icon="@drawable/reporte"
-            android:title="Reporte"/>
-      <item
-            android:id="@+id/administrar"
-            android:icon="@drawable/admin"
-            android:title="Administrar"/>
+
     </group>
 </menu>

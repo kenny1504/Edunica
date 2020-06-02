@@ -74,11 +74,16 @@
     <Compile Include="Activity_Admin_Nota.cs" />
     <Compile Include="Activity_Admin_Reporte.cs" />
     <Compile Include="Activity_Admin_Usuario.cs" />
+    <Compile Include="Adapter_Lista_Usuario.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MenuActivity.cs" />
+    <Compile Include="MenuActivity_Docente.cs" />
+    <Compile Include="MenuActivity_Institucion.cs" />
+    <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />
     <Compile Include="Resources\Model\userview.cs" />
+    <Compile Include="Resources\Model\usuariosWS.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
@@ -247,6 +252,32 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Admin_Administrar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\activity_main_drawer2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_main_Docente.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_main_Institucion.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Admin_Usuario_Detalle.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\interf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Formato_Lista.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

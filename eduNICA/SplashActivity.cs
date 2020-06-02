@@ -44,12 +44,12 @@ namespace eduNICA
             }
             else if (Global.u.tipo == 2) //si el usuario es Docente
             {
-                Intent i = new Intent(this, typeof(MenuActivity));
+                Intent i = new Intent(this, typeof(MenuActivity_Docente));
                 StartActivity(i);
             }
             else if (Global.u.tipo == 3) //si el usuario es Institucion
             {
-                Intent i = new Intent(this, typeof(MenuActivity));
+                Intent i = new Intent(this, typeof(MenuActivity_Institucion));
                 StartActivity(i);
             }
         }
