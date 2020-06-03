@@ -19,8 +19,8 @@
 			android:layout_marginLeft="40dp" 
          />
 		<TextView
-			android:text="TIpo"
-			android:id="@id/TipoUsuario"
+			android:text="Tipo"
+			android:id="@+id/Nombre_User1"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="14dip"

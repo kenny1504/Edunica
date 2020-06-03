@@ -89,8 +89,7 @@ namespace eduNICA
 
             if (id == Resource.Id.asistencia)
             {
-                Intent i = new Intent(this, typeof(Activity_Admin_Usuario));
-                StartActivity(i);
+                
             }
             else if (id == Resource.Id.docente)
             {
@@ -106,6 +105,11 @@ namespace eduNICA
             {
                 //Intent i = new Intent(this, typeof(Activity_Admin_Nota));
                 //StartActivity(i);
+            }
+            else if(id==Resource.Id.usuario)
+            {
+                Intent i = new Intent(this, typeof(Activity_Instit_Usuario));
+                StartActivity(i);
             }
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);

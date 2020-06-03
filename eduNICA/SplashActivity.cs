@@ -16,13 +16,10 @@ namespace eduNICA
     public class SplashActivity : Activity
     {
         System.Timers.Timer timer = new System.Timers.Timer();
-        public static readonly string user;
-        string tipouser;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.splash);
-            tipouser = Intent.GetStringExtra(user);
             timer.Interval = 1000;
             timer.Enabled = true;
             timer.Elapsed += Timer_Elapsed;

@@ -29,6 +29,6 @@
 		android:minHeight="24px"
 		android:layout_width="match_parent"
 		android:layout_height="466.0dp"
-		android:id="@+id/listView1"
+		android:id="@+id/wlistView1"
 		android:layout_marginTop="20dp"  />
 </LinearLayout>
