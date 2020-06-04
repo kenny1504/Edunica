@@ -74,6 +74,8 @@
     <Compile Include="Activity_Admin_Nota.cs" />
     <Compile Include="Activity_Admin_Reporte.cs" />
     <Compile Include="Activity_Admin_Usuario.cs" />
+    <Compile Include="Activity_Instit_Usuario.cs" />
+    <Compile Include="Activity_Instit_Usuario_Detalle.cs" />
     <Compile Include="Adapter_Lista_Usuario.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="MenuActivity_Docente.cs" />
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docente.cs" />
+    <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docent_Detalle.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />
     <Compile Include="Resources\Model\userview.cs" />
     <Compile Include="Resources\Model\usuariosWS.cs" />
@@ -277,7 +280,17 @@
     <AndroidResource Include="Resources\drawable\interf.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Formato_Lista.xml">
+    <AndroidResource Include="Resources\layout\Instit_Usuario.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Plantilla_Listar_Usuario.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Usuario_Detalle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

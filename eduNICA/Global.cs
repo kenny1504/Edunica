@@ -17,6 +17,7 @@ namespace eduNICA
     {
         public static usuariosview u;
         public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
+        public static List<Personas> usuariosWs_Datos = new List<Personas>();
     }
 
 }

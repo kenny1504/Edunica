@@ -987,12 +987,6 @@ C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\stamp\_ConvertResourcesCases
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\eduNICA.dll
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\eduNICA.pdb
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA.apk
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA.aab
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA-Signed.aab
-C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA-Signed.apk
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\build.props
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\adb.props
@@ -1023,7 +1017,12 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\flata\FC9071ADF26B6B36.
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\flata\B8D41E64E76B760E.flata
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\flata\A8C5A341B06B02EE.flata
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\flata\compiled.flata
-C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\R.txt
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\eduNICA.dll
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\eduNICA.pdb
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA.apk
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA.aab
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA-Signed.aab
+C:\Users\josea\source\repos\Edunica\eduNICA\bin\Debug\com.appsnica.eduNICA-Signed.apk
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\R.cs.flag
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\RefitStubs.g.cs
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\eduNICA.csproj.CoreCompileInputs.cache
@@ -1098,6 +1097,11 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\admin_admini
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\menu\activity_main_drawer2.xml
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\activity_main_docente.xml
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\activity_main_institucion.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\admin_usuario_detalle.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\drawable\interf.png
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_usuario.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\plantilla_listar_usuario.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\R.txt
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\uploadflags.txt
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\resolvedassemblies.hash
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\assets\EDMTDialog.dll
@@ -1228,6 +1232,8 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e9
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Admin_Nota.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Admin_Reporte.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Admin_Usuario.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Usuario.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Lista_Usuario.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\LoginActivity.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\MenuActivity.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\MenuActivity_Docente.java
@@ -1322,7 +1328,5 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_ConvertResources
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\admin_usuario_detalle.xml
-C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\drawable\interf.png
-C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\formato_lista.xml
-C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Lista_Usuario.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_usuario_detalle.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Usuario_Detalle.java
