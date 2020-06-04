@@ -16,7 +16,10 @@ namespace eduNICA.Resources.Intarface
 {
     public interface Admin_Lista_Usuario_Docente
     {
-        [Get("/usuarios/Docentes")] //tipo de peticion y nombre del metodo
+        [Get("/usuarios/Docentes")]//tipo de peticion y nombre del metodo
         Task<List<usuariosWS>> Usuarios_Docentes([Body] Busqueda inst); //metodo a utilizar dentro de la APP
+
+        //[Get("/usuarios/Docentes")]
+        //Task<List<Personas>> Datos_Docente([Body] BusquedaUD u); //metodo a utilizar dentro de la APP
     }
 }

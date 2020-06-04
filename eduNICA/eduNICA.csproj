@@ -83,6 +83,7 @@
     <Compile Include="MenuActivity_Docente.cs" />
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docente.cs" />
+    <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docent_Detalle.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />
     <Compile Include="Resources\Model\userview.cs" />
     <Compile Include="Resources\Model\usuariosWS.cs" />

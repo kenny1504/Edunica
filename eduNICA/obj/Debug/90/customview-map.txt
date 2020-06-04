@@ -12,6 +12,7 @@ android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main_ins
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\admin_usuario.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\app_bar_main.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\instit_usuario.xml
+android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 attr;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values\attrs.xml
 attr;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\1\jl\res\values\values.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
@@ -34,6 +35,7 @@ gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 group;obj\Debug\90\res\menu\activity_main_drawer1.xml
 group;obj\Debug\90\res\menu\activity_main_drawer2.xml
+ImageView;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 ImageView;obj\Debug\90\res\layout\login.xml
 ImageView;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 ImageView;obj\Debug\90\res\layout\splash.xml
@@ -83,6 +85,7 @@ paths;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\37\jl\res\xml\
 ProgressBar;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\layout\my_dialog_layout.xml
 Refractored.Controls.CircleImageView;obj\Debug\90\res\layout\nav_header_main.xml
 RelativeLayout;obj\Debug\90\res\layout\content_main.xml
+RelativeLayout;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 RelativeLayout;obj\Debug\90\res\layout\login.xml
 RelativeLayout;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 RelativeLayout;obj\Debug\90\res\layout\splash.xml

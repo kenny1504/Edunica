@@ -16,6 +16,10 @@ namespace eduNICA.Resources.Model
     {
         public int Id { get; set; }
     }
+    public class BusquedaUD//Recive cedula de la persona
+    {
+        public string Cedula { get; set; }
+    }
     public class usuariosWS //Manejo de datos Usuarios en el  WS
     {
         public string NombreDeUsuario { get; set; }
@@ -24,5 +28,17 @@ namespace eduNICA.Resources.Model
         public int tipo { get; set; }
         public String Cedula { get; set; }
         public String Institucion { get; set; }
+    }
+    public class Personas
+    {
+        public string Cedula { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido1 { get; set; }
+        public string Apellido2 { get; set; }
+        public char Sexo { get; set; }
+        public string Direccion { get; set; }
+        public string Correo { get; set; }
+        public int Telefono { get; set; }
+        public DateTime FechaNacimiento { get; set; }
     }
 }

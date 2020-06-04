@@ -30,21 +30,21 @@ namespace eduNICA
             usuario_Docente = RestService.For<Admin_Lista_Usuario_Docente>("http://www.edunica.somee.com/api/UsuariosWS");
 
             vlista = FindViewById<ListView>(Resource.Id.listView1);
+
             Busqueda Busqueda = new Busqueda();
             Busqueda.Id = Global.u.Id_Institucion;
 
             //hacemos peticion mediante el metodo de la interface 
-            List<usuariosWS> usuariosview = await usuario_Docente.Usuarios_Docentes(Busqueda);
-
-            for (int i = 0; i < usuariosview.Count; i++)
+            List<usuariosWS> usuariosvie = await usuario_Docente.Usuarios_Docentes(Busqueda);
+            for (int i = 0; i < usuariosvie.Count; i++)
             {
                 usuariosWS W = new usuariosWS();
-                W.Cedula = usuariosview[i].Cedula;
-                W.Id = usuariosview[i].Id;
-                W.Institucion = usuariosview[i].Institucion;
-                W.Nombre = usuariosview[i].Nombre;
-                W.NombreDeUsuario = usuariosview[i].NombreDeUsuario;
-                W.tipo = usuariosview[i].tipo;
+                W.Cedula = usuariosvie[i].Cedula;
+                W.Id = usuariosvie[i].Id;
+                W.Institucion = usuariosvie[i].Institucion;
+                W.Nombre = usuariosvie[i].Nombre;
+                W.NombreDeUsuario = usuariosvie[i].NombreDeUsuario;
+                W.tipo = usuariosvie[i].tipo;
                 Global.usuariosWs.Add(W);
             }
 
@@ -55,7 +55,7 @@ namespace eduNICA
         {
             Intent i = new Intent(this, typeof(Activity_Instit_Usuario_Detalle));
             usuariosWS modulo = Global.usuariosWs[e.Position];
-            i.PutExtra("Id", modulo.Id);//pasar id de un activity a otro
+            i.PutExtra("Cedula", modulo.Cedula);//pasar id de un activity a otro
             StartActivity(i);
         }
     }

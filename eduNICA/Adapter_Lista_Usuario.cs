@@ -46,7 +46,7 @@ namespace eduNICA
                 view = context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Listar_Usuario, null);//aplicamos el formato predefinido
                 view.FindViewById<TextView>(Resource.Id.Nombre_Usuario).Text = item.Nombre;
                 view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Drawable.interf);
-                view.FindViewById<TextView>(Resource.Id.Nombre_User1).Text = "Nombre de Usuario: "+item.NombreDeUsuario;
+                view.FindViewById<TextView>(Resource.Id.Nombre_User1).Text = "Nombre de Usuario: "+item.Cedula;
             }
             return view;
         }
