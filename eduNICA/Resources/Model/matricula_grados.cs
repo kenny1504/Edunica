@@ -19,12 +19,12 @@ namespace eduNICA.Resources.Model
     }
     public class grupos_grados
     {
+        public int Cantidad { get; set; }
         public string Grupo { get; set; }
-        public int cantidad { get; set; }
     }
     public class Grupos_ws
     {
-        public int id_grado { get; set; }
-        public int id_intituto { get; set; }
+        public int institucion { get; set; }
+        public int Grado { get; set; }
     }
 }

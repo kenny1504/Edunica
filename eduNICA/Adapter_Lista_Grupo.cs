@@ -45,7 +45,7 @@ namespace eduNICA
                 view = context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Listar_Grado, null);//aplicamos el formato predefinido
             }
             view.FindViewById<TextView>(Resource.Id.Grado_Academico).Text = item.Grupo;
-            view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.cantidad + " Estudiantes";
+            view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.Cantidad + " Estudiantes";
             return view;
         }
     }

@@ -16,6 +16,7 @@ namespace eduNICA.Resources.Intarface
 {
     public interface Instit_Matricula_Grados_Grupo
     {
+
         [Get("/institucion/grupos")]//tipo de peticion y nombre del metodo
         Task<List<grupos_grados>> Estudiante_Grado_Grupo([Body] Grupos_ws inst); //metodo a utilizar dentro de la APP
     }

@@ -30,8 +30,8 @@ namespace eduNICA
             //Establecemos la concexion con el servicio web API REST
             grupos = RestService.For<Instit_Matricula_Grados_Grupo>("http://www.edunica.somee.com/api/EstudiantesWS");
             Grupos_ws Grupos_ws = new Grupos_ws();
-            Grupos_ws.id_grado = grad;
-            Grupos_ws.id_intituto = Global.u.Id_Institucion;
+            Grupos_ws.Grado = grad;
+            Grupos_ws.institucion = Global.u.Id_Institucion;
 
             //hacemos peticion mediante el metodo de la interface 
             List<grupos_grados> grupo_institucion = await grupos.Estudiante_Grado_Grupo(Grupos_ws);
@@ -39,7 +39,7 @@ namespace eduNICA
             {
                 grupos_grados W = new grupos_grados();
                 W.Grupo = grupo_institucion[i].Grupo;
-                W.cantidad = grupo_institucion[i].cantidad;
+                W.Cantidad = grupo_institucion[i].Cantidad;
                 Global.grupos.Add(W);
             }
             vlista.Adapter = new Adapter_Lista_Grupo(this);
