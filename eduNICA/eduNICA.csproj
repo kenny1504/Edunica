@@ -74,8 +74,12 @@
     <Compile Include="Activity_Admin_Nota.cs" />
     <Compile Include="Activity_Admin_Reporte.cs" />
     <Compile Include="Activity_Admin_Usuario.cs" />
+    <Compile Include="Activity_Instit_Matricula_Grado.cs" />
+    <Compile Include="Activity_Instit_Matricula_Grado_Estudiante.cs" />
+    <Compile Include="Activity_Instit_Matricula_Grado_Estudiante_Detalle.cs" />
     <Compile Include="Activity_Instit_Usuario.cs" />
     <Compile Include="Activity_Instit_Usuario_Detalle.cs" />
+    <Compile Include="Adapter_Lista_Grado.cs" />
     <Compile Include="Adapter_Lista_Usuario.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
@@ -84,7 +88,9 @@
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docent_Detalle.cs" />
+    <Compile Include="Resources\Intarface\Instit_Matricula_Grados.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />
+    <Compile Include="Resources\Model\matricula_grados.cs" />
     <Compile Include="Resources\Model\userview.cs" />
     <Compile Include="Resources\Model\usuariosWS.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -291,6 +297,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Instit_Usuario_Detalle.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Matricula_Grado.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Matricula_Grado_Estudiante.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Matricula_Grado_Estudiante_Detalle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

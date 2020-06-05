@@ -98,8 +98,8 @@ namespace eduNICA
             }
             else if (id == Resource.Id.matricula)
             {
-                //Intent i = new Intent(this, typeof(Activity_Admin_Nota));
-                //StartActivity(i);
+                Intent i = new Intent(this, typeof(Activity_Instit_Matricula_Grado));
+                StartActivity(i);
             }
             else if (id == Resource.Id.nota)
             {

@@ -1330,3 +1330,10 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_GeneratePackageM
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_usuario_detalle.xml
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Usuario_Detalle.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_matricula_grado.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_matricula_grado_estudiante.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Matricula_Grado.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Matricula_Grado_Estudiante.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Matricula_Grado_Estudiante_Detalle.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Lista_Grado.java
