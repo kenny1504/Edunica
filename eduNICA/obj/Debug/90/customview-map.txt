@@ -41,6 +41,7 @@ group;obj\Debug\90\res\menu\activity_main_drawer2.xml
 ImageView;obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
 ImageView;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 ImageView;obj\Debug\90\res\layout\login.xml
+ImageView;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 ImageView;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 ImageView;obj\Debug\90\res\layout\splash.xml
 include;obj\Debug\90\res\layout\activity_main.xml
@@ -73,6 +74,7 @@ LinearLayout;obj\Debug\90\res\layout\instit_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 LinearLayout;obj\Debug\90\res\layout\login.xml
 LinearLayout;obj\Debug\90\res\layout\nav_header_main.xml
+LinearLayout;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 LinearLayout;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\splash.xml
 ListView;obj\Debug\90\res\layout\admin_usuario.xml
@@ -96,6 +98,7 @@ RelativeLayout;obj\Debug\90\res\layout\content_main.xml
 RelativeLayout;obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
 RelativeLayout;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 RelativeLayout;obj\Debug\90\res\layout\login.xml
+RelativeLayout;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 RelativeLayout;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 RelativeLayout;obj\Debug\90\res\layout\splash.xml
 resources;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values\attrs.xml
@@ -135,6 +138,7 @@ TextView;obj\Debug\90\res\layout\instit_usuario.xml
 TextView;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 TextView;obj\Debug\90\res\layout\login.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml
+TextView;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 TextView;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 TextView;obj\Debug\90\res\layout\splash.xml
 vector;obj\Debug\90\res\drawable-v21\ic_menu_camera.xml

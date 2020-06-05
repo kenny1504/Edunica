@@ -43,9 +43,9 @@ namespace eduNICA
             View view = convertView;
             if (view == null)
             {
-                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem2,null);//aplicamos el formato predefinido
-                view.FindViewById<TextView>(Resource.Id.text1).Text ="Grado "+item.Grado;
-                view.FindViewById<TextView>(Resource.Id.text2).Text = "Cantidad de Estudiante: " + item.cantidad;
+                view = context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Listar_Grado,null);//aplicamos el formato predefinido
+                view.FindViewById<TextView>(Resource.Id.Grado_Academico).Text =item.Grado+" Grado";
+                view.FindViewById<TextView>(Resource.Id.Cantidad).Text = item.cantidad+" Estudiantes";
             }
             return view;
         }

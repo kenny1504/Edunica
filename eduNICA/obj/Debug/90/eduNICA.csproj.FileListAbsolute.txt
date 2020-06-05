@@ -1337,3 +1337,5 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e9
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Matricula_Grado_Estudiante.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Activity_Instit_Matricula_Grado_Estudiante_Detalle.java
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Lista_Grado.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\plantilla_listar_grado.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\drawable\student5.png
