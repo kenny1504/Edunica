@@ -46,7 +46,9 @@ namespace eduNICA
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Intent i = new Intent(this, typeof(Activity_Instit_Matricula_Grado_Estudiante));
+            Intent i = new Intent(this, typeof(Activity_Instit_Matricula_Grado_Grupo));
+            Estudiantes_grados modulo = Global.Lista_Grad[e.Position];
+            i.PutExtra("Grado", modulo.Grado);//pasar grado al otro activity
             StartActivity(i);
         }
     }

@@ -14,7 +14,17 @@ namespace eduNICA.Resources.Model
 {
     public class Estudiantes_grados
     {
-        public string Grado { get; set; }
+        public int Grado { get; set; }
         public int cantidad { get; set; }
+    }
+    public class grupos_grados
+    {
+        public string Grupo { get; set; }
+        public int cantidad { get; set; }
+    }
+    public class Grupos_ws
+    {
+        public int id_grado { get; set; }
+        public int id_intituto { get; set; }
     }
 }

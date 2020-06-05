@@ -77,9 +77,11 @@
     <Compile Include="Activity_Instit_Matricula_Grado.cs" />
     <Compile Include="Activity_Instit_Matricula_Grado_Estudiante.cs" />
     <Compile Include="Activity_Instit_Matricula_Grado_Estudiante_Detalle.cs" />
+    <Compile Include="Activity_Instit_Matricula_Grado_Grupo.cs" />
     <Compile Include="Activity_Instit_Usuario.cs" />
     <Compile Include="Activity_Instit_Usuario_Detalle.cs" />
     <Compile Include="Adapter_Lista_Grado.cs" />
+    <Compile Include="Adapter_Lista_Grupo.cs" />
     <Compile Include="Adapter_Lista_Usuario.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="LoginActivity.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\Admin_Lista_Usuario_Docent_Detalle.cs" />
     <Compile Include="Resources\Intarface\Instit_Matricula_Grados.cs" />
+    <Compile Include="Resources\Intarface\Instit_Matricula_Grados_Grupo.cs" />
     <Compile Include="Resources\Intarface\LoginInterface.cs" />
     <Compile Include="Resources\Model\matricula_grados.cs" />
     <Compile Include="Resources\Model\userview.cs" />
@@ -322,6 +325,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\student5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Inst_Matricula_Grado_Grupo.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

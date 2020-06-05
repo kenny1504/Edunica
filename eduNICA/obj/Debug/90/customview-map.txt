@@ -11,6 +11,7 @@ android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main_doc
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main_institucion.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\admin_usuario.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\app_bar_main.xml
+android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\inst_matricula_grado_grupo.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\instit_matricula_grado.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\instit_matricula_grado_estudiante.xml
 android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
@@ -67,6 +68,7 @@ LinearLayout;obj\Debug\90\res\layout\admin_nota.xml
 LinearLayout;obj\Debug\90\res\layout\admin_reporte.xml
 LinearLayout;obj\Debug\90\res\layout\admin_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\admin_usuario_detalle.xml
+LinearLayout;obj\Debug\90\res\layout\inst_matricula_grado_grupo.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_estudiante.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
@@ -78,6 +80,7 @@ LinearLayout;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 LinearLayout;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\splash.xml
 ListView;obj\Debug\90\res\layout\admin_usuario.xml
+ListView;obj\Debug\90\res\layout\inst_matricula_grado_grupo.xml
 ListView;obj\Debug\90\res\layout\instit_matricula_grado.xml
 ListView;obj\Debug\90\res\layout\instit_usuario.xml
 menu;obj\Debug\90\res\menu\activity_main_drawer.xml
@@ -131,6 +134,7 @@ TextView;obj\Debug\90\res\layout\admin_reporte.xml
 TextView;obj\Debug\90\res\layout\admin_usuario.xml
 TextView;obj\Debug\90\res\layout\admin_usuario_detalle.xml
 TextView;obj\Debug\90\res\layout\content_main.xml
+TextView;obj\Debug\90\res\layout\inst_matricula_grado_grupo.xml
 TextView;obj\Debug\90\res\layout\instit_matricula_grado.xml
 TextView;obj\Debug\90\res\layout\instit_matricula_grado_estudiante.xml
 TextView;obj\Debug\90\res\layout\instit_matricula_grado_estudiante_detalle.xml
