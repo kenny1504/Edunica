@@ -72,15 +72,12 @@ namespace eduNICA
                     case Resource.Id.usuario:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
-                        Toast.MakeText(this, "Cargando ...", ToastLength.Short).Show();//Mensaje Cargando
-
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
                         break;
                     case Resource.Id.matricula:
                         toolbar.Title = "Lista Usuario Docente";
-                        Toast.MakeText(this, "Cargando", ToastLength.Short).Show();//Mensaje Cargando
 
                         toolbar.Title = "Grados Academicos";
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();

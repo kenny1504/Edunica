@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using EDMTDialog;
 using eduNICA.Resources.Intarface;
 using eduNICA.Resources.Model;
 using Refit;
@@ -18,7 +19,7 @@ namespace eduNICA
 {
     public class Fragment_Instit_Matricula_Grado_Grupo : Fragment
     {
-        ListView vlista;
+        ListView vlista; Context context; //Instalcia de context
         Instit_Matricula_Grados_Grupo grupos;
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,6 +34,13 @@ namespace eduNICA
             base.OnActivityCreated(savedInstanceState);
             int grad = Global.grado;//recuperamos grupo seleccionado
             vlista =View.FindViewById<ListView>(Resource.Id.listView_grupos);//vinculamos al listview del layout
+
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                .SetContext(context)
+                .SetMessage("Cargando ...")
+                .Build();
+            Esperar.Show();
+            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
             //Establecemos la concexion con el servicio web API REST
             grupos = RestService.For<Instit_Matricula_Grados_Grupo>("http://www.edunica.somee.com/api/EstudiantesWS");
@@ -50,9 +58,11 @@ namespace eduNICA
                 Global.grupos.Add(W);
             }
             vlista.Adapter = new Adapter_Lista_Grupo(Activity);
+            Esperar.Dismiss();//Cerramos mensaje
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            context = inflater.Context;
             // Definimos layout que se mostrara en layout
             return inflater.Inflate(Resource.Layout.Inst_Matricula_Grado_Grupo, container, false);
 

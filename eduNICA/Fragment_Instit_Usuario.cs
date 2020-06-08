@@ -34,6 +34,15 @@ namespace eduNICA
             base.OnActivityCreated(savedInstanceState);
             //base.OnCreate(savedInstanceState);
             // Create your fragment here
+           
+            //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                .SetContext(context)
+                .SetMessage("Cargando ...")
+                .Build();
+            Esperar.Show();
+            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
+
             usuario_Docente = RestService.For<Admin_Lista_Usuario_Docente>("http://www.edunica.somee.com/api/UsuariosWS");
             vlista = View.FindViewById<ListView>(Resource.Id.listView1);
             Busqueda Busqueda = new Busqueda();
@@ -53,6 +62,7 @@ namespace eduNICA
                 Global.usuariosWs.Add(W);
             }
             vlista.Adapter = new Adapter_Lista_Usuario(Activity);
+            Esperar.Dismiss();//Cerrar Mensaje Cargando
             vlista.ItemClick += Vlista_ItemClick;
         }
         public void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -65,7 +75,6 @@ namespace eduNICA
             usuariosWS modulo = Global.usuariosWs[e.Position];
             Global.cedula = modulo.Cedula;
             ft.Replace(Resource.Id.relativeLayoutMenu, usuario_Detalle).AddToBackStack(null).Commit();
-            Toast.MakeText(context, "Cargando", ToastLength.Short).Show();//Mensaje Cargando
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
