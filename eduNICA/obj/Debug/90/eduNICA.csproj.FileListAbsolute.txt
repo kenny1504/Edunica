@@ -1358,3 +1358,8 @@ C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Lista_Usuario.java
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\MenuActivity_Docente.java
 C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\MenuActivity_Institucion.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_CleanIntermediateIfNeeded.stamp
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Instit_Usuario.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Instit_Matricula_Grado.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Instit_Usuario_Detalle.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Instit_Matricula_Grado_Grupo.java

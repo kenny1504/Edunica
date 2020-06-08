@@ -36,6 +36,7 @@ namespace eduNICA
             navigationView.SetNavigationItemSelectedListener(this);
 
             View headerView = navigationView.GetHeaderView(0); 
+
             //Intancias para establecer el tipo de usuario y nombre de Usuario
             TextView navUsername = (TextView)headerView.FindViewById(Resource.Id.NombreUsuario);
             TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);

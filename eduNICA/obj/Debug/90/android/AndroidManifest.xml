@@ -12,12 +12,8 @@
     <activity android:label="Activity_Admin_Nota" android:name="crc641258e947ead0e712.Activity_Admin_Nota" />
     <activity android:label="Activity_Admin_Reporte" android:name="crc641258e947ead0e712.Activity_Admin_Reporte" />
     <activity android:label="Activity_Admin_Usuario" android:name="crc641258e947ead0e712.Activity_Admin_Usuario" />
-    <activity android:label="Activity_Instit_Matricula_Grado" android:name="crc641258e947ead0e712.Activity_Instit_Matricula_Grado" />
     <activity android:label="Activity_Instit_Matricula_Grado_Estudiante" android:name="crc641258e947ead0e712.Activity_Instit_Matricula_Grado_Estudiante" />
     <activity android:label="Activity_Instit_Matricula_Grado_Estudiante_Detalle" android:name="crc641258e947ead0e712.Activity_Instit_Matricula_Grado_Estudiante_Detalle" />
-    <activity android:label="Activity_Instit_Matricula_Grado_Grupo" android:name="crc641258e947ead0e712.Activity_Instit_Matricula_Grado_Grupo" />
-    <activity android:label="Activity_Instit_Usuario" android:name="crc641258e947ead0e712.Activity_Instit_Usuario" />
-    <activity android:label="Activity_Instit_Usuario_Detalle" android:name="crc641258e947ead0e712.Activity_Instit_Usuario_Detalle" />
     <activity android:label="@string/app_name" android:theme="@style/AppTheme" android:name="crc641258e947ead0e712.LoginActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

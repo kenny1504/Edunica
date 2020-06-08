@@ -35,6 +35,8 @@ external-cache-path;C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\lp\37\jl
 external-path;C:\Users\kenny\Desktop\Edunica\eduNICA\obj\Debug\90\lp\37\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+fragment;obj\Debug\90\res\layout\content_main.xml
+FragmentSample.TitlesFragment;obj\Debug\90\res\layout\content_main.xml
 gradient;obj\Debug\90\res\drawable\side_nav_bar.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 group;obj\Debug\90\res\menu\activity_main_drawer1.xml
@@ -68,6 +70,7 @@ LinearLayout;obj\Debug\90\res\layout\admin_nota.xml
 LinearLayout;obj\Debug\90\res\layout\admin_reporte.xml
 LinearLayout;obj\Debug\90\res\layout\admin_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\admin_usuario_detalle.xml
+LinearLayout;obj\Debug\90\res\layout\content_main.xml
 LinearLayout;obj\Debug\90\res\layout\inst_matricula_grado_grupo.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_estudiante.xml

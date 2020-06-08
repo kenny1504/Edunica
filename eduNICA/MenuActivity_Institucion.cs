@@ -8,31 +8,35 @@ using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
+using Android.Text;
 using Android.Views;
 using Android.Widget;
 
 namespace eduNICA
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
-    public class MenuActivity_Institucion : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
+    public class MenuActivity_Institucion : AppCompatActivity//, NavigationView.IOnNavigationItemSelectedListener
     {
+        Android.Support.V7.Widget.Toolbar toolbar;
+        DrawerLayout drawer;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main_Institucion);
+            
 
-
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this);
+            //navigationView.SetNavigationItemSelectedListener(this);
+            SetupDrawerContent(navigationView);
 
             View headerView = navigationView.GetHeaderView(0);
             //Intancias para establecer el tipo de usuario y nombre de Usuario
@@ -46,8 +50,51 @@ namespace eduNICA
             //tipo de usuario
                 navUserTpo.Text = "Institucion";
         }
+        //al dar click sobre un item del menu lateral
+        private void SetupDrawerContent(NavigationView navigationView)
+        {
+            navigationView.NavigationItemSelected += (sender, e) =>
+            {
+                e.MenuItem.SetChecked(true);
+
+                FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+
+                switch (e.MenuItem.ItemId)
+                {
+                    case Resource.Id.usuario:
+                        //renombramos toolbal
+                        toolbar.Title = "Lista Usuario Docente";
+                        //instaciamos el fragment a implementar
+                        Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
+                        break;
+                    case Resource.Id.matricula:
+                        toolbar.Title = "Grados Academicos";
+                        Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, int_grado).AddToBackStack(null);
+                        break;
+                }
+                //lanzamiento de fragment
+                ft.Commit();
+                drawer.CloseDrawers();
+            };
+        }
         public override void OnBackPressed()
         {
+            /////////////////////////
+            //////aqui estoy viendo lo de ir atras
+            ///////////////////////
+            ////////////////////////
+            //BottomNavigationView navigation = (BottomNavigationView)FindViewById(Resource.Id.nav_view);
+            //if (navigation.SelectedItemId==Resource.Id.usuario)
+            //{
+            //    //Process.KillProcess(Process.MyPid());
+            //    //drawer.CloseDrawer(GravityCompat.Start);
+            //}
+            //else
+            //{
+            //    navigation.SelectedItemId = Resource.Id.matricula;
+            //}
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
@@ -59,12 +106,12 @@ namespace eduNICA
                 StartActivity(i);
             }
         }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
+        //cerrar sesion
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -81,39 +128,6 @@ namespace eduNICA
             View view = (View)sender;
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        }
-
-        public bool OnNavigationItemSelected(IMenuItem item)
-        {
-            int id = item.ItemId;
-
-            if (id == Resource.Id.asistencia)
-            {
-                
-            }
-            else if (id == Resource.Id.docente)
-            {
-                //Intent i = new Intent(this, typeof(Activity_Admin_Nota));
-                //StartActivity(i);
-            }
-            else if (id == Resource.Id.matricula)
-            {
-                Intent i = new Intent(this, typeof(Activity_Instit_Matricula_Grado));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.nota)
-            {
-                //Intent i = new Intent(this, typeof(Activity_Admin_Nota));
-                //StartActivity(i);
-            }
-            else if(id==Resource.Id.usuario)
-            {
-                Intent i = new Intent(this, typeof(Activity_Instit_Usuario));
-                StartActivity(i);
-            }
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
-            return true;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
