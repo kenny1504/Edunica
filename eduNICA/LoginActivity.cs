@@ -9,6 +9,7 @@ using Android.Util;
 using Refit;
 using eduNICA.Resources.Model;
 using System.Collections.Generic;
+using EDMTDialog;
 
 namespace eduNICA
 {
@@ -44,11 +45,20 @@ namespace eduNICA
         private async void BtnEntrar_Click(object sender, System.EventArgs e)
         {
 
-
             if (pass.Text == "" && user.Text == "") //VALIDAMOS si los campos estan vacios manda mensaje
                 Toast.MakeText(this, "Favor Complete los campos", ToastLength.Short).Show();
             else
             {
+                //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
+                Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                    .SetContext(this)
+                    .SetMessage("verificando ...")
+                    .Build();
+
+                if (!Esperar.IsShowing) //Mostramos mensaje 
+                    Esperar.Show();
+               Esperar.Window.SetLayout(1000,800); //aplica tamaño a la alerta
+
                 // instancia de la clase user para enviar parametros a la peticion 
                 userview userview = new userview();
                 userview.password = pass.Text;
@@ -70,13 +80,16 @@ namespace eduNICA
                     {
                         Toast.MakeText(this, "Favor verifique las credenciales", ToastLength.Short).Show();
                     }
-
+                    if (Esperar.IsShowing) //Cerramos mensaje 
+                        Esperar.Dismiss();
 
                 }
                 catch (System.Exception ex) //captura algun error en la session
                 {
 
                     Toast.MakeText(this, "" + ex.Message, ToastLength.Short).Show();
+                    if (Esperar.IsShowing) //Cerramos mensaje 
+                        Esperar.Dismiss();
                 }
 
             }

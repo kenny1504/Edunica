@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using EDMTDialog;
 using eduNICA.Resources.Intarface;
 using eduNICA.Resources.Model;
 using Refit;
@@ -18,7 +19,7 @@ namespace eduNICA
 {
     public class Fragment_Instit_Usuario : Fragment
     {
-        ListView vlista;
+        ListView vlista; Context context;
         Android.Support.V7.Widget.Toolbar toolbar;
         //declaramos variable tipo interface
         Admin_Lista_Usuario_Docente usuario_Docente;
@@ -36,7 +37,8 @@ namespace eduNICA
             usuario_Docente = RestService.For<Admin_Lista_Usuario_Docente>("http://www.edunica.somee.com/api/UsuariosWS");
             vlista = View.FindViewById<ListView>(Resource.Id.listView1);
             Busqueda Busqueda = new Busqueda();
-            Busqueda.Id = Global.u.Id_Institucion;            
+            Busqueda.Id = Global.u.Id_Institucion;
+
             //hacemos peticion mediante el metodo de la interface 
             List<usuariosWS> usuariosvie = await usuario_Docente.Usuarios_Docentes(Busqueda);
             for (int i = 0; i < usuariosvie.Count; i++)
@@ -62,13 +64,12 @@ namespace eduNICA
             Fragment_Instit_Usuario_Detalle usuario_Detalle = new Fragment_Instit_Usuario_Detalle();
             usuariosWS modulo = Global.usuariosWs[e.Position];
             Global.cedula = modulo.Cedula;
-
             ft.Replace(Resource.Id.relativeLayoutMenu, usuario_Detalle).AddToBackStack(null).Commit();
-
-            
+            Toast.MakeText(context, "Cargando", ToastLength.Short).Show();//Mensaje Cargando
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            context = inflater.Context;
             return inflater.Inflate(Resource.Layout.Instit_Usuario, container, false);
         }
     }
