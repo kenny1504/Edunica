@@ -26924,56 +26924,56 @@
 	.section	.rodata.java_type_name.4487,"aMS",%progbits,1
 	.type	.L.java_type_name.4487, %object
 .L.java_type_name.4487:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado"
-	.size	.L.java_type_name.4487, 54
+	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado_Estudiante"
+	.size	.L.java_type_name.4487, 65
 
 	.section	.rodata.java_type_name.4488,"aMS",%progbits,1
 	.type	.L.java_type_name.4488, %object
 .L.java_type_name.4488:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado_Estudiante"
-	.size	.L.java_type_name.4488, 65
+	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado_Estudiante_Detalle"
+	.size	.L.java_type_name.4488, 73
 
 	.section	.rodata.java_type_name.4489,"aMS",%progbits,1
 	.type	.L.java_type_name.4489, %object
 .L.java_type_name.4489:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado_Estudiante_Detalle"
-	.size	.L.java_type_name.4489, 73
+	.asciz	"crc641258e947ead0e712/Adapter_Lista_Grado"
+	.size	.L.java_type_name.4489, 42
 
 	.section	.rodata.java_type_name.4490,"aMS",%progbits,1
 	.type	.L.java_type_name.4490, %object
 .L.java_type_name.4490:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Matricula_Grado_Grupo"
-	.size	.L.java_type_name.4490, 60
+	.asciz	"crc641258e947ead0e712/Adapter_Lista_Grupo"
+	.size	.L.java_type_name.4490, 42
 
 	.section	.rodata.java_type_name.4491,"aMS",%progbits,1
 	.type	.L.java_type_name.4491, %object
 .L.java_type_name.4491:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Usuario"
-	.size	.L.java_type_name.4491, 46
+	.asciz	"crc641258e947ead0e712/Adapter_Lista_Usuario"
+	.size	.L.java_type_name.4491, 44
 
 	.section	.rodata.java_type_name.4492,"aMS",%progbits,1
 	.type	.L.java_type_name.4492, %object
 .L.java_type_name.4492:
-	.asciz	"crc641258e947ead0e712/Activity_Instit_Usuario_Detalle"
+	.asciz	"crc641258e947ead0e712/Fragment_Instit_Matricula_Grado"
 	.size	.L.java_type_name.4492, 54
 
 	.section	.rodata.java_type_name.4493,"aMS",%progbits,1
 	.type	.L.java_type_name.4493, %object
 .L.java_type_name.4493:
-	.asciz	"crc641258e947ead0e712/Adapter_Lista_Grado"
-	.size	.L.java_type_name.4493, 42
+	.asciz	"crc641258e947ead0e712/Fragment_Instit_Matricula_Grado_Grupo"
+	.size	.L.java_type_name.4493, 60
 
 	.section	.rodata.java_type_name.4494,"aMS",%progbits,1
 	.type	.L.java_type_name.4494, %object
 .L.java_type_name.4494:
-	.asciz	"crc641258e947ead0e712/Adapter_Lista_Grupo"
-	.size	.L.java_type_name.4494, 42
+	.asciz	"crc641258e947ead0e712/Fragment_Instit_Usuario"
+	.size	.L.java_type_name.4494, 46
 
 	.section	.rodata.java_type_name.4495,"aMS",%progbits,1
 	.type	.L.java_type_name.4495, %object
 .L.java_type_name.4495:
-	.asciz	"crc641258e947ead0e712/Adapter_Lista_Usuario"
-	.size	.L.java_type_name.4495, 44
+	.asciz	"crc641258e947ead0e712/Fragment_Instit_Usuario_Detalle"
+	.size	.L.java_type_name.4495, 54
 
 	.section	.rodata.java_type_name.4496,"aMS",%progbits,1
 	.type	.L.java_type_name.4496, %object
@@ -75978,48 +75978,48 @@
 	.section	.rodata.managed_type_name.6899,"aMS",%progbits,1
 	.type	.L.managed_type_name.6899, %object
 .L.managed_type_name.6899:
-	.asciz	"eduNICA.Activity_Instit_Matricula_Grado, eduNICA"
-	.size	.L.managed_type_name.6899, 49
+	.asciz	"eduNICA.Activity_Instit_Matricula_Grado_Estudiante, eduNICA"
+	.size	.L.managed_type_name.6899, 60
 	.section	.rodata.managed_type_name.6900,"aMS",%progbits,1
 	.type	.L.managed_type_name.6900, %object
 .L.managed_type_name.6900:
-	.asciz	"eduNICA.Activity_Instit_Matricula_Grado_Estudiante, eduNICA"
-	.size	.L.managed_type_name.6900, 60
+	.asciz	"eduNICA.Activity_Instit_Matricula_Grado_Estudiante_Detalle, eduNICA"
+	.size	.L.managed_type_name.6900, 68
 	.section	.rodata.managed_type_name.6901,"aMS",%progbits,1
 	.type	.L.managed_type_name.6901, %object
 .L.managed_type_name.6901:
-	.asciz	"eduNICA.Activity_Instit_Matricula_Grado_Estudiante_Detalle, eduNICA"
-	.size	.L.managed_type_name.6901, 68
+	.asciz	"eduNICA.Adapter_Lista_Grado, eduNICA"
+	.size	.L.managed_type_name.6901, 37
 	.section	.rodata.managed_type_name.6902,"aMS",%progbits,1
 	.type	.L.managed_type_name.6902, %object
 .L.managed_type_name.6902:
-	.asciz	"eduNICA.Activity_Instit_Matricula_Grado_Grupo, eduNICA"
-	.size	.L.managed_type_name.6902, 55
+	.asciz	"eduNICA.Adapter_Lista_Grupo, eduNICA"
+	.size	.L.managed_type_name.6902, 37
 	.section	.rodata.managed_type_name.6903,"aMS",%progbits,1
 	.type	.L.managed_type_name.6903, %object
 .L.managed_type_name.6903:
-	.asciz	"eduNICA.Activity_Instit_Usuario, eduNICA"
-	.size	.L.managed_type_name.6903, 41
+	.asciz	"eduNICA.Adapter_Lista_Usuario, eduNICA"
+	.size	.L.managed_type_name.6903, 39
 	.section	.rodata.managed_type_name.6904,"aMS",%progbits,1
 	.type	.L.managed_type_name.6904, %object
 .L.managed_type_name.6904:
-	.asciz	"eduNICA.Activity_Instit_Usuario_Detalle, eduNICA"
+	.asciz	"eduNICA.Fragment_Instit_Matricula_Grado, eduNICA"
 	.size	.L.managed_type_name.6904, 49
 	.section	.rodata.managed_type_name.6905,"aMS",%progbits,1
 	.type	.L.managed_type_name.6905, %object
 .L.managed_type_name.6905:
-	.asciz	"eduNICA.Adapter_Lista_Grado, eduNICA"
-	.size	.L.managed_type_name.6905, 37
+	.asciz	"eduNICA.Fragment_Instit_Matricula_Grado_Grupo, eduNICA"
+	.size	.L.managed_type_name.6905, 55
 	.section	.rodata.managed_type_name.6906,"aMS",%progbits,1
 	.type	.L.managed_type_name.6906, %object
 .L.managed_type_name.6906:
-	.asciz	"eduNICA.Adapter_Lista_Grupo, eduNICA"
-	.size	.L.managed_type_name.6906, 37
+	.asciz	"eduNICA.Fragment_Instit_Usuario, eduNICA"
+	.size	.L.managed_type_name.6906, 41
 	.section	.rodata.managed_type_name.6907,"aMS",%progbits,1
 	.type	.L.managed_type_name.6907, %object
 .L.managed_type_name.6907:
-	.asciz	"eduNICA.Adapter_Lista_Usuario, eduNICA"
-	.size	.L.managed_type_name.6907, 39
+	.asciz	"eduNICA.Fragment_Instit_Usuario_Detalle, eduNICA"
+	.size	.L.managed_type_name.6907, 49
 	.section	.rodata.managed_type_name.6908,"aMS",%progbits,1
 	.type	.L.managed_type_name.6908, %object
 .L.managed_type_name.6908:

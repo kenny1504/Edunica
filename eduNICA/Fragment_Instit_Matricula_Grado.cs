@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using EDMTDialog;
 using eduNICA.Resources.Intarface;
 using eduNICA.Resources.Model;
 using Refit;
@@ -18,7 +19,7 @@ namespace eduNICA
 {
     public class Fragment_Instit_Matricula_Grado : Fragment
     {
-        ListView vlista;
+        ListView vlista; Context context;
         Instit_Matricula_Grados grados;
         Android.Support.V7.Widget.Toolbar toolbar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
@@ -28,6 +29,13 @@ namespace eduNICA
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             // Create your fragment here
             vlista = View.FindViewById<ListView>(Resource.Id.w1listView1);
+            
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                .SetContext(context)
+                .SetMessage("Cargando ...")
+                .Build();
+            Esperar.Show();
+            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
             //Establecemos la concexion con el servicio web API REST
             grados = RestService.For<Instit_Matricula_Grados>("http://www.edunica.somee.com/api/EstudiantesWS");
@@ -44,6 +52,7 @@ namespace eduNICA
                 Global.Lista_Grad.Add(W);
             }
             vlista.Adapter = new Adapter_Lista_Grado(Activity);
+            Esperar.Dismiss();
             vlista.ItemClick += Vlista_ItemClick;
         }
 
@@ -60,6 +69,7 @@ namespace eduNICA
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            context= inflater.Context;
             // Use this to return your custom view for this Fragment
             return inflater.Inflate(Resource.Layout.Instit_Matricula_Grado, container, false);
         }

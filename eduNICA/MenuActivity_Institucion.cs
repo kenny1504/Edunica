@@ -11,6 +11,8 @@ using Android.Support.V7.App;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
+using EDMTDialog;
+using Java.Lang;
 
 namespace eduNICA
 {
@@ -38,6 +40,7 @@ namespace eduNICA
             //navigationView.SetNavigationItemSelectedListener(this);
             SetupDrawerContent(navigationView);
 
+
             View headerView = navigationView.GetHeaderView(0);
             //Intancias para establecer el tipo de usuario y nombre de Usuario
             TextView navUsername = (TextView)headerView.FindViewById(Resource.Id.NombreUsuario);
@@ -53,12 +56,17 @@ namespace eduNICA
         //al dar click sobre un item del menu lateral
         private void SetupDrawerContent(NavigationView navigationView)
         {
+            //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                    .SetContext(this)
+                    .SetMessage("Cargando ...")
+                    .Build();
+
             navigationView.NavigationItemSelected += (sender, e) =>
             {
                 e.MenuItem.SetChecked(true);
 
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
-
                 switch (e.MenuItem.ItemId)
                 {
                     case Resource.Id.usuario:
@@ -69,6 +77,8 @@ namespace eduNICA
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
                         break;
                     case Resource.Id.matricula:
+                        toolbar.Title = "Lista Usuario Docente";
+
                         toolbar.Title = "Grados Academicos";
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado).AddToBackStack(null);
@@ -77,7 +87,9 @@ namespace eduNICA
                 //lanzamiento de fragment
                 ft.Commit();
                 drawer.CloseDrawers();
+                
             };
+
         }
         public override void OnBackPressed()
         {

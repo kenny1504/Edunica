@@ -13,6 +13,7 @@ using Android.Widget;
 using eduNICA.Resources.Model;
 using Refit;
 using eduNICA.Resources.Intarface;
+using EDMTDialog;
 
 namespace eduNICA
 {
@@ -20,7 +21,7 @@ namespace eduNICA
     {
         Admin_Lista_Usuario_Docente_Detalle Persona12;
         Personas usuario;
-        string cedula;
+        string cedula; Context context;
         TextView txtcedula, txtsexo, txtcorreo, txtdireccion, txttelefono, txtfecha, txtnombre;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
@@ -34,6 +35,13 @@ namespace eduNICA
             txtfecha = View.FindViewById<TextView>(Resource.Id.textView_fechanacimiento);
             txtsexo = View.FindViewById<TextView>(Resource.Id.textView_sexo);
             txttelefono = View.FindViewById<TextView>(Resource.Id.textView_telefono);
+
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                .SetContext(context)
+                .SetMessage("Cargando ...")
+                .Build();
+            Esperar.Show();
+            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
             //Establecemos la concexion con el servicio web API REST
             Persona12 = RestService.For<Admin_Lista_Usuario_Docente_Detalle>("http://www.edunica.somee.com/api/UsuariosWS");
@@ -65,10 +73,12 @@ namespace eduNICA
             txtdireccion.Text = usuario.Direccion;
             txtcorreo.Text = usuario.Correo;
             txttelefono.Text = usuario.Telefono.ToString();
+            Esperar.Dismiss();//cerrar mensaje
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            context = inflater.Context;
             //definimos el layout que se mostrara en el fragment
             return inflater.Inflate(Resource.Layout.Instit_Usuario_Detalle, container, false);
         }
