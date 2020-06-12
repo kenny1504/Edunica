@@ -24,35 +24,40 @@ namespace eduNICA
         Android.Support.V7.Widget.Toolbar toolbar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
-            Global.Lista_Grad.Clear();
+            //Global.Lista_Grad.Clear();
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             // Create your fragment here
             vlista = View.FindViewById<ListView>(Resource.Id.w1listView1);
-            
-            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
-                .SetContext(context)
-                .SetMessage("Cargando ...")
-                .Build();
-            Esperar.Show();
-            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
-
-            //Establecemos la concexion con el servicio web API REST
-            grados = RestService.For<Instit_Matricula_Grados>("http://www.edunica.somee.com/api/EstudiantesWS");
-            Busqueda Busqueda = new Busqueda();
-            Busqueda.Id = Global.u.Id_Institucion;
-
-            //hacemos peticion mediante el metodo de la interface 
-            List<Estudiantes_grados> grado_institucion = await grados.Estudiante_Grado(Busqueda);
-            for (int i = 0; i < grado_institucion.Count; i++)
+            if (Global.Lista_Grad.Count == 0)
             {
-                Estudiantes_grados W = new Estudiantes_grados();
-                W.Grado = grado_institucion[i].Grado;
-                W.cantidad = grado_institucion[i].cantidad;
-                Global.Lista_Grad.Add(W);
+                Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                    .SetContext(context)
+                    .SetMessage("Cargando ...")
+                    .Build();
+                Esperar.Show();
+                Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
+
+                //Establecemos la concexion con el servicio web API REST
+                grados = RestService.For<Instit_Matricula_Grados>("http://www.edunica.somee.com/api/EstudiantesWS");
+                Busqueda Busqueda = new Busqueda();
+                Busqueda.Id = Global.u.Id_Institucion;
+
+                //hacemos peticion mediante el metodo de la interface 
+                List<Estudiantes_grados> grado_institucion = await grados.Estudiante_Grado(Busqueda);
+                for (int i = 0; i < grado_institucion.Count; i++)
+                {
+                    Estudiantes_grados W = new Estudiantes_grados();
+                    W.Grado = grado_institucion[i].Grado;
+                    W.cantidad = grado_institucion[i].cantidad;
+                    Global.Lista_Grad.Add(W);
+                }
+                vlista.Adapter = new Adapter_Lista_Grado(Activity);
+
+                Esperar.Dismiss();
             }
-            vlista.Adapter = new Adapter_Lista_Grado(Activity);
-            Esperar.Dismiss();
+            else
+                vlista.Adapter = new Adapter_Lista_Grado(Activity);
             vlista.ItemClick += Vlista_ItemClick;
         }
 
@@ -64,7 +69,7 @@ namespace eduNICA
             Estudiantes_grados modulo = Global.Lista_Grad[e.Position];
             Global.grado = modulo.Grado;
 
-            ft.Replace(Resource.Id.relativeLayoutMenu, grupo).Commit();
+            ft.Replace(Resource.Id.relativeLayoutMenu, grupo).DisallowAddToBackStack().Commit();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

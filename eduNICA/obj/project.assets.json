@@ -17,6 +17,20 @@
       "jQuery/2.1.1": {
         "type": "package"
       },
+      "Microcharts/0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp.Views": "1.59.1.1"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
+          "lib/MonoAndroid10/Microcharts.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
+          "lib/MonoAndroid10/Microcharts.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
         "type": "package",
         "dependencies": {
@@ -67,6 +81,41 @@
         "type": "package",
         "dependencies": {
           "jQuery": "2.1.1"
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/SkiaSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win7-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
+      "SkiaSharp.Views/1.59.1.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/MonoAndroid/SkiaSharp.Views.Android.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/SkiaSharp.Views.Android.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -629,6 +678,26 @@
           "build/monoandroid90/Xamarin.Android.Support.LocalBroadcastManager.targets": {}
         }
       },
+      "Xamarin.Android.Support.Media.Compat/28.0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Annotations": "[28.0.0.3]",
+          "Xamarin.Android.Support.Compat": "[28.0.0.3]",
+          "Xamarin.Android.Support.VersionedParcelable": "[28.0.0.3]"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Xamarin.Android.Support.Media.Compat.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Xamarin.Android.Support.Media.Compat.dll": {}
+        },
+        "build": {
+          "build/monoandroid90/Xamarin.Android.Support.Media.Compat.targets": {}
+        }
+      },
       "Xamarin.Android.Support.Print/28.0.0.3": {
         "type": "package",
         "dependencies": {
@@ -707,6 +776,28 @@
           "build/monoandroid90/Xamarin.Android.Support.Transition.targets": {}
         }
       },
+      "Xamarin.Android.Support.v4/28.0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.3]",
+          "Xamarin.Android.Support.Core.UI": "[28.0.0.3]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.3]",
+          "Xamarin.Android.Support.Fragment": "[28.0.0.3]",
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.3]"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Xamarin.Android.Support.v4.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Xamarin.Android.Support.v4.dll": {}
+        },
+        "build": {
+          "build/monoandroid90/Xamarin.Android.Support.v4.targets": {}
+        }
+      },
       "Xamarin.Android.Support.v7.AppCompat/28.0.0.3": {
         "type": "package",
         "dependencies": {
@@ -748,6 +839,46 @@
         },
         "build": {
           "build/monoandroid90/Xamarin.Android.Support.v7.CardView.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.MediaRouter/28.0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Media.Compat": "[28.0.0.3]",
+          "Xamarin.Android.Support.v7.AppCompat": "[28.0.0.3]",
+          "Xamarin.Android.Support.v7.Palette": "[28.0.0.3]",
+          "Xamarin.Android.Support.v7.RecyclerView": "[28.0.0.3]"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.dll": {}
+        },
+        "build": {
+          "build/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.targets": {}
+        }
+      },
+      "Xamarin.Android.Support.v7.Palette/28.0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[28.0.0.3]",
+          "Xamarin.Android.Support.Core.Utils": "[28.0.0.3]"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Xamarin.Android.Support.v7.Palette.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Xamarin.Android.Support.v7.Palette.dll": {}
+        },
+        "build": {
+          "build/monoandroid90/Xamarin.Android.Support.v7.Palette.targets": {}
         }
       },
       "Xamarin.Android.Support.v7.RecyclerView/28.0.0.3": {
@@ -881,6 +1012,26 @@
         "Tools/uninstall.ps1",
         "jquery.2.1.1.nupkg.sha512",
         "jquery.nuspec"
+      ]
+    },
+    "Microcharts/0.7.1": {
+      "sha512": "Py79bYXqvsqthZtk1ChdDhy/n4mb7T2CKjzTVU7ldj4dnjgFC2nbOJMGeAJkDk1lZPoQPSPx3obSq7S29Zrt8g==",
+      "type": "package",
+      "path": "microcharts/0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Microcharts.Droid.dll",
+        "lib/MonoAndroid10/Microcharts.dll",
+        "lib/Xamarin.iOS10/Microcharts.dll",
+        "lib/Xamarin.iOS10/Microcharts.iOS.dll",
+        "lib/netstandard1.4/Microcharts.dll",
+        "lib/uap/Microcharts.Uwp.dll",
+        "lib/uap/Microcharts.dll",
+        "lib/xamarinmac/Microcharts.dll",
+        "lib/xamarinmac/Microcharts.macOS.dll",
+        "microcharts.0.7.1.nupkg.sha512",
+        "microcharts.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
@@ -1163,6 +1314,67 @@
         "content/Scripts/nugetexample.js",
         "sampledependency.1.0.0.nupkg.sha512",
         "sampledependency.nuspec"
+      ]
+    },
+    "SkiaSharp/1.59.1": {
+      "sha512": "Le+YqP0aWwJ5ImHikWiLWOWjdH8oOV6F2D7fknzKp9ArzDIrtPASeiHpI1RgqQEK/GGvR56B2l5belsDzwK7uQ==",
+      "type": "package",
+      "path": "skiasharp/1.59.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/SkiaSharp.dll.config",
+        "build/net45/SkiaSharp.targets",
+        "lib/MonoAndroid/SkiaSharp.dll",
+        "lib/MonoAndroid/SkiaSharp.xml",
+        "lib/XamarinMac/SkiaSharp.dll",
+        "lib/XamarinMac/SkiaSharp.xml",
+        "lib/XamariniOS/SkiaSharp.dll",
+        "lib/XamariniOS/SkiaSharp.xml",
+        "lib/XamarintvOS/SkiaSharp.dll",
+        "lib/XamarintvOS/SkiaSharp.xml",
+        "lib/net45/SkiaSharp.dll",
+        "lib/net45/SkiaSharp.dll.config",
+        "lib/net45/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.xml",
+        "lib/uap10.0/SkiaSharp.dll",
+        "lib/uap10.0/SkiaSharp.xml",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win7-x64/native/libSkiaSharp.dll",
+        "runtimes/win7-x86/native/libSkiaSharp.dll",
+        "skiasharp.1.59.1.nupkg.sha512",
+        "skiasharp.nuspec",
+        "xamarin.interactive/SkiaSharp.Workbooks.dll"
+      ]
+    },
+    "SkiaSharp.Views/1.59.1.1": {
+      "sha512": "1MQmOh3OjdrCD87Ehdn986RoD43WEe8D9zzncCotuAckYHB++JmDv1poOhaiWtoYqCLXU6Vk5IcQR6+EgZ0ofQ==",
+      "type": "package",
+      "path": "skiasharp.views/1.59.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/SkiaSharp.Views.Android.dll",
+        "lib/XamarinMac/SkiaSharp.Views.Mac.dll",
+        "lib/XamariniOS/SkiaSharp.Views.iOS.dll",
+        "lib/XamarintvOS/SkiaSharp.Views.tvOS.dll",
+        "lib/net45/SkiaSharp.Views.Desktop.dll",
+        "lib/net45/SkiaSharp.Views.WPF.dll",
+        "lib/uap10.0/SkiaSharp.Views.UWP.dll",
+        "skiasharp.views.1.59.1.1.nupkg.sha512",
+        "skiasharp.views.nuspec"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -1842,6 +2054,30 @@
         "xamarin.android.support.localbroadcastmanager.nuspec"
       ]
     },
+    "Xamarin.Android.Support.Media.Compat/28.0.0.3": {
+      "sha512": "0KLBggwr7b8hKZhC5m0z1a11FErJ6YjrDTP2pVfWHxZ8rs6p1SamFN7iIfyGwY1OMBTh5XzP4v4egyL+gDCl4A==",
+      "type": "package",
+      "path": "xamarin.android.support.media.compat/28.0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid71/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid80/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid81/Xamarin.Android.Support.Media.Compat.targets",
+        "build/monoandroid90/Xamarin.Android.Support.Media.Compat.targets",
+        "lib/monoandroid60/_._",
+        "lib/monoandroid70/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.Media.Compat.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.Media.Compat.dll",
+        "proguard/monoandroid80/proguard.txt",
+        "proguard/monoandroid81/proguard.txt",
+        "proguard/monoandroid90/proguard.txt",
+        "xamarin.android.support.media.compat.28.0.0.3.nupkg.sha512",
+        "xamarin.android.support.media.compat.nuspec"
+      ]
+    },
     "Xamarin.Android.Support.Print/28.0.0.3": {
       "sha512": "9J/LXSSHdURLJ5v2p+xNuuLtRbitbRjrZwOKwQ24WhBONNOLAud+/XIhuvBJMiR3E4gagbBRT1uDNTc1aAbqtA==",
       "type": "package",
@@ -1919,6 +2155,27 @@
         "xamarin.android.support.transition.nuspec"
       ]
     },
+    "Xamarin.Android.Support.v4/28.0.0.3": {
+      "sha512": "eDp/4Twt+FwJlthOxDiZTWhFdQwIjlOLww63JW9MmDpW3WKW5Pd2H17x7V8H/A/B6mmp1mqxBR2TmZj+zzaeyQ==",
+      "type": "package",
+      "path": "xamarin.android.support.v4/28.0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid71/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v4.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v4.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v4.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v4.dll",
+        "xamarin.android.support.v4.28.0.0.3.nupkg.sha512",
+        "xamarin.android.support.v4.nuspec"
+      ]
+    },
     "Xamarin.Android.Support.v7.AppCompat/28.0.0.3": {
       "sha512": "GO+NAVD2H3+Ic27xCAG++4s6Qj+xeF1BFppUyYMUGtk+3IaeTKNHMf5OsuqQJbff09YwzuBmk/w2gNKn0FY1dw==",
       "type": "package",
@@ -1960,6 +2217,48 @@
         "lib/monoandroid90/Xamarin.Android.Support.v7.CardView.dll",
         "xamarin.android.support.v7.cardview.28.0.0.3.nupkg.sha512",
         "xamarin.android.support.v7.cardview.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.v7.MediaRouter/28.0.0.3": {
+      "sha512": "DkcJkkIP1eCYyvIEnON1dgLisV1XZRCl1P5QyuAhWXNFrQAV5iG0fhFQuH37c3bNEMIlG+sRctOLundey/PCig==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.mediarouter/28.0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid71/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.MediaRouter.dll",
+        "xamarin.android.support.v7.mediarouter.28.0.0.3.nupkg.sha512",
+        "xamarin.android.support.v7.mediarouter.nuspec"
+      ]
+    },
+    "Xamarin.Android.Support.v7.Palette/28.0.0.3": {
+      "sha512": "MdcR+B2nn1B8HeeJKAvn9yEEmP/vOQ2RWavLQgwipiLS6uzJSFFTLEuMuLGPWchT4g6J6YWsMZ4NIXFRdlkBKA==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.palette/28.0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/monoandroid71/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid80/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid81/Xamarin.Android.Support.v7.Palette.targets",
+        "build/monoandroid90/Xamarin.Android.Support.v7.Palette.targets",
+        "lib/monoandroid60/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid70/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid71/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid80/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid81/Xamarin.Android.Support.v7.Palette.dll",
+        "lib/monoandroid90/Xamarin.Android.Support.v7.Palette.dll",
+        "xamarin.android.support.v7.palette.28.0.0.3.nupkg.sha512",
+        "xamarin.android.support.v7.palette.nuspec"
       ]
     },
     "Xamarin.Android.Support.v7.RecyclerView/28.0.0.3": {
@@ -2109,34 +2408,38 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "EDMTDialog >= 1.0.2",
+      "Microcharts >= 0.7.1",
       "Refit >= 5.1.67",
       "Refractored.Controls.CircleImageView >= 1.0.1",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.3",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
       "Xamarin.Android.Support.Design >= 28.0.0.3",
+      "Xamarin.Android.Support.v4 >= 28.0.0.3",
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.3",
+      "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
+      "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
       "Xamarin.Essentials >= 1.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kenny\\.nuget\\packages\\": {},
+    "C:\\Users\\josea\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kenny\\Desktop\\Edunica\\eduNICA\\eduNICA.csproj",
+      "projectUniqueName": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\eduNICA.csproj",
       "projectName": "eduNICA",
-      "projectPath": "C:\\Users\\kenny\\Desktop\\Edunica\\eduNICA\\eduNICA.csproj",
-      "packagesPath": "C:\\Users\\kenny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kenny\\Desktop\\Edunica\\eduNICA\\obj\\",
+      "projectPath": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\eduNICA.csproj",
+      "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\kenny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2160,6 +2463,10 @@
             "target": "Package",
             "version": "[1.0.2, )"
           },
+          "Microcharts": {
+            "target": "Package",
+            "version": "[0.7.1, )"
+          },
           "Refit": {
             "target": "Package",
             "version": "[5.1.67, )"
@@ -2180,7 +2487,19 @@
             "target": "Package",
             "version": "[28.0.0.3, )"
           },
+          "Xamarin.Android.Support.v4": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
           "Xamarin.Android.Support.v7.AppCompat": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
+          "Xamarin.Android.Support.v7.CardView": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
+          "Xamarin.Android.Support.v7.MediaRouter": {
             "target": "Package",
             "version": "[28.0.0.3, )"
           },

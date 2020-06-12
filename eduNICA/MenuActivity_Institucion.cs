@@ -26,8 +26,7 @@ namespace eduNICA
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main_Institucion);
-            
-
+           
             toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -47,11 +46,19 @@ namespace eduNICA
             TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);
 
             toolbar.Title = Global.u.Institucion; //estable la institucion a la que pertenece el usuario
-
-
             navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
             //tipo de usuario
                 navUserTpo.Text = "Institucion";
+            inicio();
+        }
+        void inicio()
+        {
+            FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+            //FragmentManager manager= getSupportFragmentManager();
+            Fragment_Instit_Home grafica = new Fragment_Instit_Home();
+            ft.Replace(Resource.Id.relativeLayoutMenu, grafica);
+            ft.DisallowAddToBackStack();
+            ft.Commit();
         }
         //al dar click sobre un item del menu lateral
         private void SetupDrawerContent(NavigationView navigationView)
@@ -64,6 +71,7 @@ namespace eduNICA
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
+                
                 e.MenuItem.SetChecked(true);
 
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
@@ -75,13 +83,14 @@ namespace eduNICA
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
+                        ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.matricula:
-                        toolbar.Title = "Lista Usuario Docente";
-
                         toolbar.Title = "Grados Academicos";
+                        //FragmentManager manager= getSupportFragmentManager();
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
-                        ft.Replace(Resource.Id.relativeLayoutMenu, int_grado).AddToBackStack(null);
+                        ft.Replace(Resource.Id.relativeLayoutMenu, int_grado);
+                       ft.DisallowAddToBackStack();
                         break;
                 }
                 //lanzamiento de fragment
@@ -91,31 +100,34 @@ namespace eduNICA
             };
 
         }
+        
         public override void OnBackPressed()
         {
-            /////////////////////////
-            //////aqui estoy viendo lo de ir atras
-            ///////////////////////
-            ////////////////////////
-            //BottomNavigationView navigation = (BottomNavigationView)FindViewById(Resource.Id.nav_view);
-            //if (navigation.SelectedItemId==Resource.Id.usuario)
-            //{
-            //    //Process.KillProcess(Process.MyPid());
-            //    //drawer.CloseDrawer(GravityCompat.Start);
-            //}
-            //else
-            //{
-            //    navigation.SelectedItemId = Resource.Id.matricula;
-            //}
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if (drawer.IsDrawerOpen(GravityCompat.Start))
+            Fragment f = FragmentManager.FindFragmentById(Resource.Id.relativeLayoutMenu);
+            if (f is Fragment_Instit_Matricula_Grado_Grupo)
             {
-                drawer.CloseDrawer(GravityCompat.Start);
+                toolbar.Title = "Grados Academicos";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado());
+                fragment.DisallowAddToBackStack().Commit();
             }
-            else
+            else if (f is Fragment_Instit_Usuario_Detalle)
             {
-                Intent i = new Intent(this, typeof(LoginActivity));
-                StartActivity(i);
+                toolbar.Title = "Lista Usuario Docente";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Usuario());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if(f is Fragment_Instit_Usuario || f is Fragment_Instit_Matricula_Grado)
+            {
+                toolbar.Title = Global.u.Institucion;
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Home());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if(f is Fragment_Instit_Home)
+            {
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             }
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -130,9 +142,11 @@ namespace eduNICA
             if (id == Resource.Id.login_out)
             {
                 Intent i = new Intent(this, typeof(LoginActivity));
+                Global.Lista_Grad.Clear();
+                Global.grupos.Clear();
+                Global.usuariosWs.Clear();
                 StartActivity(i);
             }
-
             return true;
         }
         private void FabOnClick(object sender, EventArgs eventArgs)

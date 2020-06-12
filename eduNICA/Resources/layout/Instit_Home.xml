@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#E5E7E9"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:id="@+id/gridLayout1">
+          
+
+        <TextView
+            android:text="Matriculas por Grados"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:id="@+id/textView1" />
+        <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+        android:layout_gravity="center_horizontal">
+        <microcharts.droid.ChartView  
+        android:id="@+id/Chart_Inst"  
+        android:layout_width="match_parent"  
+        android:layout_height="160dp"/>
+         </android.support.v7.widget.CardView>
+    </GridLayout>
+</ScrollView>

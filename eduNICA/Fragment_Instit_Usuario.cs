@@ -29,40 +29,44 @@ namespace eduNICA
         }
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
-            Global.usuariosWs.Clear();
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             base.OnActivityCreated(savedInstanceState);
-            //base.OnCreate(savedInstanceState);
-            // Create your fragment here
-           
-            //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
-            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
-                .SetContext(context)
-                .SetMessage("Cargando ...")
-                .Build();
-            Esperar.Show();
-            Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
-
-            usuario_Docente = RestService.For<Admin_Lista_Usuario_Docente>("http://www.edunica.somee.com/api/UsuariosWS");
             vlista = View.FindViewById<ListView>(Resource.Id.listView1);
-            Busqueda Busqueda = new Busqueda();
-            Busqueda.Id = Global.u.Id_Institucion;
 
-            //hacemos peticion mediante el metodo de la interface 
-            List<usuariosWS> usuariosvie = await usuario_Docente.Usuarios_Docentes(Busqueda);
-            for (int i = 0; i < usuariosvie.Count; i++)
+            //verificar si no hay lista en la clase
+            if (Global.usuariosWs.Count == 0)
             {
-                usuariosWS W = new usuariosWS();
-                W.Cedula = usuariosvie[i].Cedula;
-                W.Id = usuariosvie[i].Id;
-                W.Institucion = usuariosvie[i].Institucion;
-                W.Nombre = usuariosvie[i].Nombre;
-                W.NombreDeUsuario = usuariosvie[i].NombreDeUsuario;
-                W.tipo = usuariosvie[i].tipo;
-                Global.usuariosWs.Add(W);
+                //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
+                Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                    .SetContext(context)
+                    .SetMessage("Cargando ...")
+                    .Build();
+                Esperar.Show();
+                Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
+
+                usuario_Docente = RestService.For<Admin_Lista_Usuario_Docente>("http://www.edunica.somee.com/api/UsuariosWS");
+               
+                Busqueda Busqueda = new Busqueda();
+                Busqueda.Id = Global.u.Id_Institucion;
+
+                //hacemos peticion mediante el metodo de la interface 
+                List<usuariosWS> usuariosvie = await usuario_Docente.Usuarios_Docentes(Busqueda);
+                for (int i = 0; i < usuariosvie.Count; i++)
+                {
+                    usuariosWS W = new usuariosWS();
+                    W.Cedula = usuariosvie[i].Cedula;
+                    W.Id = usuariosvie[i].Id;
+                    W.Institucion = usuariosvie[i].Institucion;
+                    W.Nombre = usuariosvie[i].Nombre;
+                    W.NombreDeUsuario = usuariosvie[i].NombreDeUsuario;
+                    W.tipo = usuariosvie[i].tipo;
+                    Global.usuariosWs.Add(W);
+                }
+                vlista.Adapter = new Adapter_Lista_Usuario(Activity);
+                Esperar.Dismiss();//Cerrar Mensaje Cargando
             }
-            vlista.Adapter = new Adapter_Lista_Usuario(Activity);
-            Esperar.Dismiss();//Cerrar Mensaje Cargando
+            else
+                vlista.Adapter = new Adapter_Lista_Usuario(Activity);
             vlista.ItemClick += Vlista_ItemClick;
         }
         public void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -74,7 +78,7 @@ namespace eduNICA
             Fragment_Instit_Usuario_Detalle usuario_Detalle = new Fragment_Instit_Usuario_Detalle();
             usuariosWS modulo = Global.usuariosWs[e.Position];
             Global.cedula = modulo.Cedula;
-            ft.Replace(Resource.Id.relativeLayoutMenu, usuario_Detalle).AddToBackStack(null).Commit();
+            ft.Replace(Resource.Id.relativeLayoutMenu, usuario_Detalle).DisallowAddToBackStack().Commit();
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

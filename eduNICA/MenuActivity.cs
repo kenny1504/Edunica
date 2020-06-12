@@ -10,13 +10,15 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using EDMTDialog;
 
 namespace eduNICA
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
-    public class MenuActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
+    public class MenuActivity : AppCompatActivity
     {
-      
+        Android.Support.V7.Widget.Toolbar toolbar;
+        DrawerLayout drawer;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,16 +26,16 @@ namespace eduNICA
             SetContentView(Resource.Layout.activity_main);
 
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this);
+            SetupDrawerContent(navigationView);
 
             View headerView = navigationView.GetHeaderView(0); 
 
@@ -42,28 +44,45 @@ namespace eduNICA
             TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);
 
             toolbar.Title = Global.u.Institucion; //estable la institucion a la que pertenece el usuario
-
+            inicio();
 
             navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
 
             //Define y pone el tipo de usuario que esta en session
                 navUserTpo.Text = "Administrador";
         }
+        private void SetupDrawerContent(NavigationView navigationView)
+        {
+            //// Instancia para Mostrar "Aviso" mientras carga la consulta  al servidor
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                    .SetContext(this)
+                    .SetMessage("Cargando ...")
+                    .Build();
 
+            navigationView.NavigationItemSelected += (sender, e) =>
+            {
+                e.MenuItem.SetChecked(true);
+                switch (e.MenuItem.ItemId)
+                {
+                    case Resource.Id.usuario:
+                        
+                        break;
+                    case Resource.Id.matricula:
+                       
+                        break;
+                }
+                drawer.CloseDrawers();
+            };
+        }
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if (drawer.IsDrawerOpen(GravityCompat.Start))
+            Fragment f = FragmentManager.FindFragmentById(Resource.Id.relativeLayoutMenu);
+            if (f is Fragment_Admin_home)
             {
-                drawer.CloseDrawer(GravityCompat.Start);
-            }
-            else
-            {
-                Intent i = new Intent(this, typeof(LoginActivity));
-                StartActivity(i);
+                //salir de la app
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             }
         }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
@@ -86,45 +105,14 @@ namespace eduNICA
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
-
-        public bool OnNavigationItemSelected(IMenuItem item)
+        void inicio()
         {
-            int id = item.ItemId;
-
-            if (id == Resource.Id.usuario)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Usuario));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.nota)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Nota));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.matricula)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Matricula));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.estudiante)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Estudiante));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.docente)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Docente));
-                StartActivity(i);
-            }
-            else if (id == Resource.Id.asignatura)
-            {
-                Intent i = new Intent(this, typeof(Activity_Admin_Asignatura));
-                StartActivity(i);
-            }
-
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
-            return true;
+            FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+            //FragmentManager manager= getSupportFragmentManager();
+            Fragment_Admin_home grafica = new Fragment_Admin_home();
+            ft.Replace(Resource.Id.relativeLayoutMenu, grafica);
+            ft.DisallowAddToBackStack();
+            ft.Commit();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

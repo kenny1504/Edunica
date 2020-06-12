@@ -4,8 +4,7 @@ package crc641258e947ead0e712;
 public class MenuActivity
 	extends android.support.v7.app.AppCompatActivity
 	implements
-		mono.android.IGCUserPeer,
-		android.support.design.widget.NavigationView.OnNavigationItemSelectedListener
+		mono.android.IGCUserPeer
 {
 /** @hide */
 	public static final String __md_methods;
@@ -16,7 +15,6 @@ public class MenuActivity
 			"n_onCreateOptionsMenu:(Landroid/view/Menu;)Z:GetOnCreateOptionsMenu_Landroid_view_Menu_Handler\n" +
 			"n_onOptionsItemSelected:(Landroid/view/MenuItem;)Z:GetOnOptionsItemSelected_Landroid_view_MenuItem_Handler\n" +
 			"n_onRequestPermissionsResult:(I[Ljava/lang/String;[I)V:GetOnRequestPermissionsResult_IarrayLjava_lang_String_arrayIHandler\n" +
-			"n_onNavigationItemSelected:(Landroid/view/MenuItem;)Z:GetOnNavigationItemSelected_Landroid_view_MenuItem_Handler:Android.Support.Design.Widget.NavigationView/IOnNavigationItemSelectedListenerInvoker, Xamarin.Android.Support.Design\n" +
 			"";
 		mono.android.Runtime.register ("eduNICA.MenuActivity, eduNICA", MenuActivity.class, __md_methods);
 	}
@@ -68,14 +66,6 @@ public class MenuActivity
 	}
 
 	private native void n_onRequestPermissionsResult (int p0, java.lang.String[] p1, int[] p2);
-
-
-	public boolean onNavigationItemSelected (android.view.MenuItem p0)
-	{
-		return n_onNavigationItemSelected (p0);
-	}
-
-	private native boolean n_onNavigationItemSelected (android.view.MenuItem p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

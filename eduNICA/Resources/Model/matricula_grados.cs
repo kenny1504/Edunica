@@ -17,11 +17,17 @@ namespace eduNICA.Resources.Model
         public int Grado { get; set; }
         public int cantidad { get; set; }
     }
+    public class Estudiantes_grados_Admin
+    {
+        public int Grado { get; set; }
+        public int cantidad { get; set; }
+    }
     public class grupos_grados
     {
         public int Cantidad { get; set; }
         public string Grupo { get; set; }
     }
+
     public class Grupos_ws
     {
         public int institucion { get; set; }

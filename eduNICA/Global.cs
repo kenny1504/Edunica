@@ -21,6 +21,7 @@ namespace eduNICA
         public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
         public static List<Personas> usuariosWs_Datos = new List<Personas>();
         public static List<Estudiantes_grados> Lista_Grad = new List<Estudiantes_grados>();
+        public static List<Estudiantes_grados_Admin> Lista_Grad_Admin = new List<Estudiantes_grados_Admin>();
         public static List<grupos_grados> grupos = new List<grupos_grados>();
     }
 
