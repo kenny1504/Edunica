@@ -26,7 +26,7 @@ namespace eduNICA
 {
     public class Fragment_Admin_home : Fragment
     {
-        Admin_home admin_Home;
+        Interface_Admin_home admin_Home;
         ChartView chartView;
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,7 +38,7 @@ namespace eduNICA
             chartView = View.FindViewById<ChartView>(Resource.Id.Chart_Admin);
 
 
-            admin_Home = RestService.For<Admin_home>("http://www.edunica.somee.com/api/DashboardWS");//peticion
+            admin_Home = RestService.For<Interface_Admin_home>("http://www.edunica.somee.com/api/DashboardWS");//peticion
             //hacemos peticion mediante el metodo de la interface 
             List<Estudiantes_grados_Admin> estudiantes_Grados_Admins = await admin_Home.Total_Grados();
             for (int i = 0; i < estudiantes_Grados_Admins.Count; i++)

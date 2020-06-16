@@ -20,7 +20,7 @@ namespace eduNICA
     public class Fragment_Instit_Matricula_Grado : Fragment
     {
         ListView vlista; Context context;
-        Instit_Matricula_Grados grados;
+        Interface_Instit_Matricula_Grado grados;
         Android.Support.V7.Widget.Toolbar toolbar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
@@ -38,8 +38,8 @@ namespace eduNICA
                 Esperar.Show();
                 Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
-                //Establecemos la concexion con el servicio web API REST
-                grados = RestService.For<Instit_Matricula_Grados>("http://www.edunica.somee.com/api/EstudiantesWS");
+                //Establecemos la conexion con el servicio web API REST
+                grados = RestService.For<Interface_Instit_Matricula_Grado>("http://www.edunica.somee.com/api/EstudiantesWS");
                 Busqueda Busqueda = new Busqueda();
                 Busqueda.Id = Global.u.Id_Institucion;
 
@@ -48,16 +48,17 @@ namespace eduNICA
                 for (int i = 0; i < grado_institucion.Count; i++)
                 {
                     Estudiantes_grados W = new Estudiantes_grados();
+                    W.Idgrado = grado_institucion[i].Idgrado;
                     W.Grado = grado_institucion[i].Grado;
-                    W.cantidad = grado_institucion[i].cantidad;
+                    W.Cantidad = grado_institucion[i].Cantidad;             
                     Global.Lista_Grad.Add(W);
                 }
-                vlista.Adapter = new Adapter_Lista_Grado(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Grado(Activity);
 
                 Esperar.Dismiss();
             }
             else
-                vlista.Adapter = new Adapter_Lista_Grado(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Grado(Activity);
             vlista.ItemClick += Vlista_ItemClick;
         }
 
@@ -67,8 +68,7 @@ namespace eduNICA
             toolbar.Title = "Grupos";
             Fragment_Instit_Matricula_Grado_Grupo grupo = new Fragment_Instit_Matricula_Grado_Grupo();
             Estudiantes_grados modulo = Global.Lista_Grad[e.Position];
-            Global.grado = modulo.Grado;
-
+            Global.idgrado = modulo.Idgrado;
             ft.Replace(Resource.Id.relativeLayoutMenu, grupo).DisallowAddToBackStack().Commit();
         }
 

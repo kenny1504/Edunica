@@ -10,6 +10,7 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Text;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 using EDMTDialog;
 using Java.Lang;
@@ -36,7 +37,6 @@ namespace eduNICA
             toggle.SyncState();
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            //navigationView.SetNavigationItemSelectedListener(this);
             SetupDrawerContent(navigationView);
 
 
@@ -71,15 +71,19 @@ namespace eduNICA
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
-                
                 e.MenuItem.SetChecked(true);
 
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 switch (e.MenuItem.ItemId)
                 {
-                    case Resource.Id.usuario:
+                    case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
+
+                        //asigno el item
+                        IMenuItem yop = (IMenuItem)FindViewById(Resource.Id.add_user);
+                        yop.SetVisible(true);//aqui se quiebra sad
+
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
@@ -103,14 +107,36 @@ namespace eduNICA
         
         public override void OnBackPressed()
         {
+            //MATRICULA INSTIT ir a pantalla anterior Grados
             Fragment f = FragmentManager.FindFragmentById(Resource.Id.relativeLayoutMenu);
             if (f is Fragment_Instit_Matricula_Grado_Grupo)
             {
                 toolbar.Title = "Grados Academicos";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado());
+                Global.grupos.Clear();
                 fragment.DisallowAddToBackStack().Commit();
             }
+            //MATRICULA INSTIT  ir a pantalla anterior grupos
+            else if (f is Fragment_Instit_Matricula_Grado_Grupo_Estudiante)
+            {
+                toolbar.Title = "Grupos";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado_Grupo());
+                Global.Lista_Estudi.Clear();
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            //MATRICULA INSTIT ir a pantalla anterior lista de estudiantes
+            else if (f is Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle)
+            {
+                toolbar.Title = "Estudiantes";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                Global.datos_E.Clear();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado_Grupo_Estudiante());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+
+            //ir a pantalla anterior de lista de usuarios
             else if (f is Fragment_Instit_Usuario_Detalle)
             {
                 toolbar.Title = "Lista Usuario Docente";
@@ -118,6 +144,7 @@ namespace eduNICA
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Usuario());
                 fragment.DisallowAddToBackStack().Commit();
             }
+            //ir a home, si se encuentra en unos de los items
             else if(f is Fragment_Instit_Usuario || f is Fragment_Instit_Matricula_Grado)
             {
                 toolbar.Title = Global.u.Institucion;
@@ -125,6 +152,7 @@ namespace eduNICA
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Home());
                 fragment.DisallowAddToBackStack().Commit();
             }
+            //salir de la app
             else if(f is Fragment_Instit_Home)
             {
                 Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
@@ -142,18 +170,25 @@ namespace eduNICA
             if (id == Resource.Id.login_out)
             {
                 Intent i = new Intent(this, typeof(LoginActivity));
+                //limpiar lista de item Matricula
                 Global.Lista_Grad.Clear();
                 Global.grupos.Clear();
+                Global.Lista_Estudi.Clear();                               
+                Global.datos_E.Clear();
+
+                //Limpiar lista de item Docentes
                 Global.usuariosWs.Clear();
+                Global.usuariosWs_Datos.Clear();
+
+                //limpiar lista de datos de grafico
+                Global.Lista_Grad_Graf.Clear();
                 StartActivity(i);
             }
+            if(id == Resource.Id.add_user)
+            {
+
+            }
             return true;
-        }
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View)sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

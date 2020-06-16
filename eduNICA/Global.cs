@@ -17,10 +17,16 @@ namespace eduNICA
     {
         public static usuariosview u;
         public static string cedula;//cedula para mostrar detalle usuario
-        public static int grado;//grado para mostrar grupos
+        public static int idgrado;//grado para mostrar grupos
+        public static int idgrupo;//variable donde se almacena el id del grupo seleccionado
+        public static int idestudiante;//variable donde se almacena el id del grupo seleccionado
+
         public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
         public static List<Personas> usuariosWs_Datos = new List<Personas>();
         public static List<Estudiantes_grados> Lista_Grad = new List<Estudiantes_grados>();
+        public static List<Estudiantes_grados_grafico> Lista_Grad_Graf = new List<Estudiantes_grados_grafico>();
+        public static List<ListaEstudiantesWS> Lista_Estudi = new List<ListaEstudiantesWS>();
+        public static List<DatosWS> datos_E = new List<DatosWS>();
         public static List<Estudiantes_grados_Admin> Lista_Grad_Admin = new List<Estudiantes_grados_Admin>();
         public static List<grupos_grados> grupos = new List<grupos_grados>();
     }

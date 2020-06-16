@@ -10,7 +10,7 @@
        android:paddingLeft="10dip">
 		<TextView
 			android:text="Cargando..."
-			android:id="@+id/Grado_Academico"
+			android:id="@+id/Titulo"
 			android:layout_width="302.0dp"
 			android:layout_height="fill_parent"
 			android:textSize="20dip"
@@ -20,7 +20,7 @@
          />
 		<TextView
 			android:text="Cargando..."
-			android:id="@+id/Cantidad"
+			android:id="@+id/Subtitulo"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="14dip"

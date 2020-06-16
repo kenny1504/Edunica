@@ -24,9 +24,5 @@
     android:id="@+id/nota"
     android:icon="@drawable/nota"
     android:title="Nota" />
-    <item
-            android:id="@+id/usuario"
-            android:icon="@drawable/usuario"
-            android:title="Usuario" />
   </group>
 </menu>

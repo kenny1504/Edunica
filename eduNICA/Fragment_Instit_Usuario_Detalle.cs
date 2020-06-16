@@ -19,14 +19,14 @@ namespace eduNICA
 {
     public class Fragment_Instit_Usuario_Detalle : Fragment
     {
-        Admin_Lista_Usuario_Docente_Detalle Persona12;
+        Interface_Instit_Lista_Usuario_Docente_Detalle Persona12;
         Personas usuario;
         string cedula; Context context;
         TextView txtcedula, txtsexo, txtcorreo, txtdireccion, txttelefono, txtfecha, txtnombre;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
-            //decula de usuario seleccionado para ver detalle
+            //cedula de usuario seleccionado para ver detalle
             cedula = Global.cedula;
             txtcedula = View.FindViewById<TextView>(Resource.Id.textView_cedula);
             txtnombre = View.FindViewById<TextView>(Resource.Id.textView_nombredocente);
@@ -44,7 +44,7 @@ namespace eduNICA
             Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
             //Establecemos la concexion con el servicio web API REST
-            Persona12 = RestService.For<Admin_Lista_Usuario_Docente_Detalle>("http://www.edunica.somee.com/api/UsuariosWS");
+            Persona12 = RestService.For<Interface_Instit_Lista_Usuario_Docente_Detalle>("http://www.edunica.somee.com/api/UsuariosWS");
 
             BusquedaUD BusquedaUD = new BusquedaUD();
             BusquedaUD.Cedula = cedula;

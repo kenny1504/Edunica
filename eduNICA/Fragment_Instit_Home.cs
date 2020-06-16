@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -31,7 +26,7 @@ namespace eduNICA
 {
     public class Fragment_Instit_Home : Fragment
     {
-        Instit_home Instit_Home;
+        Interface_Instit_home Instit_Home;
         ChartView chartView;
         Context context;
         public override void OnCreate(Bundle savedInstanceState)
@@ -53,28 +48,28 @@ namespace eduNICA
                     .Build();
                 Esperar.Show();
                 Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alert
-                Instit_Home = RestService.For<Instit_home>("http://www.edunica.somee.com/api/DashboardWS");//peticion
+                Instit_Home = RestService.For<Interface_Instit_home>("http://www.edunica.somee.com/api/DashboardWS");//peticion
                 Busqueda Busqueda = new Busqueda();
                 Busqueda.Id = Global.u.Id_Institucion;
 
                 //hacemos peticion mediante el metodo de la interface 
-                List<Estudiantes_grados> estudiantes_Grados = await Instit_Home.Total_Grados(Busqueda);
+                List<Estudiantes_grados_grafico> estudiantes_Grados = await Instit_Home.Total_Grados(Busqueda);
                 for (int i = 0; i < estudiantes_Grados.Count; i++)
                 {
-                    Estudiantes_grados W = new Estudiantes_grados();
+                    Estudiantes_grados_grafico W = new Estudiantes_grados_grafico();
                     W.Grado = estudiantes_Grados[i].Grado;
-                    W.cantidad = estudiantes_Grados[i].cantidad;
-                    Global.Lista_Grad.Add(W);
+                    W.Cantidad = estudiantes_Grados[i].Cantidad;
+                    Global.Lista_Grad_Graf.Add(W);
                 }
 
 
-                for (int i = 0; i < Global.Lista_Grad.Count; i++)
+                for (int i = 0; i < Global.Lista_Grad_Graf.Count; i++)
                 {
-                    Entry entry = new Entry(Global.Lista_Grad[i].cantidad)
+                    Entry entry = new Entry(Global.Lista_Grad_Graf[i].Cantidad)
                     {
                         Color = SKColor.Parse("#35780B"),
-                        Label = Global.Lista_Grad[i].Grado + " Grado",
-                        ValueLabel = Global.Lista_Grad[i].cantidad.ToString(),
+                        Label = Global.Lista_Grad_Graf[i].Grado + " Grado",
+                        ValueLabel = Global.Lista_Grad_Graf[i].Cantidad.ToString(),
                         TextColor = SKColor.Parse("#000000")
                     };
                     entries.Add(entry);
@@ -84,13 +79,13 @@ namespace eduNICA
             }
             else
             {
-                for (int i = 0; i < Global.Lista_Grad.Count; i++)
+                for (int i = 0; i < Global.Lista_Grad_Graf.Count; i++)
                 {
-                    Entry entry = new Entry(Global.Lista_Grad[i].cantidad)
+                    Entry entry = new Entry(Global.Lista_Grad_Graf[i].Cantidad)
                     {
                         Color = SKColor.Parse("#35780B"),
-                        Label = Global.Lista_Grad[i].Grado + " Grado",
-                        ValueLabel = Global.Lista_Grad[i].cantidad.ToString(),
+                        Label = Global.Lista_Grad_Graf[i].Grado + " Grado",
+                        ValueLabel = Global.Lista_Grad_Graf[i].Cantidad.ToString(),
                         TextColor = SKColor.Parse("#000000")
                     };
                     entries.Add(entry);

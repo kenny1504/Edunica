@@ -20,7 +20,7 @@ namespace eduNICA
         Button btnEntrar;
         EditText user,pass;
 
-        LoginInterface login;
+        Interface_LoginInterface login;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,7 +31,7 @@ namespace eduNICA
             SetContentView(Resource.Layout.login);
 
             //Establecemos la concexion con el servicio web API REST
-            login = RestService.For<LoginInterface>("http://www.edunica.somee.com/api/AutenticarWS");
+            login = RestService.For<Interface_LoginInterface>("http://www.edunica.somee.com/api/AutenticarWS");
 
             //instalcias
             btnEntrar = FindViewById<Button>(Resource.Id.button1);
