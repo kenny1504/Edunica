@@ -2,6 +2,7 @@
 using Android;
 using Android.App;
 using Android.Content;
+using Android.Opengl;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -79,11 +80,6 @@ namespace eduNICA
                     case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
-
-                        //asigno el item
-                        IMenuItem yop = (IMenuItem)FindViewById(Resource.Id.add_user);
-                        yop.SetVisible(true);//aqui se quiebra sad
-
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
@@ -186,7 +182,7 @@ namespace eduNICA
             }
             if(id == Resource.Id.add_user)
             {
-
+                
             }
             return true;
         }

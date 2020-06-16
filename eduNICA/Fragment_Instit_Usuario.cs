@@ -27,12 +27,14 @@ namespace eduNICA
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetHasOptionsMenu(true);//Agrega Cambios al Menu Actual
         }
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             base.OnActivityCreated(savedInstanceState);
             vlista = View.FindViewById<ListView>(Resource.Id.listView1);
+
             //verificar si no hay lista en la clase
             if (Global.usuariosWs.Count == 0)
             {
@@ -84,6 +86,14 @@ namespace eduNICA
         {
             context = inflater.Context;
             return inflater.Inflate(Resource.Layout.Instit_Usuario, container, false);
+        }
+
+        //Metodo para mostrar Botton 
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
+        {
+            menuInflater.Inflate(Resource.Menu.menu_main, menu);
+            menu.FindItem(Resource.Id.add_user).SetVisible(true); //Establece propiedad True
+            base.OnCreateOptionsMenu(menu, menuInflater); //Agrega cambios al Menu 
         }
     }
 }
