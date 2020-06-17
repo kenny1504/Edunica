@@ -41,4 +41,12 @@ namespace eduNICA.Resources.Model
         public int Telefono { get; set; }
         public DateTime FechaNacimiento { get; set; }
     }
+    public partial class Usuarios
+    {
+        public int Id { get; set; }
+        public string Cedula { get; set; }
+        public string Usuario { get; set; }
+        public string Contraseña { get; set; }
+        public int IdInstitucion { get; set; }
+    }
 }

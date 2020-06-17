@@ -71,6 +71,7 @@
     <Compile Include="Adapter_Instit_Lista_Grado.cs" />
     <Compile Include="Adapter_Instit_Lista_Grupo.cs" />
     <Compile Include="Adapter_Instit_Lista_Usuario.cs" />
+    <Compile Include="Fragment_Instit_Add_User.cs" />
     <Compile Include="Fragment_Instit_Home.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="MenuActivity_Docente.cs" />
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_home.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Add_User.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docent_Detalle.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_home.cs" />
@@ -372,7 +374,7 @@
     <AndroidResource Include="Resources\drawable\add_user.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Instit_Add_User.xml">
+    <AndroidResource Include="Resources\layout\Instit_User_Add.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

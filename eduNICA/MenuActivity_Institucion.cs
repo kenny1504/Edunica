@@ -28,7 +28,8 @@ namespace eduNICA
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main_Institucion);
-           
+
+
             toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -133,7 +134,7 @@ namespace eduNICA
             }
 
             //ir a pantalla anterior de lista de usuarios
-            else if (f is Fragment_Instit_Usuario_Detalle)
+            else if (f is Fragment_Instit_Usuario_Detalle || f is Fragment_Instit_Add_User)
             {
                 toolbar.Title = "Lista Usuario Docente";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -182,7 +183,14 @@ namespace eduNICA
             }
             if(id == Resource.Id.add_user)
             {
-                
+                FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+                //renombramos toolbal
+                toolbar.Title = "Agregar Usuario Docente";
+                //instaciamos el fragment a implementar
+                Fragment_Instit_Add_User add_user = new Fragment_Instit_Add_User();
+                ft.Replace(Resource.Id.relativeLayoutMenu, add_user);
+                ft.DisallowAddToBackStack();
+                ft.Commit();
             }
             return true;
         }

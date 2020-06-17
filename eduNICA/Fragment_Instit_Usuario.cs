@@ -21,7 +21,6 @@ namespace eduNICA
     {
         ListView vlista; Context context;
         Android.Support.V7.Widget.Toolbar toolbar;
-        Menu g1;
         //declaramos variable tipo interface
         Interface_Instit_Lista_Usuario_Docente usuario_Docente;
         public override void OnCreate(Bundle savedInstanceState)
