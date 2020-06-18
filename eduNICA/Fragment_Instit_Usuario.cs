@@ -92,6 +92,7 @@ namespace eduNICA
         {
             menuInflater.Inflate(Resource.Menu.menu_main, menu);
             menu.FindItem(Resource.Id.add_user).SetVisible(true); //Establece propiedad True
+            menu.FindItem(Resource.Id.login_out).SetVisible(false);
             base.OnCreateOptionsMenu(menu, menuInflater); //Agrega cambios al Menu 
         }
     }
