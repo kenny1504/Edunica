@@ -18,6 +18,7 @@ attr;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\2\jl\res\values
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\90\res\layout\instit_user_add.xml
+Button;obj\Debug\90\res\layout\instit_usuario_add.xml
 Button;obj\Debug\90\res\layout\login.xml
 Button;obj\Debug\90\res\layout\paramientras.xml
 cache-path;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\44\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -29,6 +30,7 @@ declare-styleable;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\2\
 dimen;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values\dimens.xml
 dimen;obj\Debug\90\res\values\dimens.xml
 EditText;obj\Debug\90\res\layout\instit_user_add.xml
+EditText;obj\Debug\90\res\layout\instit_usuario_add.xml
 EditText;obj\Debug\90\res\layout\instit_usuario_user_add.xml
 EditText;obj\Debug\90\res\layout\layout1.xml
 EditText;obj\Debug\90\res\layout\login.xml
@@ -80,6 +82,7 @@ LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante_detalle.xml
 LinearLayout;obj\Debug\90\res\layout\instit_user_add.xml
 LinearLayout;obj\Debug\90\res\layout\instit_usuario.xml
+LinearLayout;obj\Debug\90\res\layout\instit_usuario_add.xml
 LinearLayout;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 LinearLayout;obj\Debug\90\res\layout\instit_usuario_user_add.xml
 LinearLayout;obj\Debug\90\res\layout\layout1.xml
@@ -133,6 +136,7 @@ resources;obj\Debug\90\res\values\styles.xml
 resources;obj\Debug\90\res\values-v21\styles.xml
 ScrollView;obj\Debug\90\res\layout\admin_home.xml
 ScrollView;obj\Debug\90\res\layout\instit_home.xml
+ScrollView;obj\Debug\90\res\layout\instit_usuario.xml
 shape;obj\Debug\90\res\drawable\side_nav_bar.xml
 string;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values\strings.xml
 string;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\1\jl\res\values\strings.xml
@@ -154,6 +158,7 @@ TextView;obj\Debug\90\res\layout\admin_usuario_detalle.xml
 TextView;obj\Debug\90\res\layout\instit_home.xml
 TextView;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante_detalle.xml
 TextView;obj\Debug\90\res\layout\instit_user_add.xml
+TextView;obj\Debug\90\res\layout\instit_usuario_add.xml
 TextView;obj\Debug\90\res\layout\instit_usuario_detalle.xml
 TextView;obj\Debug\90\res\layout\login.xml
 TextView;obj\Debug\90\res\layout\nav_header_main.xml

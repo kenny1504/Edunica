@@ -10,6 +10,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Text;
+using Android.Util;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
@@ -23,6 +24,9 @@ namespace eduNICA
     {
         Android.Support.V7.Widget.Toolbar toolbar;
         DrawerLayout drawer;
+
+        private bool Salir = false;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,7 +52,7 @@ namespace eduNICA
             TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);
 
             toolbar.Title = Global.u.Institucion; //estable la institucion a la que pertenece el usuario
-            navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
+            navUsername.Text = Global.u.Nombre; //establece el nombre del usuario
             //tipo de usuario
                 navUserTpo.Text = "Institucion";
             inicio();
@@ -137,6 +141,7 @@ namespace eduNICA
             else if (f is Fragment_Instit_Usuario_Detalle || f is Fragment_Instit_Add_User)
             {
                 toolbar.Title = "Lista Usuario Docente";
+                Global.usuariosWs_Datos.Clear();
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Usuario());
                 fragment.DisallowAddToBackStack().Commit();
@@ -152,9 +157,23 @@ namespace eduNICA
             //salir de la app
             else if(f is Fragment_Instit_Home)
             {
-                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                if(Salir)
+                {
+                    this.FinishAffinity();
+                    Global.Lista_Grad_Graf.Clear();
+                }
+                Salir = true;
+
+                Toast.MakeText(this, "Click nuevamente ATRÁS para salir", ToastLength.Short).Show();
+
+                var handler = new Handler();
+
+                handler.PostDelayed(() => { Salir = false; }, 1800);
             }
+            
         }
+        
+   
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
@@ -185,12 +204,14 @@ namespace eduNICA
             {
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 //renombramos toolbal
-                toolbar.Title = "Agregar Usuario Docente";
-                //instaciamos el fragment a implementar
-                Fragment_Instit_Add_User add_user = new Fragment_Instit_Add_User();
-                ft.Replace(Resource.Id.relativeLayoutMenu, add_user);
-                ft.DisallowAddToBackStack();
-                ft.Commit();
+                //toolbar.Title = "Agregar Usuario Docente";
+                ////instaciamos el fragment a implementar
+                //Fragment_Instit_Add_User add_user = new Fragment_Instit_Add_User();
+                //ft.Replace(Resource.Id.relativeLayoutMenu, add_user);
+                //ft.DisallowAddToBackStack();
+                //ft.Commit();
+                Fragment_Instit_Usuario_Add add = new Fragment_Instit_Usuario_Add();
+                add.Show(ft, "dialog frament");
             }
             return true;
         }

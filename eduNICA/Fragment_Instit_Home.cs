@@ -40,7 +40,7 @@ namespace eduNICA
             base.OnActivityCreated(savedInstanceState);
             chartView = View.FindViewById<ChartView>(Resource.Id.Chart_Inst);
             List<Entry> entries = new List<Entry>();
-            if (Global.Lista_Grad.Count == 0)
+            if (Global.Lista_Grad_Graf.Count == 0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                     .SetContext(context)

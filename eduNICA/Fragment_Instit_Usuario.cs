@@ -32,7 +32,7 @@ namespace eduNICA
         {
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             base.OnActivityCreated(savedInstanceState);
-            vlista = View.FindViewById<ListView>(Resource.Id.listView1);
+            vlista = View.FindViewById<ListView>(Resource.Id.listView_grado);
 
             //verificar si no hay lista en la clase
             if (Global.usuariosWs.Count == 0)

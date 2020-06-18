@@ -36,18 +36,15 @@ namespace eduNICA
         {
             return position;
         }
-
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = lista1[position];
             View view = convertView;
             if(view==null)
-            {
                 view = context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Listar_Usuario, null);//aplicamos el formato predefinido
-                view.FindViewById<TextView>(Resource.Id.Nombre_Usuario).Text = item.Nombre;
-                view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Drawable.interf);
-                view.FindViewById<TextView>(Resource.Id.Nombre_User1).Text = "Nombre de Usuario: "+item.NombreDeUsuario;
-            }
+            view.FindViewById<TextView>(Resource.Id.Nombre_Usuario).Text = item.Nombre;
+            view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(Resource.Drawable.interf);
+            view.FindViewById<TextView>(Resource.Id.Nombre_User1).Text = "Nombre de Usuario: " + item.NombreDeUsuario;
             return view;
         }
     }

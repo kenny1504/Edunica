@@ -1443,3 +1443,6 @@ C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_ConvertResources
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\instit_usuario_add.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Pueba.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Instit_Usuario_Add.java

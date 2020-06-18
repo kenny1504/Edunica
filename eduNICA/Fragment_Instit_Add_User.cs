@@ -44,6 +44,8 @@ namespace eduNICA
             //Android.Support.V7.App.AlertDialog.Builder Alerta = new Android.Support.V7.App.AlertDialog.Builder(Activity);
             //Alerta.SetTitle("Desea Guardar Usuario");
             //Alerta.SetMessage("Haga Click");
+            //Alerta.Show();
+            //Alerta.SetPositiveButton(RadioButton.)
             //Alerta.SetCancelable(true);
                 
 

@@ -85,6 +85,7 @@
     <Compile Include="MenuActivity.cs" />
     <Compile Include="MenuActivity_Docente.cs" />
     <Compile Include="MenuActivity_Institucion.cs" />
+    <Compile Include="Fragment_Instit_Usuario_Add.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_home.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Add_User.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docente.cs" />
@@ -375,6 +376,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Instit_User_Add.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Usuario_Add.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
