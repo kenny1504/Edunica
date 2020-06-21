@@ -45,6 +45,8 @@ namespace eduNICA
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             SetupDrawerContent(navigationView);
 
+            //BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation_56);
+            //navigation.Enabled = false;
 
             View headerView = navigationView.GetHeaderView(0);
             //Intancias para establecer el tipo de usuario y nombre de Usuario
@@ -92,10 +94,17 @@ namespace eduNICA
                         break;
                     case Resource.Id.matricula:
                         toolbar.Title = "Grados Academicos";
-                        //FragmentManager manager= getSupportFragmentManager();
+                        Global.Click = 1;
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado);
                        ft.DisallowAddToBackStack();
+                        break;
+                    case Resource.Id.nota:
+                        Global.Click = 0;
+                        toolbar.Title = "Grados Academicos";
+                        Fragment_Instit_Matricula_Grado int_grado_n = new Fragment_Instit_Matricula_Grado();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n);
+                        ft.DisallowAddToBackStack();
                         break;
                 }
                 //lanzamiento de fragment
@@ -138,7 +147,7 @@ namespace eduNICA
             }
 
             //ir a pantalla anterior de lista de usuarios
-            else if (f is Fragment_Instit_Usuario_Detalle || f is Fragment_Instit_Add_User)
+            else if (f is Fragment_Instit_Usuario_Detalle || f is Fragment_Instit_Usuario_Add)
             {
                 toolbar.Title = "Lista Usuario Docente";
                 Global.usuariosWs_Datos.Clear();
@@ -152,6 +161,33 @@ namespace eduNICA
                 toolbar.Title = Global.u.Institucion;
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Home());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+
+            //ir hacia parcial
+            else if(f is Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante)
+            {
+                toolbar.Title = "Parcial";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                Global.notas_Estudiantes.Clear();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Nota_G_G_DetalleNota());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            //ir de parcial hacia asignaturas
+            else if(f is Fragment_Instit_Nota_G_G_DetalleNota)
+            {
+                toolbar.Title = "Asignaturas";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                //Global.detallenotas.Clear();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Nota_G_G_Asignatura());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if(f is Fragment_Instit_Nota_G_G_Asignatura)
+            {
+                toolbar.Title = "Grupos";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                Global.detallenotas.Clear();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado_Grupo());
                 fragment.DisallowAddToBackStack().Commit();
             }
             //salir de la app
@@ -203,13 +239,6 @@ namespace eduNICA
             if(id == Resource.Id.add_user)
             {
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
-                //renombramos toolbal
-                //toolbar.Title = "Agregar Usuario Docente";
-                ////instaciamos el fragment a implementar
-                //Fragment_Instit_Add_User add_user = new Fragment_Instit_Add_User();
-                //ft.Replace(Resource.Id.relativeLayoutMenu, add_user);
-                //ft.DisallowAddToBackStack();
-                //ft.Commit();
                 Fragment_Instit_Usuario_Add add = new Fragment_Instit_Usuario_Add();
                 add.Show(ft, "dialog frament");
             }

@@ -43,10 +43,10 @@ namespace eduNICA
             TextView navUsername = (TextView)headerView.FindViewById(Resource.Id.NombreUsuario);
             TextView navUserTpo = (TextView)headerView.FindViewById(Resource.Id.TipoUsuario);
 
-            toolbar.Title = Global.u.Institucion; //estable la institucion a la que pertenece el usuario
+            toolbar.Title = Global.u.Institucion; //establece la institucion a la que pertenece el usuario
             inicio();
 
-            navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
+            navUsername.Text = Global.u.Nombre; //establece el nombre del usuario
 
             //Define y pone el tipo de usuario que esta en session
                 navUserTpo.Text = "Administrador";
@@ -80,7 +80,8 @@ namespace eduNICA
             if (f is Fragment_Admin_home)
             {
                 //salir de la app
-                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+                this.FinishAffinity();
+                Global.Lista_Grad_Admin.Clear();
             }
         }
         public override bool OnCreateOptionsMenu(IMenu menu)

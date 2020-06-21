@@ -16,10 +16,16 @@ namespace eduNICA
     public class Global //clase global para guardar usuario en session 
     {
         public static usuariosview u;
+
+        public static int Click;
+
         public static string cedula;//cedula para mostrar detalle usuario
-        public static int idgrado;//grado para mostrar grupos
-        public static int idgrupo;//variable donde se almacena el id del grupo seleccionado
-        public static int idestudiante;//variable donde se almacena el id del grupo seleccionado
+        public static int idgrado;//variable global donde se alamcena el id del grado seleccionado
+        public static int idgrupo;//variable global donde se almacena el id del grupo seleccionado
+        public static int idestudiante;//variable global donde se almacena el id del grupo seleccionado
+        public static int idasignatura;//variable global donde se almacena el id de la asignatura seleccionado
+        public static int iddetallenota;//variable global donde se almacena el id del parcial seleccionado
+        
 
         public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
         public static List<Personas> usuariosWs_Datos = new List<Personas>();
@@ -29,6 +35,9 @@ namespace eduNICA
         public static List<DatosWS> datos_E = new List<DatosWS>();
         public static List<Estudiantes_grados_Admin> Lista_Grad_Admin = new List<Estudiantes_grados_Admin>();
         public static List<grupos_grados> grupos = new List<grupos_grados>();
-    }
 
+        public static List<Asignaturas> materia = new List<Asignaturas>();
+        public static List<Detallenota> detallenotas = new List<Detallenota>();
+        public static List<Notas_Estudiante> notas_Estudiantes = new List<Notas_Estudiante>();
+    }
 }

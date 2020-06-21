@@ -67,16 +67,23 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter_Instit_Lista_Asignatura.cs" />
+    <Compile Include="Adapter_Instit_Lista_DetalleNota.cs" />
     <Compile Include="Adapter_Instit_Lista_Estudiante.cs" />
     <Compile Include="Adapter_Instit_Lista_Grado.cs" />
     <Compile Include="Adapter_Instit_Lista_Grupo.cs" />
     <Compile Include="Adapter_Instit_Lista_Usuario.cs" />
-    <Compile Include="Fragment_Instit_Add_User.cs" />
+    <Compile Include="Adapter_Instit_Lista_VerNotasEstudiante.cs" />
+    <Compile Include="Fragment_Docent_Grado_Detalle.cs" />
     <Compile Include="Fragment_Instit_Home.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo_Estudiante.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle.cs" />
+    <Compile Include="Fragment_Instit_Nota_G_G_Asignatura.cs" />
+    <Compile Include="Fragment_Instit_Nota_G_G_DetalleNota.cs" />
+    <Compile Include="Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante.cs" />
+    <Compile Include="Fragment_Instit_Nota_G_G_Detalle_Menu.cs" />
     <Compile Include="Fragment_Instit_Usuario.cs" />
     <Compile Include="Fragment_Instit_Usuario_Detalle.cs" />
     <Compile Include="Fragment_Admin_home.cs" />
@@ -95,8 +102,11 @@
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo_Estudiante.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo_Estudiante_Detalle.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_Asignatura.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_detallenota.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_VerNotaEstudiante.cs" />
     <Compile Include="Resources\Intarface\Interface_LoginInterface.cs" />
-    <Compile Include="Resources\Model\Instit_Matricula.cs" />
+    <Compile Include="Resources\Model\Instit.cs" />
     <Compile Include="Resources\Model\userview.cs" />
     <Compile Include="Resources\Model\usuariosWS.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -243,46 +253,6 @@
     <AndroidResource Include="Resources\menu\navigation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Usuario.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Nota.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Matricula.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Estudiante.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Docente.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Asignatura.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Reporte.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Administrar.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\menu\activity_main_drawer2.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -292,11 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main_Institucion.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Admin_Usuario_Detalle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -375,12 +340,53 @@
     <AndroidResource Include="Resources\drawable\add_user.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Instit_User_Add.xml">
+    <AndroidResource Include="Resources\layout\Instit_Usuario_Add.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Instit_Usuario_Add.xml">
+    <AndroidResource Include="Resources\layout\Docent_Grado_Detalle.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Docent_Home.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Plantilla_Grado_Docente.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Nota_G_G_Asignatura.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Asignatura_nota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Plantilla_Instit_Nota_Asignatura.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Nota_G_G_DetalleNota.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\detallenota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Nota_G_G_DetalleNota_VerNotaEstudiante.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\instit_Nota_G_G_Detalle_Menu.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

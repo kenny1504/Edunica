@@ -1,0 +1,49 @@
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:p4="http://xamarin.com/mono/android/designer"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    <LinearLayout
+        android:id="@+id/Text"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tableLayout1">
+            <TableRow
+                android:id="@+id/tableRow1">
+                <TextView
+                    android:text="Nombre Estudiante"
+                    p4:placeholder="true"
+                    android:minWidth="30px"
+                    android:minHeight="30px"
+                    android:id="@+id/textView1" />
+                <TextView
+                    android:text="Asistencia"
+                    p4:placeholder="true"
+                    android:minWidth="30px"
+                    android:minHeight="30px"
+                    android:id="@+id/textView2" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/tableRow2">
+                <TextView
+                    p4:placeholder="true"
+                    android:minWidth="30px"
+                    android:minHeight="30px"
+                    android:id="@+id/textView_nombre_estudiante" />
+                <CheckBox
+                    android:gravity="center"
+                    android:layout_column="1"
+                    android:id="@+id/checkBox_Asistencia" />
+            </TableRow>        
+        </TableLayout>
+        
+    </LinearLayout>
+</RelativeLayout >

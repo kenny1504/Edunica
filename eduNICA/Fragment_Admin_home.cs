@@ -37,7 +37,6 @@ namespace eduNICA
             base.OnActivityCreated(savedInstanceState);
             chartView = View.FindViewById<ChartView>(Resource.Id.Chart_Admin);
 
-
             admin_Home = RestService.For<Interface_Admin_home>("http://www.edunica.somee.com/api/DashboardWS");//peticion
             //hacemos peticion mediante el metodo de la interface 
             List<Estudiantes_grados_Admin> estudiantes_Grados_Admins = await admin_Home.Total_Grados();

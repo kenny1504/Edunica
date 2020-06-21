@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"  
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_horizontal">
+            <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="#12A1FF"> 
+                <ImageView
+                android:src="@drawable/Asignatura_nota"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal" 
+                android:id="@+id/imagen2"/>
+            </LinearLayout>          
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">                
+            <TextView
+                android:text="Texto"                   
+			    android:layout_width="match_parent"
+			    android:layout_height="fill_parent"
+			    android:textSize="20dip"
+                    android:paddingLeft="78dp"
+                android:textStyle="italic"
+                android:layout_marginTop="25dp"
+			    android:layout_gravity="center_horizontal" 
+                android:id="@+id/Titulo2" />
+            </LinearLayout>
+            
+        </android.support.v7.widget.CardView>
+</LinearLayout>

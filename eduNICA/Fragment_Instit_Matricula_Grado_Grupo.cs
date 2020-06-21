@@ -63,12 +63,24 @@ namespace eduNICA
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-            toolbar.Title = "Estudiantes";
-            Fragment_Instit_Matricula_Grado_Grupo_Estudiante estudiante = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante();
-            grupos_grados modulo = Global.grupos[e.Position];           
-            Global.idgrupo = modulo.Idgrupo;
-            ft.Replace(Resource.Id.relativeLayoutMenu, estudiante).DisallowAddToBackStack().Commit();
+            if (Global.Click == 1)
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                toolbar.Title = "Estudiantes";
+                Fragment_Instit_Matricula_Grado_Grupo_Estudiante estudiante = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante();
+                grupos_grados modulo = Global.grupos[e.Position];
+                Global.idgrupo = modulo.Idgrupo;
+                ft.Replace(Resource.Id.relativeLayoutMenu, estudiante).DisallowAddToBackStack().Commit();
+            }
+            else
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                toolbar.Title = "Asignaturas";
+                Fragment_Instit_Nota_G_G_Asignatura asignatura = new Fragment_Instit_Nota_G_G_Asignatura();
+                grupos_grados modulo = Global.grupos[e.Position];
+                Global.idgrupo = modulo.Idgrupo;
+                ft.Replace(Resource.Id.relativeLayoutMenu, asignatura).DisallowAddToBackStack().Commit();
+            }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
