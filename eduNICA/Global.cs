@@ -25,7 +25,12 @@ namespace eduNICA
         public static int idestudiante;//variable global donde se almacena el id del grupo seleccionado
         public static int idasignatura;//variable global donde se almacena el id de la asignatura seleccionado
         public static int iddetallenota;//variable global donde se almacena el id del parcial seleccionado
-        
+        public static int idmatricula;//variable global donde se almacena el id de la matricula del estudiante seleccionado
+
+        public static int b_click;//variable para saber que opcion eligio
+        public static string parcial;//guardar el parcial al agregar una nota para mostrarlo;
+        public static string nombre_E_N;//guardar nombre de estudiante para mostrarlo al agregar nota;
+        public static string asignatura;//guardar nombre de asignatura para mostrarlo en agregar nota;
 
         public static List<usuariosWS> usuariosWs = new List<usuariosWS>();
         public static List<Personas> usuariosWs_Datos = new List<Personas>();
@@ -39,5 +44,7 @@ namespace eduNICA
         public static List<Asignaturas> materia = new List<Asignaturas>();
         public static List<Detallenota> detallenotas = new List<Detallenota>();
         public static List<Notas_Estudiante> notas_Estudiantes = new List<Notas_Estudiante>();
+
+        public static DasboardWS ws;
     }
 }

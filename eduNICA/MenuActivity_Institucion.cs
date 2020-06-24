@@ -45,9 +45,6 @@ namespace eduNICA
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             SetupDrawerContent(navigationView);
 
-            //BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation_56);
-            //navigation.Enabled = false;
-
             View headerView = navigationView.GetHeaderView(0);
             //Intancias para establecer el tipo de usuario y nombre de Usuario
             TextView navUsername = (TextView)headerView.FindViewById(Resource.Id.NombreUsuario);
@@ -87,6 +84,8 @@ namespace eduNICA
                     case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
+                        Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
+                        
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
@@ -94,13 +93,18 @@ namespace eduNICA
                         break;
                     case Resource.Id.matricula:
                         toolbar.Title = "Grados Academicos";
-                        Global.Click = 1;
+                        Global.Click = 1;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
+
+                        Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
+
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado);
                        ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.nota:
-                        Global.Click = 0;
+                        Global.Click = 0;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
+                        Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
+
                         toolbar.Title = "Grados Academicos";
                         Fragment_Instit_Matricula_Grado int_grado_n = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n);
@@ -173,7 +177,7 @@ namespace eduNICA
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Nota_G_G_DetalleNota());
                 fragment.DisallowAddToBackStack().Commit();
             }
-            //ir de parcial hacia asignaturas
+            //ir de parcial hacia asignaturas-nota
             else if(f is Fragment_Instit_Nota_G_G_DetalleNota)
             {
                 toolbar.Title = "Asignaturas";
@@ -182,7 +186,17 @@ namespace eduNICA
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Nota_G_G_Asignatura());
                 fragment.DisallowAddToBackStack().Commit();
             }
-            else if(f is Fragment_Instit_Nota_G_G_Asignatura)
+            //regresar de agregar nota(lista de estudiantes) a menu de opciones de nota
+            else if(f is Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota)
+            {
+                toolbar.Title = "Parcial";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                Global.Lista_Estudi.Clear();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Nota_G_G_DetalleNota());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            //ir de Asignatura hacia Grupos-nota
+            else if (f is Fragment_Instit_Nota_G_G_Asignatura)
             {
                 toolbar.Title = "Grupos";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -205,10 +219,8 @@ namespace eduNICA
                 var handler = new Handler();
 
                 handler.PostDelayed(() => { Salir = false; }, 1800);
-            }
-            
-        }
-        
+            }            
+        }       
    
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

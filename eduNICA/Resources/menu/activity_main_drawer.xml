@@ -9,14 +9,6 @@
             android:icon="@drawable/usuario"
             android:title="Usuario" />
         <item
-            android:id="@+id/nota"
-            android:icon="@drawable/nota"
-            android:title="Nota" />
-        <item
-            android:id="@+id/matricula"
-            android:icon="@drawable/matricula"
-            android:title="Matricula" />
-        <item
             android:id="@+id/estudiante"
             android:icon="@drawable/studiante"
             android:title="Estudiante"/>

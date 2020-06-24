@@ -22,12 +22,6 @@ namespace eduNICA
         ListView vlista; Context context; //Instalcia de context
         Interface_Instit_Nota_G_G_VerNotaEstudiante verNotaEstudiante;
         Android.Support.V7.Widget.Toolbar toolbar;
-        //public override void OnCreate(Bundle savedInstanceState)
-        //{
-        //    base.OnCreate(savedInstanceState);
-
-        //    // Create your fragment here
-        //}
         public async override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
@@ -55,16 +49,28 @@ namespace eduNICA
 
                 List<Notas_Estudiante> N_E_lista = await verNotaEstudiante.notas_Estudiantes(BusquedaNota);
 
-                for (int i = 0; i < N_E_lista.Count; i++)
+                if(N_E_lista.Count==0)//si no poseen los estudiantes notas
                 {
-                    Notas_Estudiante W = new Notas_Estudiante();
-                    W.Nombre = N_E_lista[i].Nombre;
-                    W.Id = N_E_lista[i].Id;
-                    W.Nota = N_E_lista[i].Nota;
-                    Global.notas_Estudiantes.Add(W);
+                    Toast.MakeText(Activity, "No Se Encontraron Registros", ToastLength.Long).Show();
+                    FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                    toolbar.Title = "Parcial";
+                    Fragment_Instit_Nota_G_G_DetalleNota detalleNota = new Fragment_Instit_Nota_G_G_DetalleNota();
+                    ft.Replace(Resource.Id.relativeLayoutMenu, detalleNota).DisallowAddToBackStack().Commit();
+                    Esperar.Dismiss();//cerramos msj cargando
                 }
-                vlista.Adapter = new Adapter_Instit_Lista_VerNotasEstudiante(Activity);
-                Esperar.Dismiss();//cerramos msj cargando
+                else//listamos estudiante con su respectiva nota
+                {
+                    for (int i = 0; i < N_E_lista.Count; i++)
+                    {
+                        Notas_Estudiante W = new Notas_Estudiante();
+                        W.Nombre = N_E_lista[i].Nombre;
+                        W.Id = N_E_lista[i].Id;
+                        W.Nota = N_E_lista[i].Nota;
+                        Global.notas_Estudiantes.Add(W);
+                    }
+                    vlista.Adapter = new Adapter_Instit_Lista_VerNotasEstudiante(Activity);
+                    Esperar.Dismiss();//cerramos msj cargando
+                }
             }
             else
                 vlista.Adapter = new Adapter_Instit_Lista_VerNotasEstudiante(Activity);

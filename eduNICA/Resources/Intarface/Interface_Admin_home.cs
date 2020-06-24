@@ -18,5 +18,8 @@ namespace eduNICA.Resources.Intarface
     {
         [Get("/Dashboard/Admin")]
         Task<List<Estudiantes_grados_Admin>> Total_Grados(); //metodo a utilizar dentro de la APP
+
+        [Get("/Dashboard/Datos_Admin")]
+        Task<DasboardWS> DatosAdmin(); //metodo a utilizar dentro de la APP
     }
 }

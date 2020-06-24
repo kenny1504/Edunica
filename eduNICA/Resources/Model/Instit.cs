@@ -52,6 +52,7 @@ namespace eduNICA.Resources.Model
     public class ListaEstudiantesWS
     {
         public int Idestudiante { get; set; }
+        public int IdMatricula { get; set; }
         public int Idgrado { get; set; }
         public int idGrupo { get; set; }
         public string Nombre { get; set; }
@@ -99,5 +100,26 @@ namespace eduNICA.Resources.Model
         public int IdGrupo { get; set; }
         public int IdAsignatura { get; set; }
         public int IdDetalleNota { get; set; }
+    }
+    public class AgregarNota
+    {
+        public int IdMatricula { get; set; }
+        public int IdDetalle { get; set; }
+        public int IdAsigntura { get; set; }
+        public int Nota { get; set; }
+    }
+    public partial class Detallematricula
+    {
+        public int Id { get; set; }
+        public int AsignaturasId { get; set; }
+        public int MatriculasId { get; set; }
+    }
+
+    public class DasboardWS
+    {
+        public int Instituciones { get; set; }
+        public int Docentes { get; set; }
+        public int Estudiantes { get; set; }
+        public int Matriculas { get; set; }
     }
 }

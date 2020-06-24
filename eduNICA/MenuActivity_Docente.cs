@@ -103,7 +103,7 @@ namespace eduNICA
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 switch (e.MenuItem.ItemId)
                 {
-                    case Resource.Id.docente:
+                    case Resource.Id.asistencia_doc:
                         ////renombramos toolbal
                         //toolbar.Title = "Lista Usuario Docente";
                         ////instaciamos el fragment a implementar
@@ -111,12 +111,14 @@ namespace eduNICA
                         //ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
                         //ft.DisallowAddToBackStack();
                         break;
-                    case Resource.Id.matricula:
+                    case Resource.Id.nota_doc:
                         //toolbar.Title = "Grados Academicos";
                         ////FragmentManager manager= getSupportFragmentManager();
                         //Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
                         //ft.Replace(Resource.Id.relativeLayoutMenu, int_grado);
                         //ft.DisallowAddToBackStack();
+                        break;
+                    case Resource.Id.estudiante_doc:
                         break;
                 }
                 //lanzamiento de fragment

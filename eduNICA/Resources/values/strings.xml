@@ -5,7 +5,7 @@
     <string name="login_out">Cerrar Sesion</string>
   
   
-      <string name="nota">Notas</string>
+      <string name="nota">Ver Notas</string>
     <string name="addnota">Agregar Notas</string>
   <string name="asistencia">Asistencia</string>
 </resources>

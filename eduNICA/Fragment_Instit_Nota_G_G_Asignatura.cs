@@ -71,6 +71,7 @@ namespace eduNICA
             Fragment_Instit_Nota_G_G_DetalleNota detalleNota = new Fragment_Instit_Nota_G_G_DetalleNota();
             Asignaturas modulo = Global.materia[e.Position];
             Global.idasignatura = modulo.Id;
+            Global.asignatura = modulo.Nombre;
             ft.Replace(Resource.Id.relativeLayoutMenu, detalleNota).DisallowAddToBackStack().Commit();
         }
 

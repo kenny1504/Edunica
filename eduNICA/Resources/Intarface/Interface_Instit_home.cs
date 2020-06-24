@@ -18,5 +18,8 @@ namespace eduNICA.Resources.Intarface
     {
         [Get("/Dashboard/Institucion")]
         Task<List<Estudiantes_grados_grafico>> Total_Grados([Body] Busqueda inst); //metodo a utilizar dentro de la APP
+
+        [Get("/Dashboard/Datos_Institucion")]
+        Task<DasboardWS> DatosInstitucion([Body] Busqueda inst); //metodo a utilizar dentro de la APP
     }
 }

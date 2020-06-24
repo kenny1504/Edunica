@@ -14,6 +14,8 @@ using eduNICA.Resources.Model;
 using Refit;
 using eduNICA.Resources.Intarface;
 using EDMTDialog;
+using Android.Support.Design.Internal;
+using Android.Support.Design.Widget;
 
 namespace eduNICA
 {
@@ -26,6 +28,12 @@ namespace eduNICA
         {
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+
+            Global.b_click = 1;//inicializamos en uno b_click para q al dar click sobre parcial muestre nota
+
+            BottomNavigationView navigation = View.FindViewById<BottomNavigationView>(Resource.Id.navigation_detalle);
+            seSetupDrawerContent(navigation);
+
 
             vlista = View.FindViewById<ListView>(Resource.Id.listView1_D_N);
             if (Global.detallenotas.Count == 0)
@@ -57,15 +65,46 @@ namespace eduNICA
             vlista.ItemClick += Vlista_ItemClick;
         }
 
+        public void seSetupDrawerContent(BottomNavigationView navigation)
+        {
+            navigation.NavigationItemSelected += (sender, e) =>
+            {                
+                //e.Item.SetChecked(true);
+                switch (e.Item.ItemId)
+                {
+                    case Resource.Id.nota_dashboard:
+                        Global.b_click = 1;//al dar click sobre ver notas inicializamos en 1 para ver nota
+                        break;
+                    case Resource.Id.addnota_dashboard:
+                        Global.b_click = -1;//al dar click sobre agregar notas inicializamos en -1 para agregar nota
+                        break;
+                }
+            };
+        }
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-
-            Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante verNotaEstudiante = new Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante();
-            Detallenota modulo = Global.detallenotas[e.Position];
-            Global.iddetallenota = modulo.Id;
-            toolbar.Title = modulo.Descripcion;
-            ft.Replace(Resource.Id.relativeLayoutMenu, verNotaEstudiante).DisallowAddToBackStack().Commit();
+            if (Global.b_click == 1)//si damos click sobre ver notas
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante verNotaEstudiante = new Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante();
+                Detallenota modulo = Global.detallenotas[e.Position];
+                Global.iddetallenota = modulo.Id;
+                toolbar.Title = modulo.Descripcion;
+                ft.Replace(Resource.Id.relativeLayoutMenu, verNotaEstudiante).DisallowAddToBackStack().Commit();
+            }
+            else if(Global.b_click==-1)//click sobre agregar notas
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota Estudiantes = new Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota();
+                toolbar.Title = "Estudiantes";
+                Detallenota modulo = Global.detallenotas[e.Position];
+                Global.parcial = modulo.Descripcion;
+                ft.Replace(Resource.Id.relativeLayoutMenu, Estudiantes).DisallowAddToBackStack().Commit();
+            }
+            else
+            {
+                Toast.MakeText(Activity, "Seleccione una Opcion de Menu, Gracias!", ToastLength.Long).Show();
+            }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

@@ -80,10 +80,11 @@
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo_Estudiante.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle.cs" />
+    <Compile Include="Fragment_Instit_Nota_Add.cs" />
     <Compile Include="Fragment_Instit_Nota_G_G_Asignatura.cs" />
     <Compile Include="Fragment_Instit_Nota_G_G_DetalleNota.cs" />
     <Compile Include="Fragment_Instit_Nota_G_G_DetalleNota_VerNotaEstudiante.cs" />
-    <Compile Include="Fragment_Instit_Nota_G_G_Detalle_Menu.cs" />
+    <Compile Include="Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota.cs" />
     <Compile Include="Fragment_Instit_Usuario.cs" />
     <Compile Include="Fragment_Instit_Usuario_Detalle.cs" />
     <Compile Include="Fragment_Admin_home.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo_Estudiante.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Matricula_Grados_Grupo_Estudiante_Detalle.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_AgregarNotaEstudiante.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_Asignatura.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_detallenota.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_VerNotaEstudiante.cs" />
@@ -389,6 +391,14 @@
     <AndroidResource Include="Resources\layout\instit_Nota_G_G_Detalle_Menu.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Instit_Nota_Add.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icono_home_instit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

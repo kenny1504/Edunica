@@ -10,7 +10,6 @@ public class Fragment_Admin_home
 	public static final String __md_methods;
 	static {
 		__md_methods = 
-			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onActivityCreated:(Landroid/os/Bundle;)V:GetOnActivityCreated_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"";
@@ -24,14 +23,6 @@ public class Fragment_Admin_home
 		if (getClass () == Fragment_Admin_home.class)
 			mono.android.TypeManager.Activate ("eduNICA.Fragment_Admin_home, eduNICA", "", this, new java.lang.Object[] {  });
 	}
-
-
-	public void onCreate (android.os.Bundle p0)
-	{
-		n_onCreate (p0);
-	}
-
-	private native void n_onCreate (android.os.Bundle p0);
 
 
 	public void onActivityCreated (android.os.Bundle p0)

@@ -95,9 +95,9 @@ namespace eduNICA
             if (id == Resource.Id.login_out)
             {
                 Intent i = new Intent(this, typeof(LoginActivity));
+                Global.Lista_Grad_Admin.Clear();
                 StartActivity(i);
             }
-
             return true;
         }
         private void FabOnClick(object sender, EventArgs eventArgs)

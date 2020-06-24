@@ -63,7 +63,7 @@ namespace eduNICA
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if (Global.Click == 1)
+            if (Global.Click == 1)//listar estudiante, cuando selecciono matricula
             {
                 FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
                 toolbar.Title = "Estudiantes";
@@ -72,7 +72,7 @@ namespace eduNICA
                 Global.idgrupo = modulo.Idgrupo;
                 ft.Replace(Resource.Id.relativeLayoutMenu, estudiante).DisallowAddToBackStack().Commit();
             }
-            else
+            else //listar Asignatura, cuando selecciono nota
             {
                 FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
                 toolbar.Title = "Asignaturas";
