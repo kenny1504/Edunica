@@ -67,6 +67,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter_Docente_Ver_Nota.cs" />
+    <Compile Include="Adapter_Docent_Lista_Asignatura.cs" />
+    <Compile Include="Adapter_Docent_Asistencia_Add.cs" />
     <Compile Include="Adapter_Instit_Lista_Asignatura.cs" />
     <Compile Include="Adapter_Instit_Lista_DetalleNota.cs" />
     <Compile Include="Adapter_Instit_Lista_Estudiante.cs" />
@@ -74,7 +77,11 @@
     <Compile Include="Adapter_Instit_Lista_Grupo.cs" />
     <Compile Include="Adapter_Instit_Lista_Usuario.cs" />
     <Compile Include="Adapter_Instit_Lista_VerNotasEstudiante.cs" />
-    <Compile Include="Fragment_Docent_Grado_Detalle.cs" />
+    <Compile Include="Fragment_Docent_Asignaturas.cs" />
+    <Compile Include="Fragment_Docent_DetalleNota.cs" />
+    <Compile Include="Fragment_Docent_Asistencia_ListaEstudiante.cs" />
+    <Compile Include="Fragment_Docent_Home.cs" />
+    <Compile Include="Fragment_Docent_Ver_Nota.cs" />
     <Compile Include="Fragment_Instit_Home.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo.cs" />
@@ -95,6 +102,9 @@
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Fragment_Instit_Usuario_Add.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_home.cs" />
+    <Compile Include="Resources\Intarface\Interface_Docent_Asignaturas.cs" />
+    <Compile Include="Resources\Intarface\Interface_Docent_Asistencia_Add.cs" />
+    <Compile Include="Resources\Intarface\Interface_Docent_Estudiantes.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Add_User.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docent_Detalle.cs" />
@@ -108,7 +118,13 @@
     <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_detallenota.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Nota_G_G_VerNotaEstudiante.cs" />
     <Compile Include="Resources\Intarface\Interface_LoginInterface.cs" />
-    <Compile Include="Resources\Model\Instit.cs" />
+    <Compile Include="Resources\Model\Asignaturas.cs" />
+    <Compile Include="Resources\Model\Asistencia.cs" />
+    <Compile Include="Resources\Model\Detallematricula.cs" />
+    <Compile Include="Resources\Model\Detallenota.cs" />
+    <Compile Include="Resources\Model\Grupo_ws.cs" />
+    <Compile Include="Resources\Model\Estudiantes.cs" />
+    <Compile Include="Resources\Model\Nota.cs" />
     <Compile Include="Resources\Model\userview.cs" />
     <Compile Include="Resources\Model\usuariosWS.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -357,11 +373,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Plantilla_Grado_Docente.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\Instit_Nota_G_G_Asignatura.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -399,6 +410,29 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icono_home_instit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Plantilla_Docent_Pasar_Asistencia.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Docent_Asistencia_Agregar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\navigation1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Plantilla_Docent_Nota.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Docent_Nota_Ver.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

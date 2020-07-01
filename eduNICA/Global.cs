@@ -18,7 +18,7 @@ namespace eduNICA
         public static usuariosview u;
 
         public static int Click;
-
+   
         public static string cedula;//cedula para mostrar detalle usuario
         public static int idgrado;//variable global donde se alamcena el id del grado seleccionado
         public static int idgrupo;//variable global donde se almacena el id del grupo seleccionado
@@ -41,10 +41,18 @@ namespace eduNICA
         public static List<Estudiantes_grados_Admin> Lista_Grad_Admin = new List<Estudiantes_grados_Admin>();
         public static List<grupos_grados> grupos = new List<grupos_grados>();
 
-        public static List<Asignaturas> materia = new List<Asignaturas>();
+        public static List<Asignaturas> materia = new List<Asignaturas>();//cargar las asignaturas
         public static List<Detallenota> detallenotas = new List<Detallenota>();
         public static List<Notas_Estudiante> notas_Estudiantes = new List<Notas_Estudiante>();
 
         public static DasboardWS ws;
+
+        public static List<Asistencia> asistencias = new List<Asistencia>();
+
+        public static List<Lista_Estudiante_Asistencia> _Asistencias = new List<Lista_Estudiante_Asistencia>();//lista temporal para guardar la asistencia
+
+        public static List<ListaAsistencia> ListaAsistencias = new List<ListaAsistencia>();//listar estudiante de cada docente para asistencia
+
+        public static List<Asignaturasdocente> Asignaturasdocentes = new List<Asignaturasdocente>();//lista de asignaturas de cada docente
     }
 }

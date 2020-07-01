@@ -81,6 +81,15 @@ namespace eduNICA
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 switch (e.MenuItem.ItemId)
                 {
+                    case Resource.Id.asistencia:
+                        Global.Click = 2;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
+                        Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
+
+                        toolbar.Title = "Grados Academicos";
+                        Fragment_Instit_Matricula_Grado int_grado_n1 = new Fragment_Instit_Matricula_Grado();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n1);
+                        ft.DisallowAddToBackStack();
+                        break;
                     case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
@@ -210,7 +219,22 @@ namespace eduNICA
                 if(Salir)
                 {
                     this.FinishAffinity();
+                    //limpiar lista de item Matricula
+                    Global.Lista_Grad.Clear();
+                    Global.grupos.Clear();
+                    Global.Lista_Estudi.Clear();
+                    Global.datos_E.Clear();
+
+                    //Limpiar lista de item Docentes
+                    Global.usuariosWs.Clear();
+                    Global.usuariosWs_Datos.Clear();
+
+                    //limpiar lista de datos de grafico
                     Global.Lista_Grad_Graf.Clear();
+
+                    Global.materia.Clear();//limpiar asignaturas
+                    Global.detallenotas.Clear();//limpiar parciales
+                    Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
                 }
                 Salir = true;
 
@@ -246,6 +270,11 @@ namespace eduNICA
 
                 //limpiar lista de datos de grafico
                 Global.Lista_Grad_Graf.Clear();
+
+                Global.materia.Clear();//limpiar asignaturas
+                Global.detallenotas.Clear();//limpiar parciales
+                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
                 StartActivity(i);
             }
             if(id == Resource.Id.add_user)

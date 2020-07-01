@@ -8,4 +8,5 @@
       <string name="nota">Ver Notas</string>
     <string name="addnota">Agregar Notas</string>
   <string name="asistencia">Asistencia</string>
+  <string name="addasistencia">Pasar Asistencia</string>
 </resources>

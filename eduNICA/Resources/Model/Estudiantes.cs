@@ -31,14 +31,7 @@ namespace eduNICA.Resources.Model
         public int Cantidad { get; set; }
         public string Grupo { get; set; }
         
-    }
-    
-    //objeto buscar grupo segun grado e institucion
-    public class Grupos_ws
-    {
-        public int institucion { get; set; }
-        public int Grado { get; set; }
-    }
+    } 
     //objeto buscar para lista estudiante-institucion
     public class estudianteWS
     {
@@ -58,7 +51,7 @@ namespace eduNICA.Resources.Model
         public string Nombre { get; set; }
         public string Sexo { get; set; }
 
-    }
+    }   
     //datos de estudiante matriculado-institucion
     public class DatosWS
     {
@@ -75,24 +68,7 @@ namespace eduNICA.Resources.Model
     {
         public int Grado { get; set; }
         public int cantidad { get; set; }
-    }
-    public class Asignaturas//clase para listar asignatura Inst_N_G_G_Asignatura
-    { 
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-    }
-    public class Detallenota//detalle de nota Inst_N_G_G_parcial
-    {
-        public int Id { get; set; }
-        public string Descripcion { get; set; }
-        public int Orden { get; set; }
-    }
-    public class Notas_Estudiante//mostrar notas nivel institucion
-    {
-        public int Id { get; set; }
-        public int Nota { get; set; }
-        public string Nombre { get; set; }
-    }
+    }  
     public class BusquedaNota//id para mostrar notas nivel institucion
     {
         public int IdInstitucion { get; set; }
@@ -100,19 +76,6 @@ namespace eduNICA.Resources.Model
         public int IdGrupo { get; set; }
         public int IdAsignatura { get; set; }
         public int IdDetalleNota { get; set; }
-    }
-    public class AgregarNota
-    {
-        public int IdMatricula { get; set; }
-        public int IdDetalle { get; set; }
-        public int IdAsigntura { get; set; }
-        public int Nota { get; set; }
-    }
-    public partial class Detallematricula
-    {
-        public int Id { get; set; }
-        public int AsignaturasId { get; set; }
-        public int MatriculasId { get; set; }
     }
 
     public class DasboardWS
@@ -122,4 +85,5 @@ namespace eduNICA.Resources.Model
         public int Estudiantes { get; set; }
         public int Matriculas { get; set; }
     }
+    
 }

@@ -1,7 +1,7 @@
 package crc641258e947ead0e712;
 
 
-public class Fragment_Docent_Grado_Detalle
+public class Fragment_Docent_Asistencia_ListaEstudiante
 	extends android.app.Fragment
 	implements
 		mono.android.IGCUserPeer
@@ -10,28 +10,19 @@ public class Fragment_Docent_Grado_Detalle
 	public static final String __md_methods;
 	static {
 		__md_methods = 
-			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onActivityCreated:(Landroid/os/Bundle;)V:GetOnActivityCreated_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("eduNICA.Fragment_Docent_Grado_Detalle, eduNICA", Fragment_Docent_Grado_Detalle.class, __md_methods);
+		mono.android.Runtime.register ("eduNICA.Fragment_Docent_Asistencia_ListaEstudiante, eduNICA", Fragment_Docent_Asistencia_ListaEstudiante.class, __md_methods);
 	}
 
 
-	public Fragment_Docent_Grado_Detalle ()
+	public Fragment_Docent_Asistencia_ListaEstudiante ()
 	{
 		super ();
-		if (getClass () == Fragment_Docent_Grado_Detalle.class)
-			mono.android.TypeManager.Activate ("eduNICA.Fragment_Docent_Grado_Detalle, eduNICA", "", this, new java.lang.Object[] {  });
+		if (getClass () == Fragment_Docent_Asistencia_ListaEstudiante.class)
+			mono.android.TypeManager.Activate ("eduNICA.Fragment_Docent_Asistencia_ListaEstudiante, eduNICA", "", this, new java.lang.Object[] {  });
 	}
-
-
-	public void onCreate (android.os.Bundle p0)
-	{
-		n_onCreate (p0);
-	}
-
-	private native void n_onCreate (android.os.Bundle p0);
 
 
 	public void onActivityCreated (android.os.Bundle p0)
