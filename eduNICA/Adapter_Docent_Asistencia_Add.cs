@@ -51,7 +51,6 @@ namespace eduNICA
             {               
                 view = this.context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Docent_Pasar_Asistencia, null);//aplicamos el formato predefinido
 
-                //guardar.nombre = view.FindViewById<TextView>(Resource.Id.Nombre_Estudiante_Asistencia);
                 guardar.Estado_Asist = view.FindViewById<CheckBox>(Resource.Id.cb_asistencia);
                 guardar.Estado_Asist.Tag = position;//checkbox asistencia
                 view.Tag = guardar;

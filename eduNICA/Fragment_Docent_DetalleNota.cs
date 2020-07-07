@@ -78,13 +78,12 @@ namespace eduNICA
             }
             else if (Global.b_click == -1)//agregar notas
             {
-                Toast.MakeText(Activity, "Ya entre poco", ToastLength.Long).Show();
-                //FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-                //Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota Estudiantes = new Fragment_Instit_Nota_G_G_Estudiantes_Add_Nota();
-                //toolbar.Title = "Estudiantes";
-                //Detallenota modulo = Global.detallenotas[e.Position];
-                //Global.parcial = modulo.Descripcion;
-                //ft.Replace(Resource.Id.relativeLayoutMenu, Estudiantes).DisallowAddToBackStack().Commit();
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                Fragment_Docent_Agregar_Nota _Agregar_Nota = new Fragment_Docent_Agregar_Nota();
+                Detallenota modulo = Global.detallenotas[e.Position];
+                Global.iddetallenota = modulo.Id;
+                toolbar.Title = modulo.Descripcion;
+                ft.Replace(Resource.Id.relativeLayoutMenu, _Agregar_Nota).DisallowAddToBackStack().Commit();
             }
         }
         public void seSetupDrawerContent(BottomNavigationView navigation)

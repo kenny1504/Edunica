@@ -70,7 +70,7 @@ namespace eduNICA
             {
                 drawer.CloseDrawer(GravityCompat.Start);
             }
-            else if(f is Fragment_Docent_Ver_Nota)//regresar de lista de estudiante con nota, a parciales
+            else if(f is Fragment_Docent_Ver_Nota || f is Fragment_Docent_Agregar_Nota)//regresar de lista de estudiante con nota, a parciales
             {
                 toolbar.Title = "Parcial";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -134,6 +134,12 @@ namespace eduNICA
                 Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
                 StartActivity(i);
+            }
+            else if(id ==Resource.Id.credenciales)
+            {
+                FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+                Fragment_Actualizar_Credenciales add = new Fragment_Actualizar_Credenciales();
+                add.Show(ft, "dialog frament");
             }
 
             return true;

@@ -20,7 +20,10 @@ attr;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values
 attr;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\2\jl\res\values\values.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\ic_launcher_round.xml
+Button;obj\Debug\90\res\layout\actualizar_credenciales.xml
+Button;obj\Debug\90\res\layout\actualizar_credenciales_institucion.xml
 Button;obj\Debug\90\res\layout\docent_asistencia_agregar.xml
+Button;obj\Debug\90\res\layout\docent_nota_agregar.xml
 Button;obj\Debug\90\res\layout\instit_nota_add.xml
 Button;obj\Debug\90\res\layout\instit_usuario_add.xml
 Button;obj\Debug\90\res\layout\login.xml
@@ -33,6 +36,8 @@ declare-styleable;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\
 declare-styleable;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\2\jl\res\values\values.xml
 dimen;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\values\dimens.xml
 dimen;obj\Debug\90\res\values\dimens.xml
+EditText;obj\Debug\90\res\layout\actualizar_credenciales.xml
+EditText;obj\Debug\90\res\layout\actualizar_credenciales_institucion.xml
 EditText;obj\Debug\90\res\layout\instit_nota_add.xml
 EditText;obj\Debug\90\res\layout\instit_usuario_add.xml
 EditText;obj\Debug\90\res\layout\login.xml
@@ -47,6 +52,7 @@ GridLayout;obj\Debug\90\res\layout\instit_home.xml
 group;obj\Debug\90\res\menu\activity_main_drawer.xml
 group;obj\Debug\90\res\menu\activity_main_drawer1.xml
 group;obj\Debug\90\res\menu\activity_main_drawer2.xml
+group;obj\Debug\90\res\menu\menu_main.xml
 ImageView;obj\Debug\90\res\layout\admin_home.xml
 ImageView;obj\Debug\90\res\layout\instit_home.xml
 ImageView;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante_detalle.xml
@@ -73,10 +79,14 @@ item;obj\Debug\90\res\values\drawables.xml
 item;obj\Debug\90\res\values\styles.xml
 item;obj\Debug\90\res\values-v21\styles.xml
 LinearLayout;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\layout\my_dialog_layout.xml
+LinearLayout;obj\Debug\90\res\layout\actualizar_credenciales.xml
+LinearLayout;obj\Debug\90\res\layout\actualizar_credenciales_institucion.xml
 LinearLayout;obj\Debug\90\res\layout\admin_home.xml
 LinearLayout;obj\Debug\90\res\layout\docent_asistencia_agregar.xml
 LinearLayout;obj\Debug\90\res\layout\docent_home.xml
+LinearLayout;obj\Debug\90\res\layout\docent_nota_agregar.xml
 LinearLayout;obj\Debug\90\res\layout\docent_nota_ver.xml
+LinearLayout;obj\Debug\90\res\layout\instit_asignaturas.xml
 LinearLayout;obj\Debug\90\res\layout\instit_home.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado.xml
 LinearLayout;obj\Debug\90\res\layout\instit_matricula_grado_grupo.xml
@@ -98,7 +108,9 @@ LinearLayout;obj\Debug\90\res\layout\plantilla_listar_grado.xml
 LinearLayout;obj\Debug\90\res\layout\plantilla_listar_usuario.xml
 LinearLayout;obj\Debug\90\res\layout\splash.xml
 ListView;obj\Debug\90\res\layout\docent_asistencia_agregar.xml
+ListView;obj\Debug\90\res\layout\docent_nota_agregar.xml
 ListView;obj\Debug\90\res\layout\docent_nota_ver.xml
+ListView;obj\Debug\90\res\layout\instit_asignaturas.xml
 ListView;obj\Debug\90\res\layout\instit_matricula_grado.xml
 ListView;obj\Debug\90\res\layout\instit_matricula_grado_grupo.xml
 ListView;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante.xml
@@ -154,10 +166,14 @@ style;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\value
 style;obj\Debug\90\res\values\styles.xml
 style;obj\Debug\90\res\values-v21\styles.xml
 TextView;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\layout\my_dialog_layout.xml
+TextView;obj\Debug\90\res\layout\actualizar_credenciales.xml
+TextView;obj\Debug\90\res\layout\actualizar_credenciales_institucion.xml
 TextView;obj\Debug\90\res\layout\admin_home.xml
 TextView;obj\Debug\90\res\layout\docent_asistencia_agregar.xml
 TextView;obj\Debug\90\res\layout\docent_home.xml
+TextView;obj\Debug\90\res\layout\docent_nota_agregar.xml
 TextView;obj\Debug\90\res\layout\docent_nota_ver.xml
+TextView;obj\Debug\90\res\layout\instit_asignaturas.xml
 TextView;obj\Debug\90\res\layout\instit_home.xml
 TextView;obj\Debug\90\res\layout\instit_matricula_grado_grupo_estudiante_detalle.xml
 TextView;obj\Debug\90\res\layout\instit_nota_add.xml

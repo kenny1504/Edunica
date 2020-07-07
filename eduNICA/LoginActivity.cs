@@ -74,6 +74,8 @@ namespace eduNICA
                     {
                         Global.u = usuariosview[0];
                         Intent i = new Intent(this, typeof(SplashActivity));
+                        Global.user = user.Text;//para actualizar credenciales
+                        Global.passw = pass.Text;//para actualizar credenciales
                         StartActivity(i);
                     }
                     else //si no encontro registros muestra toast

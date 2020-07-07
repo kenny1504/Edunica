@@ -67,6 +67,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter_Docente_Agregrar_Nota.cs" />
     <Compile Include="Adapter_Docente_Ver_Nota.cs" />
     <Compile Include="Adapter_Docent_Lista_Asignatura.cs" />
     <Compile Include="Adapter_Docent_Asistencia_Add.cs" />
@@ -77,11 +78,15 @@
     <Compile Include="Adapter_Instit_Lista_Grupo.cs" />
     <Compile Include="Adapter_Instit_Lista_Usuario.cs" />
     <Compile Include="Adapter_Instit_Lista_VerNotasEstudiante.cs" />
+    <Compile Include="Fragment_Actualizar_Credenciales.cs" />
+    <Compile Include="Fragment_Actualizar_Credenciales_Institucion.cs" />
+    <Compile Include="Fragment_Docent_Agregar_Nota.cs" />
     <Compile Include="Fragment_Docent_Asignaturas.cs" />
     <Compile Include="Fragment_Docent_DetalleNota.cs" />
     <Compile Include="Fragment_Docent_Asistencia_ListaEstudiante.cs" />
     <Compile Include="Fragment_Docent_Home.cs" />
     <Compile Include="Fragment_Docent_Ver_Nota.cs" />
+    <Compile Include="Fragment_Instit_Asignaturas.cs" />
     <Compile Include="Fragment_Instit_Home.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado_Grupo.cs" />
@@ -101,11 +106,14 @@
     <Compile Include="MenuActivity_Docente.cs" />
     <Compile Include="MenuActivity_Institucion.cs" />
     <Compile Include="Fragment_Instit_Usuario_Add.cs" />
+    <Compile Include="Resources\Intarface\Interface_Actualizar_Credenciales.cs" />
+    <Compile Include="Resources\Intarface\Interface_Actualizar_Credenciales_Institucion.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_home.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Asignaturas.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Asistencia_Add.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Estudiantes.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Add_User.cs" />
+    <Compile Include="Resources\Intarface\Interface_Instit_Asignaturas.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docente.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_Lista_Usuario_Docent_Detalle.cs" />
     <Compile Include="Resources\Intarface\Interface_Instit_home.cs" />
@@ -431,6 +439,26 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Docent_Nota_Ver.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Actualizar_Credenciales.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Actualizar_Credenciales_Institucion.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Docent_Nota_Agregar.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\instit_Asignaturas.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

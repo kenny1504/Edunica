@@ -119,6 +119,16 @@ namespace eduNICA
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n);
                         ft.DisallowAddToBackStack();
                         break;
+                    case Resource.Id.asignatura:
+                        //renombramos toolbal
+                        toolbar.Title = "Asignaturas";
+                        Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
+
+                        //instaciamos el fragment a implementar
+                        Fragment_Instit_Asignaturas _Instit_Asignaturas = new Fragment_Instit_Asignaturas();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Instit_Asignaturas);
+                        ft.DisallowAddToBackStack();
+                        break;
                 }
                 //lanzamiento de fragment
                 ft.Commit();
@@ -130,9 +140,15 @@ namespace eduNICA
         
         public override void OnBackPressed()
         {
+            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            
             //MATRICULA INSTIT ir a pantalla anterior Grados
             Fragment f = FragmentManager.FindFragmentById(Resource.Id.relativeLayoutMenu);
-            if (f is Fragment_Instit_Matricula_Grado_Grupo)
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
+            {
+                drawer.CloseDrawer(GravityCompat.Start);
+            }
+            else if (f is Fragment_Instit_Matricula_Grado_Grupo)
             {
                 toolbar.Title = "Grados Academicos";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -169,7 +185,7 @@ namespace eduNICA
                 fragment.DisallowAddToBackStack().Commit();
             }
             //ir a home, si se encuentra en unos de los items
-            else if(f is Fragment_Instit_Usuario || f is Fragment_Instit_Matricula_Grado)
+            else if(f is Fragment_Instit_Usuario || f is Fragment_Instit_Matricula_Grado || f is Fragment_Instit_Asignaturas)
             {
                 toolbar.Title = Global.u.Institucion;
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -281,6 +297,12 @@ namespace eduNICA
             {
                 FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 Fragment_Instit_Usuario_Add add = new Fragment_Instit_Usuario_Add();
+                add.Show(ft, "dialog frament");
+            }
+            else if (id == Resource.Id.credenciales)
+            {
+                FragmentTransaction ft = this.FragmentManager.BeginTransaction();
+                Fragment_Actualizar_Credenciales_Institucion add = new Fragment_Actualizar_Credenciales_Institucion();
                 add.Show(ft, "dialog frament");
             }
             return true;
