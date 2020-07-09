@@ -70,5 +70,8 @@ namespace eduNICA
         public static List<Usuariosinstituciones> usuarioInstitucions = new List<Usuariosinstituciones>();//instaciamos lista de instituciones(admin)
         public static int id_Usuariosinstituciones;//variable para mandar y ver detalle institucion(admin)
         public static UsuarioInstitucion UsuarioInstitucion;//intancia de detalle de institucion(ADMIN)
+
+
+        public static string Nombre; //variable para almacenar nombre estudiante(docent_ver_Asistencia)
     }
 }

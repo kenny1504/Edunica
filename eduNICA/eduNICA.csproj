@@ -71,7 +71,9 @@
     <Compile Include="Adapter_Admin_Instituciones.cs" />
     <Compile Include="Adapter_Admin_Usuarios.cs" />
     <Compile Include="Adapter_Docente_Agregrar_Nota.cs" />
+    <Compile Include="Adapter_Docente_Asistencia_Fechas.cs" />
     <Compile Include="Adapter_Docente_Ver_Nota.cs" />
+    <Compile Include="Adapter_Docent_Asistencia_Estudiantes.cs" />
     <Compile Include="Adapter_Docent_Lista_Asignatura.cs" />
     <Compile Include="Adapter_Docent_Asistencia_Add.cs" />
     <Compile Include="Adapter_Instit_Lista_Asignatura.cs" />
@@ -89,9 +91,12 @@
     <Compile Include="Fragment_Admin_Instituciones_Detalle.cs" />
     <Compile Include="Fragment_Admin_Usuarios.cs" />
     <Compile Include="Fragment_Admin_Usuarios_Detalle.cs" />
+    <Compile Include="Fragment_Docente_Estudiantes.cs" />
     <Compile Include="Fragment_Docent_Agregar_Nota.cs" />
     <Compile Include="Fragment_Docent_Asignaturas.cs" />
     <Compile Include="Fragment_Docent_Asistencia.cs" />
+    <Compile Include="Fragment_Docent_Asistencia_Estudiantes.cs" />
+    <Compile Include="Fragment_Docent_Asistencia_Estudiantes_Detalle.cs" />
     <Compile Include="Fragment_Docent_Asistencia_Ver.cs" />
     <Compile Include="Fragment_Docent_DetalleNota.cs" />
     <Compile Include="Fragment_Docent_Asistencia_ListaEstudiante.cs" />
@@ -126,6 +131,7 @@
     <Compile Include="Resources\Intarface\Interface_Admin_Instituciones_Detalle.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_Usuarios.cs" />
     <Compile Include="Resources\Intarface\Interface_Admin_Usuarios_Detalle.cs" />
+    <Compile Include="Resources\Intarface\Interface_Docent_Asistencia_Ver.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Asignaturas.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Asistencia_Add.cs" />
     <Compile Include="Resources\Intarface\Interface_Docent_Estudiantes.cs" />
@@ -522,6 +528,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Admin_Institucion_Detalle.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Docent_Asistencia_Ver_Detalle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

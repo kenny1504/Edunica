@@ -69,7 +69,7 @@ namespace eduNICA
             }
             //Lista_Estudiante_Nota _Estudiante_Nota = this.vlista[position];
             view.FindViewById<TextView>(Resource.Id.Nombre_Estudiante_).Text = item.Nombre;
-            view.FindViewById<TextView>(Resource.Id.Asignatura).Text ="Codigo Estudiante: "+ item.CodigoEstudinte;
+            view.FindViewById<TextView>(Resource.Id.Asignatura).Text ="Codigo: "+ item.CodigoEstudinte;
             view.FindViewById<EditText>(Resource.Id.editText_NotaEstudiante).Text = item.nota;
 
             //_nota.nota.AddTextChangedListener(new MyTextWatcher(this.context, _nota, vlista));

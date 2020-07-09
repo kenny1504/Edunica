@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ugHgZHSvsCMgJ0XwiCNV0TruU5N5y3X407pmQdZ6fnLL7ijwYPtj0Pc6UaG4R6LatBzndWA3HCgtW82kKc8Yrg==",
+  "dgSpecHash": "gxVXGIaJsS/ltmZ6BrzHDt/nhfGVUqIlQwX0zshjm5a8WsAz5B0OA0AVq7u6KDEZQowTHQfPIVl0AgkVODHdTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\josea\\source\\Edunica\\eduNICA\\eduNICA.csproj",
+  "projectFilePath": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\eduNICA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\josea\\.nuget\\packages\\edmtdialog\\1.0.2\\edmtdialog.1.0.2.nupkg.sha512",
     "C:\\Users\\josea\\.nuget\\packages\\jquery\\2.1.1\\jquery.2.1.1.nupkg.sha512",

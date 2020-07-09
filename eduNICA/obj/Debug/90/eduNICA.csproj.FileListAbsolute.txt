@@ -1945,3 +1945,17 @@ C:\Users\josea\source\Edunica\eduNICA\obj\Debug\90\stamp\_ConvertResourcesCases.
 C:\Users\josea\source\Edunica\eduNICA\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\josea\source\Edunica\eduNICA\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\josea\source\Edunica\eduNICA\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\admin_institucion.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\drawable\instituciones.png
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\admin_institucion_detalle.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Admin_Instituciones.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Docent_Asistencia_Estudiantes.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Admin_Instituciones.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Admin_Instituciones_Detalle.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Admin_Usuarios_FilterableAdapter.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Admin_Usuarios_FilterableAdapter_SuggestionsFilter.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Docent_Asistencia_Estudiantes.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\res\layout\docent_asistencia_ver_detalle.xml
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Docent_Asistencia_Estudiantes_Detalle.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Adapter_Docente_Asistencia_Fechas.java
+C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\android\src\crc641258e947ead0e712\Fragment_Docente_Estudiantes.java

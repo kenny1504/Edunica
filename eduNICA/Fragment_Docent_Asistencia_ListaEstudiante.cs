@@ -31,7 +31,7 @@ namespace eduNICA
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             button_guardar = View.FindViewById<Button>(Resource.Id.button_Guardar_Asistencia);
             button_guardar.Click += Button_guardar_Click;
-
+            Global.ListaAsistencias.Clear();
             textfecha = View.FindViewById<TextView>(Resource.Id.textView5);
             textfecha.Text = DateTime.Today.ToShortDateString();
             vlista = View.FindViewById<ListView>(Resource.Id.listView_Asistencia_Estudi);//vinculamos al listview del layout
@@ -66,7 +66,10 @@ namespace eduNICA
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
+            {
                 vlista.Adapter = new Adapter_Docent_Asistencia_Add(Activity);
+            }
+                
         }       
         private async void Button_guardar_Click(object sender, EventArgs e)
         {

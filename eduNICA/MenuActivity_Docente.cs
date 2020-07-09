@@ -49,8 +49,8 @@ namespace eduNICA
 
 
             navUsername.Text = Global.u.Nombre; //establce el nombre del usuario
-            //tipo de usuario
-                navUserTpo.Text = "Docente";
+                                                //tipo de usuario
+            navUserTpo.Text = "Docente";
             inicio();
         }
         void inicio()
@@ -71,7 +71,7 @@ namespace eduNICA
             {
                 drawer.CloseDrawer(GravityCompat.Start);
             }
-            else if(f is Fragment_Docent_Ver_Nota || f is Fragment_Docent_Agregar_Nota)//regresar de lista de estudiante con nota, a parciales
+            else if (f is Fragment_Docent_Ver_Nota || f is Fragment_Docent_Agregar_Nota)//regresar de lista de estudiante con nota, a parciales
             {
                 toolbar.Title = "Parcial";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -81,7 +81,7 @@ namespace eduNICA
                 fragment.DisallowAddToBackStack().Commit();
             }
             //regresar de parciales a lista de asignaturas
-            else if(f is Fragment_Docent_DetalleNota)
+            else if (f is Fragment_Docent_DetalleNota)
             {
                 toolbar.Title = "Asignaturas";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -89,7 +89,7 @@ namespace eduNICA
                 fragment.DisallowAddToBackStack().Commit();
             }
             //regresar de lista de asignaturas de docente a home
-            else if(f is Fragment_Docent_Asignaturas || f is Fragment_Docent_Asistencia)///////////////////pendiente ver
+            else if (f is Fragment_Docent_Asignaturas || f is Fragment_Docent_Asistencia || f is Fragment_Docente_Estudiantes)///////////////////pendiente ver
             {
                 toolbar.Title = Global.u.Institucion;
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -99,6 +99,14 @@ namespace eduNICA
                 Global.ListaAsistencias.Clear();
                 Global.asistencias.Clear();
 
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if(f is Fragment_Docent_Asistencia_Estudiantes_Detalle)
+            {
+
+                toolbar.Title = "Asistencia";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Asistencia());
                 fragment.DisallowAddToBackStack().Commit();
             }
             //salir de la app
@@ -206,12 +214,17 @@ namespace eduNICA
                         ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.estudiante_doc:
+                        toolbar.Title = "Estudiantes";
+                        Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                        Global.ListaAsistencias.Clear();
+                        Fragment_Docente_Estudiantes _Docente_Estudiantes = new Fragment_Docente_Estudiantes();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Docente_Estudiantes);
+                        ft.DisallowAddToBackStack();
                         break;
                 }
                 //lanzamiento de fragment
                 ft.Commit();
                 drawer.CloseDrawers();
-
             };
 
         }

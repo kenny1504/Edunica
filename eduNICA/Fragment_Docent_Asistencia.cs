@@ -21,12 +21,6 @@ namespace eduNICA
 {
     public class Fragment_Docent_Asistencia : Fragment
     {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
-        }
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
@@ -43,8 +37,8 @@ namespace eduNICA
                 switch (e.Item.ItemId)
                 {
                     case Resource.Id.asistencia_dashboard:
-                        Fragment_Docent_Asistencia_Ver _Docent_Asistencia_Ver = new Fragment_Docent_Asistencia_Ver();
-                        ft.Replace(Resource.Id.linearLayout_docent_Asignatura, _Docent_Asistencia_Ver);
+                        Fragment_Docent_Asistencia_Estudiantes _Asistencia_Estudiantes = new Fragment_Docent_Asistencia_Estudiantes();
+                        ft.Replace(Resource.Id.linearLayout_docent_Asignatura, _Asistencia_Estudiantes);
                         ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.addasistencia_dashboard:
@@ -59,8 +53,8 @@ namespace eduNICA
         public void cargarinicio()
         {
             FragmentTransaction ft = this.FragmentManager.BeginTransaction();
-            Fragment_Docent_Asistencia_Ver _Docent_Asistencia_Ver = new Fragment_Docent_Asistencia_Ver();
-            ft.Replace(Resource.Id.linearLayout_docent_Asignatura, _Docent_Asistencia_Ver);
+            Fragment_Docent_Asistencia_Estudiantes  _Asistencia_Estudiantes= new Fragment_Docent_Asistencia_Estudiantes();
+            ft.Replace(Resource.Id.linearLayout_docent_Asignatura, _Asistencia_Estudiantes);
             ft.DisallowAddToBackStack();
             ft.Commit();
         }
