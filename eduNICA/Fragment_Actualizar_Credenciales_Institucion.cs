@@ -69,7 +69,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Nombre Institucion...")
+                                .SetMessage("Actualizando Nombre Institucion")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -86,7 +86,7 @@ namespace eduNICA
                         if (retorno == 1)
                         {
                             Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                            Toast.MakeText(Activity, "Nombre de Institucion Actualizado(-servicio-)", ToastLength.Short).Show();
+                            Toast.MakeText(Activity, "Nombre de Institucion Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                     }
@@ -94,7 +94,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Nombre Intitucion y Usuario...")
+                                .SetMessage("Actualizando Nombre Intitucion y Usuario")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -112,7 +112,28 @@ namespace eduNICA
                         {
                             Global.user = usuario.Text;//actualizamos el nombre de usuario almacenado en la variable Global
                             Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                            Toast.MakeText(Activity, "Nombre de Institucion y Nombre de Usuario Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                            //cerramos sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar lista de item Matricula
+                            Global.Lista_Grad.Clear();
+                            Global.grupos.Clear();
+                            Global.Lista_Estudi.Clear();
+                            Global.datos_E.Clear();
+
+                            //Limpiar lista de item Docentes
+                            Global.usuariosWs.Clear();
+                            Global.usuariosWs_Datos.Clear();
+
+                            //limpiar lista de datos de grafico
+                            Global.Lista_Grad_Graf.Clear();
+
+                            Global.materia.Clear();//limpiar asignaturas
+                            Global.detallenotas.Clear();//limpiar parciales
+                            Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                            StartActivity(i);
+                            Toast.MakeText(Activity, "Nombre de Institucion y Nombre de Usuario Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                         else
@@ -131,7 +152,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Nombre Intitucion, Usuario y Direccion...")
+                                .SetMessage("Actualizando Nombre Intitucion, Usuario y Direccion")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -150,7 +171,28 @@ namespace eduNICA
                             Global.user = usuario.Text;//actualizamos el nombre de usuario almacenado en la variable Global
                             Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
                             Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion
-                            Toast.MakeText(Activity, "Nombre de Institucion, Usuario y Direccion Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                            //cerramos sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar lista de item Matricula
+                            Global.Lista_Grad.Clear();
+                            Global.grupos.Clear();
+                            Global.Lista_Estudi.Clear();
+                            Global.datos_E.Clear();
+
+                            //Limpiar lista de item Docentes
+                            Global.usuariosWs.Clear();
+                            Global.usuariosWs_Datos.Clear();
+
+                            //limpiar lista de datos de grafico
+                            Global.Lista_Grad_Graf.Clear();
+
+                            Global.materia.Clear();//limpiar asignaturas
+                            Global.detallenotas.Clear();//limpiar parciales
+                            Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                            Toast.MakeText(Activity, "Nombre de Institucion, Usuario y Direccion Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                         else
@@ -169,7 +211,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Nombre Intitucion y Direccion...")
+                                .SetMessage("Actualizando Nombre Intitucion y Direccion")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -187,7 +229,7 @@ namespace eduNICA
                         {
                             Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
                             Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion
-                            Toast.MakeText(Activity, "Nombre de Institucion y Direccion Actualizado(-servicio-)", ToastLength.Short).Show();
+                            Toast.MakeText(Activity, "Nombre de Institucion y Direccion Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                     }
@@ -195,7 +237,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Usuario...")
+                                .SetMessage("Actualizando Usuario")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -212,7 +254,28 @@ namespace eduNICA
                         if (retorno == 1)
                         {
                             Global.user = usuario.Text;//actualizamos el nombre de usuario almacenado en la variable Global
-                            Toast.MakeText(Activity, "Nombre de Usuario Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                            //cerramos sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar lista de item Matricula
+                            Global.Lista_Grad.Clear();
+                            Global.grupos.Clear();
+                            Global.Lista_Estudi.Clear();
+                            Global.datos_E.Clear();
+
+                            //Limpiar lista de item Docentes
+                            Global.usuariosWs.Clear();
+                            Global.usuariosWs_Datos.Clear();
+
+                            //limpiar lista de datos de grafico
+                            Global.Lista_Grad_Graf.Clear();
+
+                            Global.materia.Clear();//limpiar asignaturas
+                            Global.detallenotas.Clear();//limpiar parciales
+                            Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                            Toast.MakeText(Activity, "Nombre de Usuario Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                         else
@@ -231,7 +294,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Usuario y Direccion...")
+                                .SetMessage("Actualizando Usuario y Direccion")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -250,7 +313,28 @@ namespace eduNICA
                         {
                             Global.user = usuario.Text;//actualizamos el nombre de usuario almacenado en la variable Global
                             Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion
-                            Toast.MakeText(Activity, "Nombre de Usuario y Direccion Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                            //cerramos sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar lista de item Matricula
+                            Global.Lista_Grad.Clear();
+                            Global.grupos.Clear();
+                            Global.Lista_Estudi.Clear();
+                            Global.datos_E.Clear();
+
+                            //Limpiar lista de item Docentes
+                            Global.usuariosWs.Clear();
+                            Global.usuariosWs_Datos.Clear();
+
+                            //limpiar lista de datos de grafico
+                            Global.Lista_Grad_Graf.Clear();
+
+                            Global.materia.Clear();//limpiar asignaturas
+                            Global.detallenotas.Clear();//limpiar parciales
+                            Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                            Toast.MakeText(Activity, "Nombre de Usuario y Direccion Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                         else
@@ -269,7 +353,7 @@ namespace eduNICA
                     {
                         Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                 .SetContext(context)
-                                .SetMessage("Actualizando Direccion...")
+                                .SetMessage("Actualizando Direccion")
                                 .Build();
                         Esperar.Show();
                         //********************************************************************************************************
@@ -286,7 +370,7 @@ namespace eduNICA
                         if (retorno == 1)
                         {
                             Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion
-                            Toast.MakeText(Activity, "Direccion de Institucion Actualizado(-servicio-)", ToastLength.Short).Show();
+                            Toast.MakeText(Activity, "Direccion de Institucion Actualizado", ToastLength.Short).Show();
                             Dismiss();
                         }
                     }
@@ -326,7 +410,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña...")
+                                    .SetMessage("Actualizando Contraseña")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -344,7 +428,27 @@ namespace eduNICA
                             if (retorno == 1)
                             {
                                 Global.passw = newcontraseña.Text;
-                                Toast.MakeText(Activity, "Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                                Toast.MakeText(Activity, "Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -352,7 +456,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña y Nombre de Instituto...")
+                                    .SetMessage("Actualizando Contraseña y Nombre de Instituto")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -371,7 +475,28 @@ namespace eduNICA
                             {
                                 Global.passw = newcontraseña.Text;
                                 Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Nombre de Institucion y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                                Toast.MakeText(Activity, "Nombre de Institucion y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -379,7 +504,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña, Nombre de Instituto y Usuario...")
+                                    .SetMessage("Actualizando Contraseña, Nombre de Instituto y Usuario")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -399,7 +524,28 @@ namespace eduNICA
                                 Global.passw = newcontraseña.Text;
                                 Global.user = usuario.Text;//actualizamos el nombre de usuario en la variable global
                                 Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Nombre de Institucion, Usuario y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                                Toast.MakeText(Activity, "Nombre de Institucion, Usuario y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -407,7 +553,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña, Nombre de Instituto, Usuario y Direccion...")
+                                    .SetMessage("Actualizando Contraseña, Nombre de Instituto, Usuario y Direccion")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -428,7 +574,29 @@ namespace eduNICA
                                 Global.user = usuario.Text;//actualizamos el nombre de usuario en la variable global
                                 Global.u.Cedula = direccion.Text;//actualizamos variable de dato de usuario loguiado
                                 Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Nombre de Institucion, Usuario, Direccion y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                                Toast.MakeText(Activity, "Nombre de Institucion, Usuario, Direccion y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -436,7 +604,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña y Usuario...")
+                                    .SetMessage("Actualizando Contraseña y Usuario")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -455,7 +623,29 @@ namespace eduNICA
                             {
                                 Global.passw = newcontraseña.Text;
                                 Global.user = usuario.Text;//actualizamos el nombre de usuario en la variable global
-                                Toast.MakeText(Activity, "Nombre de Usuario y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+
+                                Toast.MakeText(Activity, "Nombre de Usuario y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -463,7 +653,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña y Direccion...")
+                                    .SetMessage("Actualizando Contraseña y Direccion")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -482,7 +672,28 @@ namespace eduNICA
                             {
                                 Global.passw = newcontraseña.Text;
                                 Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Direccion y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                                Toast.MakeText(Activity, "Direccion y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -490,7 +701,7 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña, usuario y Direccion...")
+                                    .SetMessage("Actualizando Contraseña, usuario y Direccion")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
@@ -510,7 +721,28 @@ namespace eduNICA
                                 Global.passw = newcontraseña.Text;
                                 Global.user = usuario.Text;//actualizamos el nombre de usuario en la variable global
                                 Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Nombre de Usuario, Direccion y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                                Toast.MakeText(Activity, "Nombre de Usuario, Direccion y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -518,11 +750,11 @@ namespace eduNICA
                         {
                             Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                                     .SetContext(context)
-                                    .SetMessage("Actualizando Contraseña, Nombre de Intituto y Direccion...")
+                                    .SetMessage("Actualizando Contraseña, Nombre de Intituto y Direccion")
                                     .Build();
                             Esperar.Show();
                             //********************************************************************************************************
-                            //***************************Actualizar Contraseña, Instituto y Direccion***********************************
+                            //***************************Actualizar Contraseña, Instituto y Direccion*********************************
                             //********************************************************************************************************
                             _Actualizar_Credenciales_Institucion = RestService.For<Interface_Actualizar_Credenciales_Institucion>("http://www.edunica.somee.com/api/UsuariosWS");
                             UsuarioInstitucion user = new UsuarioInstitucion();
@@ -538,7 +770,28 @@ namespace eduNICA
                                 Global.passw = newcontraseña.Text;
                                 Global.u.Cedula = direccion.Text;//actualizamos direccion de institucion
                                 Global.u.Institucion = institucion.Text;//actualizamos el nombre de institucion almacenado en datos de usuario logueado
-                                Toast.MakeText(Activity, "Nombre de Institucion, DIreccion y Contraseña Actualizado(-servicio-)", ToastLength.Short).Show();
+
+
+                                //cerramos sesion al cambiar credenciales de acceso
+                                Intent i = new Intent(context, typeof(LoginActivity));
+                                //limpiar lista de item Matricula
+                                Global.Lista_Grad.Clear();
+                                Global.grupos.Clear();
+                                Global.Lista_Estudi.Clear();
+                                Global.datos_E.Clear();
+
+                                //Limpiar lista de item Docentes
+                                Global.usuariosWs.Clear();
+                                Global.usuariosWs_Datos.Clear();
+
+                                //limpiar lista de datos de grafico
+                                Global.Lista_Grad_Graf.Clear();
+
+                                Global.materia.Clear();//limpiar asignaturas
+                                Global.detallenotas.Clear();//limpiar parciales
+                                Global.notas_Estudiantes.Clear();//limpiar estudiantes con notas
+
+                                Toast.MakeText(Activity, "Nombre de Institucion, DIreccion y Contraseña Actualizado", ToastLength.Short).Show();
                                 Dismiss();
                             }
                         }
@@ -575,22 +828,22 @@ namespace eduNICA
             //***********************************************************************************
             else if (institucion.Text == "")
             {
-                Toast.MakeText(Activity, "Porfavor ingrese nombre de institucion", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Porfavor ingrese nombre de Institucion", ToastLength.Short).Show();
                 institucion.RequestFocus();
             }
             else if (usuario.Text == "" )
             {
-                Toast.MakeText(Activity, "Porfavor ingrese nombre de usuario", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Porfavor ingrese nombre de Usuario", ToastLength.Short).Show();
                 usuario.RequestFocus();
             }
             else if (direccion.Text == "" )
             {
-                Toast.MakeText(Activity, "Porfavor ingrese direccion de institucion", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Porfavor ingrese direccion de Institucion", ToastLength.Short).Show();
                 direccion.RequestFocus();
             }
             else if (contraseña.Text == "")
             {
-                Toast.MakeText(Activity, "Porfavor ingrese la contraseña", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Porfavor ingrese la Contraseña", ToastLength.Short).Show();
                 contraseña.RequestFocus();
             }
             //***********************************************************************************

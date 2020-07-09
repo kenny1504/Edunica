@@ -17,6 +17,7 @@ namespace eduNICA
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
     public class MenuActivity : AppCompatActivity
     {
+        private bool Salir_Admin = false;
         Android.Support.V7.Widget.Toolbar toolbar;
         DrawerLayout drawer;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -62,26 +63,107 @@ namespace eduNICA
             navigationView.NavigationItemSelected += (sender, e) =>
             {
                 e.MenuItem.SetChecked(true);
+                FragmentTransaction ft = this.FragmentManager.BeginTransaction();
                 switch (e.MenuItem.ItemId)
                 {
-                    case Resource.Id.usuario:
-                        
+                    case Resource.Id.admin_usuario:
+                        Global.estudiantesADMINs.Clear();
+                        Global.usuarioInstitucions.Clear();
+                        //renombramos toolbal
+                        Global.ws = null;
+                        toolbar.Title = "Lista Usuarios";
+                        //instaciamos el fragment a implementar
+                        Fragment_Admin_Usuarios _Usuarios = new Fragment_Admin_Usuarios();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Usuarios);
+                        ft.DisallowAddToBackStack();
                         break;
-                    case Resource.Id.matricula:
-                       
+                    case Resource.Id.admin_estudiante:
+                        Global.usuarioInstitucions.Clear();
+                        Global.usuariosADMINs.Clear();
+                        Global.ws = null;
+                        //renombramos toolbal
+                        toolbar.Title = "Lista Estudiantes";                      
+                        //instaciamos el fragment a implementar
+                        Fragment_Admin_Estudiantes _Estudiantes = new Fragment_Admin_Estudiantes();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes);
+                        ft.DisallowAddToBackStack();
+                        break;
+                    case Resource.Id.admin_institucion:
+                        Global.usuariosADMINs.Clear();
+                        Global.estudiantesADMINs.Clear();
+                        Global.ws = null;
+                        toolbar.Title = "Lista Intituciones";
+                        //instaciamos el fragment a implementar
+                        Fragment_Admin_Instituciones _Instituciones = new Fragment_Admin_Instituciones();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Instituciones);
+                        ft.DisallowAddToBackStack();
                         break;
                 }
+                ft.Commit();
                 drawer.CloseDrawers();
             };
         }
         public override void OnBackPressed()
         {
+            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             Fragment f = FragmentManager.FindFragmentById(Resource.Id.relativeLayoutMenu);
-            if (f is Fragment_Admin_home)
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
+            {
+                drawer.CloseDrawer(GravityCompat.Start);
+            }
+            else if(f is Fragment_Admin_Estudiantes || f is Fragment_Admin_Usuarios || f is Fragment_Admin_Instituciones)
+            {
+                toolbar.Title = Global.u.Institucion;
+                Global.estudiantesADMINs.Clear();
+                Global.usuariosADMINs.Clear();
+                Global.usuarioInstitucions.Clear();
+                Global.ws = null;
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Admin_home());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if (f is Fragment_Admin_Instituciones_Detalle)
+            {
+                toolbar.Title = "Lista Intituciones";
+                Global.ws = null;
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Admin_Instituciones());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if(f is Fragment_Admin_Estudiantes_Detalle)
+            {
+                toolbar.Title = "Lista Estudiante";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Admin_Estudiantes());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if (f is Fragment_Admin_Usuarios_Detalle)
+            {
+                toolbar.Title = "Lista Usuarios";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Admin_Usuarios());
+                fragment.DisallowAddToBackStack().Commit();
+            }
+            else if (f is Fragment_Admin_home)
             {
                 //salir de la app
-                this.FinishAffinity();
-                Global.Lista_Grad_Admin.Clear();
+                if (Salir_Admin)
+                {
+                    this.FinishAffinity();
+                    //limpiamos listas al salir
+                    Global.Lista_Grad_Admin.Clear();
+                    Global.estudiantesADMINs.Clear();
+                    Global.usuariosADMINs.Clear();
+                    Global.usuarioInstitucions.Clear();
+                }
+                Salir_Admin = true;
+
+                Toast.MakeText(this, "Click nuevamente ATRÁS para salir", ToastLength.Short).Show();
+
+                var handler = new Handler();
+
+                handler.PostDelayed(() => { Salir_Admin = false; }, 1800);
+                
             }
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -95,7 +177,12 @@ namespace eduNICA
             if (id == Resource.Id.login_out)
             {
                 Intent i = new Intent(this, typeof(LoginActivity));
+
+                //limpiamos listar al cerrar sesion 
+                Global.estudiantesADMINs.Clear();
                 Global.Lista_Grad_Admin.Clear();
+                Global.usuariosADMINs.Clear();
+                Global.usuarioInstitucions.Clear();
                 StartActivity(i);
             }
             return true;

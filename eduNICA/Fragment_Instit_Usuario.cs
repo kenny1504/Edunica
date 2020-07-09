@@ -32,7 +32,7 @@ namespace eduNICA
         {
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             base.OnActivityCreated(savedInstanceState);
-            vlista = View.FindViewById<ListView>(Resource.Id.listView_grado);
+            vlista = View.FindViewById<ListView>(Resource.Id.listView_usuario);
 
             //verificar si no hay lista en la clase
             if (Global.usuariosWs.Count == 0)
@@ -93,6 +93,7 @@ namespace eduNICA
             menuInflater.Inflate(Resource.Menu.menu_main, menu);
             menu.FindItem(Resource.Id.add_user).SetVisible(true); //Establece propiedad True
             menu.FindItem(Resource.Id.login_out).SetVisible(false);
+            menu.FindItem(Resource.Id.credenciales).SetVisible(false);
             base.OnCreateOptionsMenu(menu, menuInflater); //Agrega cambios al Menu 
         }
     }

@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
+using eduNICA.Resources.Model;
+using Refit;
+using eduNICA.Resources.Intarface;
+using EDMTDialog;
+
+namespace eduNICA
+{
+    public class Fragment_Admin_Estudiantes_Detalle : Fragment
+    {
+        Interface_Admin_Estudiantes_Detalle _Estudiantes_Detalle;
+        Context context;
+        TextView txtnombre, txtcodigo, txtsexo, txtfecha, txttutor, txtdireccion, txttelefonotutor, txtinstituto, txtgrado, txtgrupo;
+        public override async void OnActivityCreated(Bundle savedInstanceState)
+        {
+            base.OnActivityCreated(savedInstanceState);
+            txtcodigo = View.FindViewById<TextView>(Resource.Id.Admin_codigoestudiante);
+            txtnombre = View.FindViewById<TextView>(Resource.Id.Admin_nombreEstudiante);
+            txttutor = View.FindViewById<TextView>(Resource.Id.Admin_nombre_tutor_E);
+            txtdireccion = View.FindViewById<TextView>(Resource.Id.Admin_direccionestudiante);
+            txtfecha = View.FindViewById<TextView>(Resource.Id.Admin_fechanaciestudiante);
+            txtsexo = View.FindViewById<TextView>(Resource.Id.Admin_sexoestudiante);
+            txttelefonotutor = View.FindViewById<TextView>(Resource.Id.Admin_telefono_tutor_E);
+            txtinstituto = View.FindViewById<TextView>(Resource.Id.Admin_institucion_E);
+            txtgrado = View.FindViewById<TextView>(Resource.Id.Admin_gradoestudiante);
+            txtgrupo = View.FindViewById<TextView>(Resource.Id.Admin_grupoestudiante);
+
+            Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
+                .SetContext(context)
+                .SetMessage("Cargando ...")
+                .Build();
+            Esperar.Show();
+
+            //Establecemos la concexion con el servicio web API REST
+            _Estudiantes_Detalle = RestService.For<Interface_Admin_Estudiantes_Detalle>("http://www.edunica.somee.com/api/EstudiantesWS");
+
+            Busqueda Busqueda = new Busqueda();
+            Busqueda.Id = Global.idestudiante;
+
+            //hacemos peticion mediante el metodo de la interface 
+            DatosEstudiantesADMIN Edatos = await _Estudiantes_Detalle.Estudiantes(Busqueda);
+            Global.datosEstudiantesADMINs = Edatos;
+
+            txtnombre.Text = Global.datosEstudiantesADMINs.Nombre;
+            txtcodigo.Text = Global.datosEstudiantesADMINs.CodigoEstudiante;
+            txtsexo.Text = Global.datosEstudiantesADMINs.Sexo;
+            txtfecha.Text = Global.datosEstudiantesADMINs.FechaNacimiento.ToString();
+            txtdireccion.Text = Global.datosEstudiantesADMINs.Direccion;
+            txttutor.Text = Global.datosEstudiantesADMINs.Tutor;
+            txttelefonotutor.Text = Global.datosEstudiantesADMINs.TelefonoTutor.ToString();
+            txtgrupo.Text = Global.datosEstudiantesADMINs.Grupo;
+            txtinstituto.Text = Global.datosEstudiantesADMINs.Institucion;
+            txtgrado.Text = Global.datosEstudiantesADMINs.Grado.ToString();
+            Esperar.Dismiss();//cerrar mensaje
+        }
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            context = inflater.Context;
+            return inflater.Inflate(Resource.Layout.Admin_Estudiantes_Detalle, container, false);
+        }
+    }
+}

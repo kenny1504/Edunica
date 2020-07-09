@@ -5,21 +5,16 @@
       <item android:title="  Menu de Navegacion"/>      
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/usuario"
+            android:id="@+id/admin_usuario"
             android:icon="@drawable/usuario"
             android:title="Usuario" />
         <item
-            android:id="@+id/estudiante"
+            android:id="@+id/admin_estudiante"
             android:icon="@drawable/studiante"
             android:title="Estudiante"/>
       <item
-            android:id="@+id/docente"
-            android:icon="@drawable/docente"
-            android:title="Docente"/>
-      <item
-            android:id="@+id/asignatura"
-            android:icon="@drawable/asignaturas"
-            android:title="Asignatura"/>
-
+            android:id="@+id/admin_institucion"
+            android:icon="@drawable/matricula"
+            android:title="Instituciones"/>
     </group>
 </menu>

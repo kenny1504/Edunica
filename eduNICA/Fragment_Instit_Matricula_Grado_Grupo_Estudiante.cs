@@ -70,24 +70,12 @@ namespace eduNICA
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //if(Global.b_click==-1)//para abrir modal agregar nota
-            //{
-                //FragmentTransaction ft = this.FragmentManager.BeginTransaction();
-                //Fragment_Instit_Nota_Add add = new Fragment_Instit_Nota_Add();
-                //ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
-                //Global.idmatricula = modulo.IdMatricula;
-                //Global.nombre_E_N = modulo.Nombre;
-                //add.Show(ft, "dialog frament");
-            //}
-            //else
-            //{
-                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-                toolbar.Title = "Informacion de Estudiante";
-                Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle estudiante_D = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle();
-                ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
-                Global.idestudiante = modulo.Idestudiante;
-                ft.Replace(Resource.Id.relativeLayoutMenu, estudiante_D).DisallowAddToBackStack().Commit();
-            //}
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Estudiante";
+            Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle estudiante_D = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle();
+            ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
+            Global.idestudiante = modulo.Idestudiante;
+            ft.Replace(Resource.Id.relativeLayoutMenu, estudiante_D).DisallowAddToBackStack().Commit();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

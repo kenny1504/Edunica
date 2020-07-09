@@ -19,7 +19,7 @@ namespace eduNICA
 {
     public class Fragment_Docent_Agregar_Nota : Fragment
     {
-        Context context; ListView vlista;Button Btn_Guardar;
+        Context context; ListView vlista;Button Btn_Guardar;TextView asignatura;
         Interface_Docent_Estudiantes _Docent_Estudiantes;
         Android.Support.V7.Widget.Toolbar toolbar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
@@ -28,7 +28,8 @@ namespace eduNICA
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             Btn_Guardar = View.FindViewById<Button>(Resource.Id.button_Guardar_Nota);
             vlista = View.FindViewById<ListView>(Resource.Id.listView_Notas_Agregar);//vinculamos al listview del layout
-
+            asignatura = View.FindViewById<TextView>(Resource.Id.asignatura_nota);
+            asignatura.Text = Global.asignatura;
             Btn_Guardar.Click += Btn_Guardar_Click;
             if (Global.notas_Estudiantes.Count == 0)
             {

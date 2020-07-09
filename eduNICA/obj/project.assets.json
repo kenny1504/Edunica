@@ -2418,6 +2418,7 @@
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.3",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
+      "Xamarin.Android.Support.v7.RecyclerView >= 28.0.0.3",
       "Xamarin.Essentials >= 1.3.1"
     ]
   },
@@ -2428,11 +2429,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\eduNICA.csproj",
+      "projectUniqueName": "C:\\Users\\josea\\source\\Edunica\\eduNICA\\eduNICA.csproj",
       "projectName": "eduNICA",
-      "projectPath": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\eduNICA.csproj",
+      "projectPath": "C:\\Users\\josea\\source\\Edunica\\eduNICA\\eduNICA.csproj",
       "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josea\\source\\repos\\Edunica\\eduNICA\\obj\\",
+      "outputPath": "C:\\Users\\josea\\source\\Edunica\\eduNICA\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2503,6 +2504,10 @@
             "target": "Package",
             "version": "[28.0.0.3, )"
           },
+          "Xamarin.Android.Support.v7.RecyclerView": {
+            "target": "Package",
+            "version": "[28.0.0.3, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.3.1, )"
@@ -2510,5 +2515,13 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\josea\\source\\Edunica\\eduNICA\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

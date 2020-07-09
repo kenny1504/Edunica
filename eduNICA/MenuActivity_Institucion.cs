@@ -188,6 +188,8 @@ namespace eduNICA
             else if(f is Fragment_Instit_Usuario || f is Fragment_Instit_Matricula_Grado || f is Fragment_Instit_Asignaturas)
             {
                 toolbar.Title = Global.u.Institucion;
+                Global.usuariosWs.Clear();
+                Global.materia.Clear();
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Home());
                 fragment.DisallowAddToBackStack().Commit();
@@ -225,7 +227,7 @@ namespace eduNICA
             {
                 toolbar.Title = "Grupos";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
-                Global.detallenotas.Clear();
+                Global.materia.Clear();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado_Grupo());
                 fragment.DisallowAddToBackStack().Commit();
             }
@@ -273,6 +275,10 @@ namespace eduNICA
             int id = item.ItemId;
             if (id == Resource.Id.login_out)
             {
+
+                //***************************************************************
+                //***********agregar tambien a actualizar credenciales***********
+                //***************************************************************
                 Intent i = new Intent(this, typeof(LoginActivity));
                 //limpiar lista de item Matricula
                 Global.Lista_Grad.Clear();

@@ -75,7 +75,6 @@ namespace eduNICA
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             context= inflater.Context;
-            // Use this to return your custom view for this Fragment
             return inflater.Inflate(Resource.Layout.Instit_Matricula_Grado, container, false);
         }
     }

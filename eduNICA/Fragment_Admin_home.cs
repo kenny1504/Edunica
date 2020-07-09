@@ -41,8 +41,10 @@ namespace eduNICA
             chartView = View.FindViewById<ChartView>(Resource.Id.Chart_Admin);
             List<Entry> entries = new List<Entry>();
 
-            if (Global.Lista_Grad_Admin.Count == 0)
+            if (Global.Lista_Grad_Admin.Count == 0 || Global.ws!=null)
             {
+                Global.Lista_Grad_Admin.Clear();
+                Global.ws = null;
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                     .SetContext(context)
                     .SetMessage("Cargando ...")

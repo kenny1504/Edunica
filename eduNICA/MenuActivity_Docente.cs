@@ -13,6 +13,7 @@ using Android.Widget;
 using EDMTDialog;
 using Java.Lang;
 
+
 namespace eduNICA
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
@@ -76,6 +77,7 @@ namespace eduNICA
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_DetalleNota());
                 Global.notas_Estudiantes.Clear();
+                Global._Notas.Clear();
                 fragment.DisallowAddToBackStack().Commit();
             }
             //regresar de parciales a lista de asignaturas
@@ -87,11 +89,16 @@ namespace eduNICA
                 fragment.DisallowAddToBackStack().Commit();
             }
             //regresar de lista de asignaturas de docente a home
-            else if(f is Fragment_Docent_Asignaturas)
+            else if(f is Fragment_Docent_Asignaturas || f is Fragment_Docent_Asistencia)///////////////////pendiente ver
             {
                 toolbar.Title = Global.u.Institucion;
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Home());
+
+                Global.Asignaturasdocentes.Clear();
+                Global.ListaAsistencias.Clear();
+                Global.asistencias.Clear();
+
                 fragment.DisallowAddToBackStack().Commit();
             }
             //salir de la app
@@ -103,6 +110,11 @@ namespace eduNICA
                     Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
                     Global.detallenotas.Clear();//limpiar parciales de nota
                     Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
+
+                    Global.ListaAsistencias.Clear();//lista de estudiantes
+                    Global.asistencias.Clear();//limpiar lista luego de guardar asistencia
+                    Global._Notas.Clear();//limpiamos lista temporal de nota
+                    Global.Asignaturasdocentes.Clear();//limpiamos asignatura de docente al cerrar sesion
                     this.FinishAffinity();
                 }
                 Salir_Docente = true;
@@ -113,6 +125,7 @@ namespace eduNICA
 
                 handler.PostDelayed(() => { Salir_Docente = false; }, 1800);
             }
+            
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -127,11 +140,17 @@ namespace eduNICA
             {
                 Intent i = new Intent(this, typeof(LoginActivity));
 
+                //recordar agregar listas a cambiar credenciales
                 //limpiar listas al cerrar sesion
                 Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
                 Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
                 Global.detallenotas.Clear();//limpiar parciales de nota
                 Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
+
+                Global.ListaAsistencias.Clear();//lista de estudiantes
+                Global.asistencias.Clear();//limpiar lista luego de guardar asistencia
+                Global._Notas.Clear();//limpiamos lista temporal de nota
+                Global.Asignaturasdocentes.Clear();//limpiamos asignatura de docente al cerrar sesion
 
                 StartActivity(i);
             }
@@ -173,8 +192,8 @@ namespace eduNICA
                         Global.detallenotas.Clear();//limpiar parciales de nota
                         Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
-                        Fragment_Docent_Asistencia_ListaEstudiante estudiante = new Fragment_Docent_Asistencia_ListaEstudiante();
-                        ft.Replace(Resource.Id.relativeLayoutMenu, estudiante);
+                        Fragment_Docent_Asistencia _Asistencia = new Fragment_Docent_Asistencia();
+                        ft.Replace(Resource.Id.relativeLayoutMenu, _Asistencia);
                         ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.nota_doc:

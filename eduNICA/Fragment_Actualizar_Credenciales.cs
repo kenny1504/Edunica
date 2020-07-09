@@ -74,7 +74,23 @@ namespace eduNICA
                     if(retorno==1)
                     {
                         Global.user = usuario.Text;//actualizamos el nombre de usuario almacenado en la variable Global
-                        Toast.MakeText(Activity, "Nombre de Usuario Actualizado(-servicio-)", ToastLength.Short).Show();
+
+                        //cerrar sesion al cambiar credenciales de acceso
+                        Intent i = new Intent(context, typeof(LoginActivity));
+
+                        //limpiar listas al cerrar sesion
+                        Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
+                        Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                        Global.detallenotas.Clear();//limpiar parciales de nota
+                        Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
+
+                        Global.ListaAsistencias.Clear();//lista de estudiantes
+                        Global.asistencias.Clear();//limpiar lista luego de guardar asistencia
+                        Global._Notas.Clear();//limpiamos lista temporal de nota
+                        Global.Asignaturasdocentes.Clear();//limpiamos asignatura de docente al cerrar sesion
+                        StartActivity(i);
+
+                        Toast.MakeText(Activity, "Nombre de Usuario Actualizado", ToastLength.Short).Show();
                         Dismiss();
                     }
                     else
@@ -139,7 +155,22 @@ namespace eduNICA
                         Esperar.Dismiss();
                         if (retorno == 1)
                         {
-                            Toast.MakeText(Activity, "Contraseña Actualizada(servicio)", ToastLength.Short).Show();
+                            Toast.MakeText(Activity, "Contraseña Actualizada", ToastLength.Short).Show();
+
+                            //cerrar sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar listas al cerrar sesion
+                            Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
+                            Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                            Global.detallenotas.Clear();//limpiar parciales de nota
+                            Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
+
+                            Global.ListaAsistencias.Clear();//lista de estudiantes
+                            Global.asistencias.Clear();//limpiar lista luego de guardar asistencia
+                            Global._Notas.Clear();//limpiamos lista temporal de nota
+                            Global.Asignaturasdocentes.Clear();//limpiamos asignatura de docente al cerrar sesion
+                            StartActivity(i);
+
                             Dismiss();
                         }
                     }
@@ -163,7 +194,22 @@ namespace eduNICA
                         if (retorno == 1)
                         {
                             Global.user = usuario.Text;
-                            Toast.MakeText(Activity, "Contraseña y nombre de Usuario Actualizada(servicio)", ToastLength.Short).Show();
+                            Toast.MakeText(Activity, "Contraseña y nombre de Usuario Actualizada", ToastLength.Short).Show();
+
+                            //cerrar sesion al cambiar credenciales de acceso
+                            Intent i = new Intent(context, typeof(LoginActivity));
+                            //limpiar listas al cerrar sesion
+                            Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
+                            Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                            Global.detallenotas.Clear();//limpiar parciales de nota
+                            Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
+
+                            Global.ListaAsistencias.Clear();//lista de estudiantes
+                            Global.asistencias.Clear();//limpiar lista luego de guardar asistencia
+                            Global._Notas.Clear();//limpiamos lista temporal de nota
+                            Global.Asignaturasdocentes.Clear();//limpiamos asignatura de docente al cerrar sesion
+                            StartActivity(i);
+
                             Dismiss();
                         }
                     }

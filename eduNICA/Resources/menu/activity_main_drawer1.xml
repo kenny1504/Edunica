@@ -14,7 +14,7 @@
             android:title="Nota" />
     <item
             android:id="@+id/estudiante_doc"
-            android:icon="@drawable/nota"
+            android:icon="@drawable/usuario"
             android:title="Estudiantes" />
   
   </group>

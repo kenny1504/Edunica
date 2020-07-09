@@ -30,13 +30,14 @@ namespace eduNICA
         public static int idasignatura;//variable global donde se almacena el id de la asignatura seleccionado
         public static int iddetallenota;//variable global donde se almacena el id del parcial seleccionado
         public static int idmatricula;//variable global donde se almacena el id de la matricula del estudiante seleccionado
+        public static int iddocente;//variable global para pasar el id de usuario, para ver detalle(ADMIN)
 
         public static int b_click;//variable para saber que opcion eligio(ver nota o agregar nota)
         public static string parcial;//guardar el parcial al agregar una nota para mostrarlo;
         public static string nombre_E_N;//guardar nombre de estudiante para mostrarlo al agregar nota;
         public static string asignatura;//guardar nombre de asignatura para mostrarlo en agregar nota;
 
-        public static List<usuariosWS> usuariosWs = new List<usuariosWS>();//instancia de datos de usuario logueado
+        public static List<usuariosWS> usuariosWs = new List<usuariosWS>();//instancia de datos de usuario
         public static List<Personas> usuariosWs_Datos = new List<Personas>();
         public static List<Estudiantes_grados> Lista_Grad = new List<Estudiantes_grados>();//instancia de grado con cantidad de estudiantes
         public static List<Estudiantes_grados_grafico> Lista_Grad_Graf = new List<Estudiantes_grados_grafico>();
@@ -59,5 +60,15 @@ namespace eduNICA
         public static List<ListaAsistencia> ListaAsistencias = new List<ListaAsistencia>();//listar estudiante de cada docente para asistencia
 
         public static List<Asignaturasdocente> Asignaturasdocentes = new List<Asignaturasdocente>();//lista de asignaturas de cada docente
+
+        public static List<EstudiantesADMIN> estudiantesADMINs = new List<EstudiantesADMIN>();//instaciamos lista de estudiantes(admin)
+        public static DatosEstudiantesADMIN datosEstudiantesADMINs;//instaciamos detalle de estudiantes(admin)
+
+        public static List<UsuariosADMIN> usuariosADMINs = new List<UsuariosADMIN>();//instaciamos lista de usuarios(admin)
+        public static DatosUsuariosADMIN datosUsuariosADMIN;//instancia de detalle de usuario(ADMIN)
+
+        public static List<Usuariosinstituciones> usuarioInstitucions = new List<Usuariosinstituciones>();//instaciamos lista de instituciones(admin)
+        public static int id_Usuariosinstituciones;//variable para mandar y ver detalle institucion(admin)
+        public static UsuarioInstitucion UsuarioInstitucion;//intancia de detalle de institucion(ADMIN)
     }
 }
