@@ -41,7 +41,7 @@ namespace eduNICA
             chartView = View.FindViewById<ChartView>(Resource.Id.Chart_Admin);
             List<Entry> entries = new List<Entry>();
 
-            if (Global.Lista_Grad_Admin.Count == 0 || Global.ws!=null)
+            if (Global.Lista_Grad_Admin.Count == 0 || Global.ws==null)
             {
                 Global.Lista_Grad_Admin.Clear();
                 Global.ws = null;
