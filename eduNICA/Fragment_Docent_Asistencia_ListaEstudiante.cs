@@ -35,7 +35,7 @@ namespace eduNICA
             textfecha = View.FindViewById<TextView>(Resource.Id.textView5);
             textfecha.Text = DateTime.Today.ToShortDateString();
             vlista = View.FindViewById<ListView>(Resource.Id.listView_Asistencia_Estudi);//vinculamos al listview del layout
-            if (Global.ListaAsistencias.Count == 0)
+            if (Global.ListaAsistencias.Count == 0 && Global._Asistencia.Count==0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                     .SetContext(context)
@@ -60,7 +60,7 @@ namespace eduNICA
                     W.Nombre = A_lista[i].Nombre;
                     W.IdMatricula = A_lista[i].IdMatricula;
                     W.CodigoEstudinte = A_lista[i].CodigoEstudinte;
-                    Global._Asistencias.Add(W);
+                    Global._Asistencia.Add(W);
                 }
                 vlista.Adapter = new Adapter_Docent_Asistencia_Add(Activity);
                 Esperar.Dismiss();//Cerramos mensaje
@@ -68,13 +68,12 @@ namespace eduNICA
             else
             {
                 vlista.Adapter = new Adapter_Docent_Asistencia_Add(Activity);
-            }
-                
+            }                
         }       
         private async void Button_guardar_Click(object sender, EventArgs e)
         {
             Global.asistencias.Clear();
-            List<Lista_Estudiante_Asistencia> asistencias = Global._Asistencias;
+            List<Lista_Estudiante_Asistencia> asistencias = Global._Asistencia;
                     Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
                    .SetContext(context)
                    .SetMessage("Guardando ...")
@@ -103,8 +102,7 @@ namespace eduNICA
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Home());
                 fragment.DisallowAddToBackStack().Commit();
-            }
-                
+            }               
             else
             {
                 Toast.MakeText(Activity, "Asistencia ya Realizada", ToastLength.Short).Show();
@@ -112,8 +110,7 @@ namespace eduNICA
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Home());
                 fragment.DisallowAddToBackStack().Commit();
-            }
-                
+            }               
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

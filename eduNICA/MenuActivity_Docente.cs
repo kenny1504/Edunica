@@ -115,7 +115,7 @@ namespace eduNICA
                 if (Salir_Docente)
                 {
                     Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
-                    Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                    Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                     Global.detallenotas.Clear();//limpiar parciales de nota
                     Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
@@ -151,7 +151,7 @@ namespace eduNICA
                 //recordar agregar listas a cambiar credenciales
                 //limpiar listas al cerrar sesion
                 Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
-                Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                 Global.detallenotas.Clear();//limpiar parciales de nota
                 Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
@@ -199,7 +199,7 @@ namespace eduNICA
                         Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente                       
                         Global.detallenotas.Clear();//limpiar parciales de nota
                         Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
-
+                        Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                         Fragment_Docent_Asistencia _Asistencia = new Fragment_Docent_Asistencia();
                         ft.Replace(Resource.Id.relativeLayoutMenu, _Asistencia);
                         ft.DisallowAddToBackStack();
@@ -207,7 +207,7 @@ namespace eduNICA
                     case Resource.Id.nota_doc:
                         toolbar.Title = "Asignaturas";
 
-                        Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                        Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
 
                         Fragment_Docent_Asignaturas _Docent_Asignaturas = new Fragment_Docent_Asignaturas();
                         ft.Replace(Resource.Id.relativeLayoutMenu, _Docent_Asignaturas);
@@ -215,7 +215,7 @@ namespace eduNICA
                         break;
                     case Resource.Id.estudiante_doc:
                         toolbar.Title = "Estudiantes";
-                        Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                        Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                         Global.ListaAsistencias.Clear();
                         Fragment_Docente_Estudiantes _Docente_Estudiantes = new Fragment_Docente_Estudiantes();
                         ft.Replace(Resource.Id.relativeLayoutMenu, _Docente_Estudiantes);

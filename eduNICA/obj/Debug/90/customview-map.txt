@@ -10,6 +10,7 @@ android.support.design.widget.CoordinatorLayout;obj\Debug\90\res\layout\app_bar_
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\activity_main.xml
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\activity_main_docente.xml
 android.support.design.widget.NavigationView;obj\Debug\90\res\layout\activity_main_institucion.xml
+android.support.design.widget.TextInputLayout;obj\Debug\90\res\layout\admin_usuarios.xml
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main.xml
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main_docente.xml
 android.support.v4.widget.DrawerLayout;obj\Debug\90\res\layout\activity_main_institucion.xml
@@ -42,6 +43,8 @@ dimen;C:\Users\josea\source\repos\Edunica\eduNICA\obj\Debug\90\lp\0\jl\res\value
 dimen;obj\Debug\90\res\values\dimens.xml
 EditText;obj\Debug\90\res\layout\actualizar_credenciales.xml
 EditText;obj\Debug\90\res\layout\actualizar_credenciales_institucion.xml
+EditText;obj\Debug\90\res\layout\admin_estudiantes.xml
+EditText;obj\Debug\90\res\layout\admin_institucion.xml
 EditText;obj\Debug\90\res\layout\admin_usuarios.xml
 EditText;obj\Debug\90\res\layout\instit_nota_add.xml
 EditText;obj\Debug\90\res\layout\instit_usuario_add.xml

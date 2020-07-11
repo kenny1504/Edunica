@@ -19,15 +19,19 @@ namespace eduNICA
 {
     public class Fragment_Admin_Estudiantes : Fragment
     {
+        EditText student_search;
         ListView vlista; Context context; //Instalcia de context
         Interface_Admin_Estudiantes _Estudiantes;
         Android.Support.V7.Widget.Toolbar toolbar;
+        List<EstudiantesADMIN> Buscar;
         public async override void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
 
+            student_search = View.FindViewById<EditText>(Resource.Id.editText_filtrar_Admin_student);
             vlista = View.FindViewById<ListView>(Resource.Id.listView_admin_estudiante);//vinculamos al listview del layout
+            student_search.TextChanged += Student_search_TextChanged;
             if(Global.estudiantesADMINs.Count==0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
@@ -49,14 +53,29 @@ namespace eduNICA
                     W.Institucion = E_lista[i].Institucion;
                     Global.estudiantesADMINs.Add(W);
                 }
-                vlista.Adapter = new Adapter_Admin_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Admin_Estudiantes(Activity, Global.estudiantesADMINs);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Admin_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Admin_Estudiantes(Activity, Global.estudiantesADMINs);
             vlista.ItemClick += Vlista_ItemClick;
         }
 
+        private void Student_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            Buscar = (from Usuario in Global.estudiantesADMINs where Usuario.Nombre.Contains(student_search.Text) select Usuario).ToList<EstudiantesADMIN>();
+            vlista.Adapter = new Adapter_Admin_Estudiantes(Activity, Buscar);
+            vlista.ItemClick += Vlista_ItemClick1;
+        }
+        private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Estudiante";
+            Fragment_Admin_Estudiantes_Detalle _Estudiantes_Detalle = new Fragment_Admin_Estudiantes_Detalle();
+            EstudiantesADMIN modulo = Buscar[e.Position];
+            Global.idestudiante = modulo.Id;
+            ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes_Detalle).DisallowAddToBackStack().Commit();
+        }
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();

@@ -70,8 +70,8 @@
     <Compile Include="Adapter_Admin_Estudiantes.cs" />
     <Compile Include="Adapter_Admin_Instituciones.cs" />
     <Compile Include="Adapter_Admin_Usuarios.cs" />
-    <Compile Include="Adapter_Docente_Agregrar_Nota.cs" />
     <Compile Include="Adapter_Docente_Asistencia_Fechas.cs" />
+    <Compile Include="Adapter_Docente_Nota_Agregar.cs" />
     <Compile Include="Adapter_Docente_Ver_Nota.cs" />
     <Compile Include="Adapter_Docent_Asistencia_Estudiantes.cs" />
     <Compile Include="Adapter_Docent_Lista_Asignatura.cs" />
@@ -97,7 +97,6 @@
     <Compile Include="Fragment_Docent_Asistencia.cs" />
     <Compile Include="Fragment_Docent_Asistencia_Estudiantes.cs" />
     <Compile Include="Fragment_Docent_Asistencia_Estudiantes_Detalle.cs" />
-    <Compile Include="Fragment_Docent_Asistencia_Ver.cs" />
     <Compile Include="Fragment_Docent_DetalleNota.cs" />
     <Compile Include="Fragment_Docent_Asistencia_ListaEstudiante.cs" />
     <Compile Include="Fragment_Docent_Home.cs" />

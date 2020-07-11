@@ -19,15 +19,21 @@ namespace eduNICA
 {
     public class Fragment_Admin_Instituciones : Fragment
     {
+        EditText instit_search;
         ListView vlista; Context context; //Instalcia de context
         Interface_Admin_Instituciones _Instituciones;
         Android.Support.V7.Widget.Toolbar toolbar;
+        List<Usuariosinstituciones> Buscar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+
+            instit_search = View.FindViewById<EditText>(Resource.Id.editText_filtrar_Admin_instit);
+            instit_search.TextChanged += Instit_search_TextChanged;
             vlista = View.FindViewById<ListView>(Resource.Id.LV_Admin_instituciones);//vinculamos al listview del layout
+
             if (Global.usuarioInstitucions.Count == 0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
@@ -50,14 +56,29 @@ namespace eduNICA
                     W.IdInstitucion = E_lista[i].IdInstitucion;
                     Global.usuarioInstitucions.Add(W);
                 }
-                vlista.Adapter = new Adapter_Admin_Instituciones(Activity);
+                vlista.Adapter = new Adapter_Admin_Instituciones(Activity, Global.usuarioInstitucions);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Admin_Instituciones(Activity);
+                vlista.Adapter = new Adapter_Admin_Instituciones(Activity, Global.usuarioInstitucions);
             vlista.ItemClick += Vlista_ItemClick;
         }
 
+        private void Instit_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            Buscar = (from Usuario in Global.usuarioInstitucions where Usuario.Usuario.Contains(instit_search.Text) select Usuario).ToList<Usuariosinstituciones>();
+            vlista.Adapter = new Adapter_Admin_Instituciones(Activity, Buscar);
+            vlista.ItemClick += Vlista_ItemClick1;
+        }
+        private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Institucion";
+            Fragment_Admin_Instituciones_Detalle _Admin_Instituciones_Detalle = new Fragment_Admin_Instituciones_Detalle();
+            Usuariosinstituciones modulo = Buscar[e.Position];
+            Global.id_Usuariosinstituciones = modulo.Id;
+            ft.Replace(Resource.Id.relativeLayoutMenu, _Admin_Instituciones_Detalle).DisallowAddToBackStack().Commit();
+        }
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();

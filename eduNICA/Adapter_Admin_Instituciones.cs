@@ -17,11 +17,10 @@ namespace eduNICA
     {
         Activity context;//definimos el origen del listview
         List<Usuariosinstituciones> vlista;//para vinculamos listview
-
-        public Adapter_Admin_Instituciones(Activity context)
+        public Adapter_Admin_Instituciones(Activity context, List<Usuariosinstituciones> vlista)
         {
             this.context = context;
-            this.vlista = Global.usuarioInstitucions;
+            this.vlista = vlista;
         }
 
         public override int Count => vlista.Count;

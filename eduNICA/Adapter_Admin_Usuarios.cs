@@ -18,12 +18,11 @@ namespace eduNICA
         Activity context;//definimos el origen del listview
         List<UsuariosADMIN> vlista;//para vinculamos listview
 
-        public Adapter_Admin_Usuarios(Activity context)
+        public Adapter_Admin_Usuarios(Activity context, List<UsuariosADMIN> vlista)
         {
             this.context = context;
-            this.vlista = Global.usuariosADMINs;
+            this.vlista = vlista;
         }
-
         public override int Count => vlista.Count;
 
         public override Java.Lang.Object GetItem(int position)

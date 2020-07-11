@@ -72,16 +72,6 @@ namespace eduNICA
                 Global.idgrupo = modulo.Idgrupo;
                 ft.Replace(Resource.Id.relativeLayoutMenu, estudiante).DisallowAddToBackStack().Commit();
             }
-            else if(Global.Click==2)
-            {
-                Toast.MakeText(Activity, "Proximamente", ToastLength.Short).Show();
-                //FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-                //toolbar.Title = "Estudiantes";
-                //Fragment_Docent_Asistencia_ListaEstudiante estudiante = new Fragment_Docent_Asistencia_ListaEstudiante();
-                //grupos_grados modulo = Global.grupos[e.Position];
-                //Global.idgrupo = modulo.Idgrupo;
-                //ft.Replace(Resource.Id.relativeLayoutMenu, estudiante).DisallowAddToBackStack().Commit();
-            }
             else //listar Asignatura, cuando selecciono nota
             {
                 FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();

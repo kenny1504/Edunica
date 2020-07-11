@@ -82,9 +82,10 @@ namespace eduNICA
                 switch (e.MenuItem.ItemId)
                 {
                     case Resource.Id.asistencia:
-                        Global.Click = 2;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
+                        Global.DetalleStudent_DetallaAsistencia = 1;
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
-
+                        Global.Click = 1;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula, nota y asistencia
+                        Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         toolbar.Title = "Grados Academicos";
                         Fragment_Instit_Matricula_Grado int_grado_n1 = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n1);
@@ -93,17 +94,19 @@ namespace eduNICA
                     case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
+                        Global.DetalleStudent_DetallaAsistencia = 0;
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
-                        
+                        Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Usuario int_user = new Fragment_Instit_Usuario();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_user);
                         ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.matricula:
+                        Global.DetalleStudent_DetallaAsistencia = 0;
                         toolbar.Title = "Grados Academicos";
                         Global.Click = 1;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
-
+                        Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
 
                         Fragment_Instit_Matricula_Grado int_grado = new Fragment_Instit_Matricula_Grado();
@@ -111,9 +114,10 @@ namespace eduNICA
                        ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.nota:
+                        Global.DetalleStudent_DetallaAsistencia = 0;
                         Global.Click = 0;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
-
+                        Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         toolbar.Title = "Grados Academicos";
                         Fragment_Instit_Matricula_Grado int_grado_n = new Fragment_Instit_Matricula_Grado();
                         ft.Replace(Resource.Id.relativeLayoutMenu, int_grado_n);
@@ -121,9 +125,10 @@ namespace eduNICA
                         break;
                     case Resource.Id.asignatura:
                         //renombramos toolbal
+                        Global.DetalleStudent_DetallaAsistencia = 0;
                         toolbar.Title = "Asignaturas";
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
-
+                        Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         //instaciamos el fragment a implementar
                         Fragment_Instit_Asignaturas _Instit_Asignaturas = new Fragment_Instit_Asignaturas();
                         ft.Replace(Resource.Id.relativeLayoutMenu, _Instit_Asignaturas);
@@ -166,7 +171,7 @@ namespace eduNICA
                 fragment.DisallowAddToBackStack().Commit();
             }
             //MATRICULA INSTIT ir a pantalla anterior lista de estudiantes
-            else if (f is Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle)
+            else if (f is Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle || f is Fragment_Docent_Asistencia_Estudiantes_Detalle)
             {
                 toolbar.Title = "Estudiantes";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
@@ -174,7 +179,6 @@ namespace eduNICA
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Instit_Matricula_Grado_Grupo_Estudiante());
                 fragment.DisallowAddToBackStack().Commit();
             }
-
             //ir a pantalla anterior de lista de usuarios
             else if (f is Fragment_Instit_Usuario_Detalle || f is Fragment_Instit_Usuario_Add)
             {

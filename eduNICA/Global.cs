@@ -23,6 +23,8 @@ namespace eduNICA
 
         public static string Direccion_Instit;//variable para almacenar la direccion de institucion para editarla
 
+        public static int DetalleStudent_DetallaAsistencia;//variable para reutilizar lista de estudiantes luego mostrar ya sea(datos o asistencia)
+
         public static string cedula;//cedula para mostrar detalle usuario
         public static int idgrado;//variable global donde se alamcena el id del grado seleccionado
         public static int idgrupo;//variable global donde se almacena el id del grupo seleccionado
@@ -54,7 +56,7 @@ namespace eduNICA
 
         public static List<Asistencia> asistencias = new List<Asistencia>();//instancia para guardar asistencia
 
-        public static List<Lista_Estudiante_Asistencia> _Asistencias = new List<Lista_Estudiante_Asistencia>();//lista temporal para guardar la asistencia
+        public static List<Lista_Estudiante_Asistencia> _Asistencia = new List<Lista_Estudiante_Asistencia>();//lista temporal para guardar la asistencia
         public static List<Lista_Estudiante_Nota> _Notas = new List<Lista_Estudiante_Nota>();//lista temporal para guardar la nota
 
         public static List<ListaAsistencia> ListaAsistencias = new List<ListaAsistencia>();//listar estudiante de cada docente para asistencia
@@ -71,7 +73,7 @@ namespace eduNICA
         public static int id_Usuariosinstituciones;//variable para mandar y ver detalle institucion(admin)
         public static UsuarioInstitucion UsuarioInstitucion;//intancia de detalle de institucion(ADMIN)
 
-
+        
         public static string Nombre; //variable para almacenar nombre estudiante(docent_ver_Asistencia)
     }
 }

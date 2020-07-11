@@ -46,6 +46,7 @@ namespace eduNICA
             }
             view.FindViewById<TextView>(Resource.Id.Nombre_Estudiante_).Text = item.Nombre;
             view.FindViewById<TextView>(Resource.Id.Asignatura).Text = Global.asignatura;
+            view.FindViewById<TextView>(Resource.Id.Texto_Editable).Text = "";
             view.FindViewById<EditText>(Resource.Id.editText_NotaEstudiante).Text = item.Nota.ToString();
             view.FindViewById<EditText>(Resource.Id.editText_NotaEstudiante).Enabled = false;
             return view;

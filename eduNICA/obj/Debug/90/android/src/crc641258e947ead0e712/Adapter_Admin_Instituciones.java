@@ -26,13 +26,6 @@ public class Adapter_Admin_Instituciones
 			mono.android.TypeManager.Activate ("eduNICA.Adapter_Admin_Instituciones, eduNICA", "", this, new java.lang.Object[] {  });
 	}
 
-	public Adapter_Admin_Instituciones (android.app.Activity p0)
-	{
-		super ();
-		if (getClass () == Adapter_Admin_Instituciones.class)
-			mono.android.TypeManager.Activate ("eduNICA.Adapter_Admin_Instituciones, eduNICA", "Android.App.Activity, Mono.Android", this, new java.lang.Object[] { p0 });
-	}
-
 
 	public int getCount ()
 	{

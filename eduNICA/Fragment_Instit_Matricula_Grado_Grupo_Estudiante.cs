@@ -70,12 +70,25 @@ namespace eduNICA
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-            toolbar.Title = "Informacion de Estudiante";
-            Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle estudiante_D = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle();
-            ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
-            Global.idestudiante = modulo.Idestudiante;
-            ft.Replace(Resource.Id.relativeLayoutMenu, estudiante_D).DisallowAddToBackStack().Commit();
+            if(Global.Click==1)
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                toolbar.Title = "Detalle de Asistencia";
+                Fragment_Docent_Asistencia_Estudiantes_Detalle _Estudiantes_Detalle = new Fragment_Docent_Asistencia_Estudiantes_Detalle();
+                ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
+                Global.idmatricula = modulo.IdMatricula;
+                Global.Nombre = modulo.Nombre;
+                ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes_Detalle).DisallowAddToBackStack().Commit();
+            }
+            else
+            {
+                FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+                toolbar.Title = "Informacion de Estudiante";
+                Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle estudiante_D = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle();
+                ListaEstudiantesWS modulo = Global.Lista_Estudi[e.Position];
+                Global.idestudiante = modulo.Idestudiante;
+                ft.Replace(Resource.Id.relativeLayoutMenu, estudiante_D).DisallowAddToBackStack().Commit();
+            }           
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

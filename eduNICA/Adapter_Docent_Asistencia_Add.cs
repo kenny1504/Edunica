@@ -21,7 +21,7 @@ namespace eduNICA
         public Adapter_Docent_Asistencia_Add(Activity context)
         {
             this.context = context;
-            this.vlista = Global._Asistencias;
+            this.vlista = Global._Asistencia;
         }
         public override Lista_Estudiante_Asistencia this[int position] { get { return vlista[position]; } }
 

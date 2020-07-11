@@ -56,23 +56,47 @@ namespace eduNICA
                         W.CodigoEstudinte = N_E_lista[i].CodigoEstudinte;
                         Global._Notas.Add(W);
                     }
-                    vlista.Adapter = new Adapter_Docente_Agregrar_Nota(Activity);
+                    vlista.Adapter = new Adapter_Docente_Nota_Agregar(Activity);
                     Esperar.Dismiss();//cerramos msj cargando
             }
             else
-                vlista.Adapter = new Adapter_Docente_Agregrar_Nota(Activity);
+                vlista.Adapter = new Adapter_Docente_Nota_Agregar(Activity);
         }
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
            // Global._Notas.Clear();
             List<Lista_Estudiante_Nota> notas = Global._Notas;
-            for (int i = 0; i < notas.Count; i++)
+            int total=0;
+            for (int i = 0; i < notas.Count; i++)//contar numero de edittext con nota
             {
-                AgregarNota agregarNota = new AgregarNota();
-                agregarNota.Nota = Convert.ToInt32(notas[i].nota);
+                if (notas[i].nota != null)//cantidad de edittext con nota
+                    total++;
             }
-            Toast.MakeText(Activity, "Guardando Notas(sin servicio todavia)...!", ToastLength.Short).Show();
+            if(total==notas.Count)//cantidad de notas ingresadas sea igual al numero de estudiantes de la lista
+            {
+                int a = 0;bool band = false;
+                while (a<notas.Count && !band)//recorremos valor de la nota
+                {
+                    if(Convert.ToInt32( notas[a].nota)>=0 && Convert.ToInt32(notas[a].nota) <= 100)//verificar que la nota sea valida, para guardarlas
+                    {
+                        for (int i = 0; i < notas.Count; i++)//ingresamos a la clase para guardarla
+                        {
+                            AgregarNota agregarNota = new AgregarNota();
+                            agregarNota.Nota = Convert.ToInt32(notas[i].nota);
+                        }
+                        Toast.MakeText(Activity, "Notas Guardadas con Exito(sin servicio todavia)...!", ToastLength.Short).Show();
+                    }
+                    else//mensaje del estudiante que tenga una nota incorrecta
+                    {
+                        Toast.MakeText(Activity, "Estudiante ''"+notas[a].Nombre+"'' posee nota incorrecta", ToastLength.Short).Show();
+                        band = true;
+                    }
+                    a++;
+                }               
+            }
+            else
+                Toast.MakeText(Activity, "Faltan Notas que Ingresar", ToastLength.Short).Show();//no ingreso todas las notas
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

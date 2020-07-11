@@ -80,7 +80,7 @@ namespace eduNICA
 
                         //limpiar listas al cerrar sesion
                         Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
-                        Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                        Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                         Global.detallenotas.Clear();//limpiar parciales de nota
                         Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
@@ -161,7 +161,7 @@ namespace eduNICA
                             Intent i = new Intent(context, typeof(LoginActivity));
                             //limpiar listas al cerrar sesion
                             Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
-                            Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                            Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                             Global.detallenotas.Clear();//limpiar parciales de nota
                             Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
@@ -200,7 +200,7 @@ namespace eduNICA
                             Intent i = new Intent(context, typeof(LoginActivity));
                             //limpiar listas al cerrar sesion
                             Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente
-                            Global._Asistencias.Clear();//limpiar lista de asistencia(estudiante)
+                            Global._Asistencia.Clear();//limpiar lista de asistencia(estudiante)
                             Global.detallenotas.Clear();//limpiar parciales de nota
                             Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas
 
