@@ -19,9 +19,11 @@ namespace eduNICA
 {
     public class Fragment_Instit_Matricula_Grado_Grupo_Estudiante : Fragment
     {
+        EditText student_search;
         ListView vlista; Context context; //Instalcia de context
         Interface_Instit_Matricula_Grados_Grupo_Estudiante estudiantes;
         Android.Support.V7.Widget.Toolbar toolbar;
+        List<ListaEstudiantesWS> Buscar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
@@ -29,8 +31,9 @@ namespace eduNICA
 
             int grad=Global.idgrado;
             int grup=Global.idgrupo;
-
+            student_search = View.FindViewById<EditText>(Resource.Id.editText_filtrar_Instit_Student);
             vlista = View.FindViewById<ListView>(Resource.Id.listView_estudiantes);//vinculamos al listview del layout
+            student_search.TextChanged += Student_search_TextChanged;
             if (Global.Lista_Estudi.Count == 0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
@@ -60,17 +63,34 @@ namespace eduNICA
                     W.IdMatricula = E_lista[i].IdMatricula;
                     Global.Lista_Estudi.Add(W);
                 }
-                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity, Global.Lista_Estudi);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity, Global.Lista_Estudi);
             vlista.ItemClick += Vlista_ItemClick;
+        }
+
+        private void Student_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            Buscar = (from Student in Global.Lista_Estudi where Student.Nombre.Contains(student_search.Text) select Student).ToList<ListaEstudiantesWS>();
+            vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity, Buscar);
+            vlista.ItemClick += Vlista_ItemClick1;
+        }
+
+        private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Estudiante";
+            Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle estudiante_D = new Fragment_Instit_Matricula_Grado_Grupo_Estudiante_Detalle();
+            ListaEstudiantesWS modulo = Buscar[e.Position];
+            Global.idestudiante = modulo.Idestudiante;
+            ft.Replace(Resource.Id.relativeLayoutMenu, estudiante_D).DisallowAddToBackStack().Commit();
         }
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if(Global.Click==1)
+            if(Global.DetalleStudent_DetalleAsistencia == 1)
             {
                 FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
                 toolbar.Title = "Detalle de Asistencia";

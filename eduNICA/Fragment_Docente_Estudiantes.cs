@@ -19,16 +19,19 @@ namespace eduNICA
 {
     public class Fragment_Docente_Estudiantes : Fragment
     {
+        EditText student_search;
         ListView vlista; Context context; //Instalcia de context
         Interface_Docent_Estudiantes _Estudiantes;
         Android.Support.V7.Widget.Toolbar toolbar;
+        List<ListaAsistencia> Buscar;
         public override async void OnActivityCreated(Bundle savedInstanceState)
         {
             base.OnActivityCreated(savedInstanceState);
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-
+            student_search = View.FindViewById<EditText>(Resource.Id.editText_filtrar_Admin_student);
             vlista = View.FindViewById<ListView>(Resource.Id.listView_admin_estudiante);
+            student_search.TextChanged += Student_search_TextChanged;
             if (Global.ListaAsistencias.Count == 0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
@@ -56,12 +59,30 @@ namespace eduNICA
                     W.CodigoEstudinte = A_lista[i].CodigoEstudinte;
                     Global.ListaAsistencias.Add(W);
                 }
-                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity, Global.ListaAsistencias);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity, Global.ListaAsistencias);
             vlista.ItemClick += Vlista_ItemClick; ;
+        }
+
+        private void Student_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            Buscar = (from Estudiante in Global.ListaAsistencias where Estudiante.Nombre.Contains(student_search.Text) select Estudiante).ToList<ListaAsistencia>();
+            vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity, Buscar);
+            vlista.ItemClick += Vlista_ItemClick1;
+        }
+
+        private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            //toolbar.Title = "Informacion de Estudiante";
+            ListaAsistencia modulo = Buscar[e.Position];
+            Global.idmatricula = modulo.IdMatricula;
+            //Global.Nombre = modulo.Nombre;
+            //ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes_Detalle).DisallowAddToBackStack().Commit();
+            Toast.MakeText(Activity, "Proximamente Detalle Estudiante", ToastLength.Short).Show();
         }
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

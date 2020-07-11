@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:hint="Buscar Estudiante"
         android:singleLine="true"
+        app:backgroundTint="#ff17a589"
 	    android:layout_height="wrap_content"
         android:id="@+id/editText_filtrar_Admin_student"/>
 <ListView

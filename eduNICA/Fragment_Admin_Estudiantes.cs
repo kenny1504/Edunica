@@ -63,7 +63,7 @@ namespace eduNICA
 
         private void Student_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
-            Buscar = (from Usuario in Global.estudiantesADMINs where Usuario.Nombre.Contains(student_search.Text) select Usuario).ToList<EstudiantesADMIN>();
+            Buscar = (from Estudiante in Global.estudiantesADMINs where Estudiante.Nombre.Contains(student_search.Text) select Estudiante).ToList<EstudiantesADMIN>();
             vlista.Adapter = new Adapter_Admin_Estudiantes(Activity, Buscar);
             vlista.ItemClick += Vlista_ItemClick1;
         }

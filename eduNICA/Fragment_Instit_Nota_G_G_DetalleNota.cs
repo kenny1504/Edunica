@@ -99,6 +99,7 @@ namespace eduNICA
                 toolbar.Title = "Estudiantes";
                 Detallenota modulo = Global.detallenotas[e.Position];
                 Global.parcial = modulo.Descripcion;
+                Global.iddetallenota = modulo.Id;
                 ft.Replace(Resource.Id.relativeLayoutMenu, Estudiantes).DisallowAddToBackStack().Commit();
             }
             else

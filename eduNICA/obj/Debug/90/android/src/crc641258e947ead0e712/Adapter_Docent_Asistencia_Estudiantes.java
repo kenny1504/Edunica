@@ -26,13 +26,6 @@ public class Adapter_Docent_Asistencia_Estudiantes
 			mono.android.TypeManager.Activate ("eduNICA.Adapter_Docent_Asistencia_Estudiantes, eduNICA", "", this, new java.lang.Object[] {  });
 	}
 
-	public Adapter_Docent_Asistencia_Estudiantes (android.app.Activity p0)
-	{
-		super ();
-		if (getClass () == Adapter_Docent_Asistencia_Estudiantes.class)
-			mono.android.TypeManager.Activate ("eduNICA.Adapter_Docent_Asistencia_Estudiantes, eduNICA", "Android.App.Activity, Mono.Android", this, new java.lang.Object[] { p0 });
-	}
-
 
 	public int getCount ()
 	{

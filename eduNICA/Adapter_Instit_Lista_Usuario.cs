@@ -18,13 +18,13 @@ namespace eduNICA
     {
         Activity context;//definimos el origen del listview
         List<usuariosWS> lista1;//para vinculamos listview
-        
         //constructor
-        public Adapter_Instit_Lista_Usuario(Activity context)
+        public Adapter_Instit_Lista_Usuario(Activity context, List<usuariosWS> lista1)
         {
             this.context = context;
-            this.lista1 = Global.usuariosWs;
+            this.lista1 = lista1;
         }
+
         public override int Count => lista1.Count;
 
         public override Java.Lang.Object GetItem(int position)

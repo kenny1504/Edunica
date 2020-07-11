@@ -26,11 +26,10 @@ namespace eduNICA
         {
             base.OnActivityCreated(savedInstanceState);
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-
             int grad = Global.idgrado;
             int grup = Global.idgrupo;
 
-            vlista = View.FindViewById<ListView>(Resource.Id.listView_estudiantes);//vinculamos al listview del layout
+            vlista = View.FindViewById<ListView>(Resource.Id.listView_Instit_asignaturas);//vinculamos al listview del layout
             if (Global.Lista_Estudi.Count == 0)
             {
                 Android.Support.V7.App.AlertDialog Esperar = new EDMTDialogBuilder()
@@ -60,11 +59,11 @@ namespace eduNICA
                     W.IdMatricula = E_lista[i].IdMatricula;
                     Global.Lista_Estudi.Add(W);
                 }
-                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity, Global.Lista_Estudi);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Estudiante(Activity, Global.Lista_Estudi);
             vlista.ItemClick += Vlista_ItemClick;
         }
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -81,7 +80,7 @@ namespace eduNICA
         {
             context = inflater.Context;
             // Definimos layout que se mostrara
-            return inflater.Inflate(Resource.Layout.Instit_Matricula_Grado_Grupo_Estudiante, container, false);
+            return inflater.Inflate(Resource.Layout.instit_Asignaturas, container, false);
         }
     }
 }

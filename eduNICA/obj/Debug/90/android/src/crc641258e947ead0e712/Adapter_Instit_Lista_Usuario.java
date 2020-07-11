@@ -26,13 +26,6 @@ public class Adapter_Instit_Lista_Usuario
 			mono.android.TypeManager.Activate ("eduNICA.Adapter_Instit_Lista_Usuario, eduNICA", "", this, new java.lang.Object[] {  });
 	}
 
-	public Adapter_Instit_Lista_Usuario (android.app.Activity p0)
-	{
-		super ();
-		if (getClass () == Adapter_Instit_Lista_Usuario.class)
-			mono.android.TypeManager.Activate ("eduNICA.Adapter_Instit_Lista_Usuario, eduNICA", "Android.App.Activity, Mono.Android", this, new java.lang.Object[] { p0 });
-	}
-
 
 	public int getCount ()
 	{

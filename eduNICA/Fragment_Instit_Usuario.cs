@@ -19,10 +19,12 @@ namespace eduNICA
 {
     public class Fragment_Instit_Usuario : Fragment
     {
+        EditText user_search;
         ListView vlista; Context context;
         Android.Support.V7.Widget.Toolbar toolbar;
         //declaramos variable tipo interface
         Interface_Instit_Lista_Usuario_Docente usuario_Docente;
+        List<usuariosWS> Buscar;
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,8 +34,9 @@ namespace eduNICA
         {
             toolbar = Activity.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             base.OnActivityCreated(savedInstanceState);
+            user_search = View.FindViewById<EditText>(Resource.Id.editText_filtrar_Instit_User);
             vlista = View.FindViewById<ListView>(Resource.Id.listView_usuario);
-
+            user_search.TextChanged += User_search_TextChanged;
             //verificar si no hay lista en la clase
             if (Global.usuariosWs.Count == 0)
             {
@@ -63,13 +66,31 @@ namespace eduNICA
                     W.tipo = usuariosvie[i].tipo;
                     Global.usuariosWs.Add(W);
                 }
-                vlista.Adapter = new Adapter_Instit_Lista_Usuario(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Usuario(Activity, Global.usuariosWs);
                 Esperar.Dismiss();//Cerrar Mensaje Cargando
             }
             else
-                vlista.Adapter = new Adapter_Instit_Lista_Usuario(Activity);
+                vlista.Adapter = new Adapter_Instit_Lista_Usuario(Activity, Global.usuariosWs);
             vlista.ItemClick += Vlista_ItemClick;
         }
+
+        private void User_search_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            Buscar = (from Usuario in Global.usuariosWs where Usuario.Nombre.Contains(user_search.Text) select Usuario).ToList<usuariosWS>();
+            vlista.Adapter = new Adapter_Instit_Lista_Usuario(Activity, Buscar);
+            vlista.ItemClick += Vlista_ItemClick1;
+        }
+
+        private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Detalle Usuario";
+            Fragment_Instit_Usuario_Detalle usuario_Detalle = new Fragment_Instit_Usuario_Detalle();
+            usuariosWS modulo = Buscar[e.Position];
+            Global.cedula = modulo.Cedula;
+            ft.Replace(Resource.Id.relativeLayoutMenu, usuario_Detalle).DisallowAddToBackStack().Commit();
+        }
+
         public void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             

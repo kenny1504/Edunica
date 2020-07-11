@@ -68,10 +68,21 @@ namespace eduNICA
                     if (nota == 1)
                     {
                         Toast.MakeText(Activity, "Guardado con Exito", ToastLength.Short).Show();
-                        Dismiss();
+                        Dismiss();                       
                     }
                     else
-                        Toast.MakeText(Activity, "Estudiante ya posee Nota", ToastLength.Short).Show();
+                    {
+                        Dismiss();
+                        AlertDialog alert = new AlertDialog.Builder(context).Create();//************************************************************************************************
+                        alert.SetTitle("Alerta!");
+                        alert.SetIcon(Resource.Drawable.warning);
+                        alert.SetMessage("Estudiante ya posee Nota");
+                        alert.SetButton("Aceptar", (a, b) =>
+                        {
+                            alert.Dismiss();
+                        });
+                        alert.Show();
+                    }                      
                 }
                 else
                     Toast.MakeText(Activity, "Nota Ingresada No Valida", ToastLength.Short).Show();

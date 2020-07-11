@@ -140,6 +140,7 @@ namespace eduNICA
                         {
                             AlertDialog alert = new AlertDialog.Builder(context).Create();//***********************************************************************************************************************
                             alert.SetTitle("Error!");
+                            alert.SetIcon(Resource.Drawable.warning);
                             alert.SetMessage("Nombre de Usuario en Uso!");
                             alert.SetButton("Aceptar", (a, b) =>
                             {
@@ -199,6 +200,7 @@ namespace eduNICA
                         {
                             AlertDialog alert = new AlertDialog.Builder(context).Create();//************************************************************************************************
                             alert.SetTitle("Error!");
+                            alert.SetIcon(Resource.Drawable.warning);
                             alert.SetMessage("Nombre de Usuario en Uso!");
                             alert.SetButton("Aceptar", (a, b) =>
                             {
@@ -283,6 +285,7 @@ namespace eduNICA
                             AlertDialog alert = new AlertDialog.Builder(context).Create();//************************************************************************************************
                             alert.SetTitle("Error!");
                             alert.SetMessage("Nombre de Usuario en Uso!");
+                            alert.SetIcon(Resource.Drawable.warning);
                             alert.SetButton("Aceptar", (a, b) =>
                             {
                                 alert.Dismiss();
@@ -341,6 +344,7 @@ namespace eduNICA
                         {
                             AlertDialog alert = new AlertDialog.Builder(context).Create();//************************************************************************************************
                             alert.SetTitle("Error!");
+                            alert.SetIcon(Resource.Drawable.warning);
                             alert.SetMessage("Nombre de Usuario en Uso!");
                             alert.SetButton("Aceptar", (a, b) =>
                             {
@@ -379,6 +383,7 @@ namespace eduNICA
                     {
                         AlertDialog alert = new AlertDialog.Builder(context).Create();
                         alert.SetTitle("Error!");
+                        alert.SetIcon(Resource.Drawable.warning);
                         alert.SetMessage("No hay cambios nuevo ha actualizar!");
                         alert.SetButton("Aceptar", (a, b) =>
                         {
@@ -391,6 +396,7 @@ namespace eduNICA
                 {
                     AlertDialog alert = new AlertDialog.Builder(context).Create();
                     alert.SetTitle("Error!");
+                    alert.SetIcon(Resource.Drawable.warning);
                     alert.SetMessage("Contraseña Actual incorrecta!!");
                     alert.SetButton("Aceptar", (a, b) =>
                     {
@@ -800,6 +806,7 @@ namespace eduNICA
                     {
                         AlertDialog alert = new AlertDialog.Builder(context).Create();
                         alert.SetTitle("Error!");
+                        alert.SetIcon(Resource.Drawable.warning);
                         alert.SetMessage("La contraseña de verificacion no coincide!");
                         alert.SetButton("Aceptar", (a, b) =>
                         {
@@ -813,6 +820,7 @@ namespace eduNICA
                 {
                     AlertDialog alert = new AlertDialog.Builder(context).Create();
                     alert.SetTitle("Error!");
+                    alert.SetIcon(Resource.Drawable.warning);
                     alert.SetMessage("Contraseña Actual incorrecta!");
                     alert.SetButton("Aceptar", (a, b) =>
                     {

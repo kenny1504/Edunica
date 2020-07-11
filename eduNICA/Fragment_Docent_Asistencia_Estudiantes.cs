@@ -55,11 +55,11 @@ namespace eduNICA
                     W.CodigoEstudinte = A_lista[i].CodigoEstudinte;
                     Global.ListaAsistencias.Add(W);
                 }
-                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity, Global.ListaAsistencias);
                 Esperar.Dismiss();//Cerramos mensaje
             }
             else
-                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity);
+                vlista.Adapter = new Adapter_Docent_Asistencia_Estudiantes(Activity, Global.ListaAsistencias);
             vlista.ItemClick += Vlista_ItemClick;
         }
 

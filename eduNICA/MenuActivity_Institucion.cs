@@ -82,7 +82,7 @@ namespace eduNICA
                 switch (e.MenuItem.ItemId)
                 {
                     case Resource.Id.asistencia:
-                        Global.DetalleStudent_DetallaAsistencia = 1;
+                        Global.DetalleStudent_DetalleAsistencia = 1;
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
                         Global.Click = 1;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula, nota y asistencia
                         Global.Lista_Estudi.Clear();//limpiamos lista estudiante
@@ -94,7 +94,7 @@ namespace eduNICA
                     case Resource.Id.docente:
                         //renombramos toolbal
                         toolbar.Title = "Lista Usuario Docente";
-                        Global.DetalleStudent_DetallaAsistencia = 0;
+                        Global.DetalleStudent_DetalleAsistencia = 0;
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
                         Global.Lista_Estudi.Clear();//limpiamos lista estudiante
                         //instaciamos el fragment a implementar
@@ -103,7 +103,7 @@ namespace eduNICA
                         ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.matricula:
-                        Global.DetalleStudent_DetallaAsistencia = 0;
+                        Global.DetalleStudent_DetalleAsistencia = 0;
                         toolbar.Title = "Grados Academicos";
                         Global.Click = 1;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
                         Global.Lista_Estudi.Clear();//limpiamos lista estudiante
@@ -114,7 +114,7 @@ namespace eduNICA
                        ft.DisallowAddToBackStack();
                         break;
                     case Resource.Id.nota:
-                        Global.DetalleStudent_DetallaAsistencia = 0;
+                        Global.DetalleStudent_DetalleAsistencia = 0;
                         Global.Click = 0;//inicializacion de variable para hacer uso de grado y grupo tanto en matricula como en nota 
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
                         Global.Lista_Estudi.Clear();//limpiamos lista estudiante
@@ -125,7 +125,7 @@ namespace eduNICA
                         break;
                     case Resource.Id.asignatura:
                         //renombramos toolbal
-                        Global.DetalleStudent_DetallaAsistencia = 0;
+                        Global.DetalleStudent_DetalleAsistencia = 0;
                         toolbar.Title = "Asignaturas";
                         Global.b_click = 1;//inicializamos a 1 para q al regresar a notas se muestre de inicio las notas
                         Global.Lista_Estudi.Clear();//limpiamos lista estudiante

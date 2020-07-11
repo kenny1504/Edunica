@@ -23,7 +23,7 @@ namespace eduNICA
 
         public static string Direccion_Instit;//variable para almacenar la direccion de institucion para editarla
 
-        public static int DetalleStudent_DetallaAsistencia;//variable para reutilizar lista de estudiantes luego mostrar ya sea(datos o asistencia)
+        public static int DetalleStudent_DetalleAsistencia;//variable para reutilizar lista de estudiantes luego mostrar ya sea(datos o asistencia)
 
         public static string cedula;//cedula para mostrar detalle usuario
         public static int idgrado;//variable global donde se alamcena el id del grado seleccionado
