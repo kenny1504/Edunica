@@ -71,7 +71,7 @@ namespace eduNICA
             {
                 drawer.CloseDrawer(GravityCompat.Start);
             }
-            else if (f is Fragment_Docent_Ver_Nota || f is Fragment_Docent_Agregar_Nota)//regresar de lista de estudiante con nota, a parciales
+            else if ( f is Fragment_Docent_Agregar_Nota)//regresar de lista de estudiante con nota, a parciales
             {
                 toolbar.Title = "Parcial";
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();

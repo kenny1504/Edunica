@@ -72,7 +72,6 @@
     <Compile Include="Adapter_Admin_Usuarios.cs" />
     <Compile Include="Adapter_Docente_Asistencia_Fechas.cs" />
     <Compile Include="Adapter_Docente_Nota_Agregar.cs" />
-    <Compile Include="Adapter_Docente_Ver_Nota.cs" />
     <Compile Include="Adapter_Docent_Asistencia_Estudiantes.cs" />
     <Compile Include="Adapter_Docent_Lista_Asignatura.cs" />
     <Compile Include="Adapter_Docent_Asistencia_Add.cs" />
@@ -101,7 +100,6 @@
     <Compile Include="Fragment_Docent_DetalleNota.cs" />
     <Compile Include="Fragment_Docent_Asistencia_ListaEstudiante.cs" />
     <Compile Include="Fragment_Docent_Home.cs" />
-    <Compile Include="Fragment_Docent_Ver_Nota.cs" />
     <Compile Include="Fragment_Instit_Asignaturas.cs" />
     <Compile Include="Fragment_Instit_Home.cs" />
     <Compile Include="Fragment_Instit_Matricula_Grado.cs" />
@@ -464,11 +462,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Plantilla_Docent_Nota.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\Docent_Nota_Ver.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -34,6 +34,12 @@ namespace eduNICA.Resources.Model
     }
     public class NotasD//notas enviar
     {
+        public NotasD(int idNota, int nota)
+        {
+            IdNota = new int[idNota];
+            Nota = new int[nota];
+        }
+
         public int[] IdNota { get; set; }
         public int[] Nota { get; set; }
     }

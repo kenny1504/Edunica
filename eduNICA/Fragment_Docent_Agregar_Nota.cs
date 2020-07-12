@@ -60,11 +60,6 @@ namespace eduNICA
                     W.nota = N_E_lista[i].Nota.ToString();
                     W.id = N_E_lista[i].Id;
                     Global._Notas.Add(W);
-                    //Notas_Estudiante W = new Notas_Estudiante();
-                    //W.Nombre = N_E_lista[i].Nombre;
-                    //W.Nota = N_E_lista[i].Nota;
-                    //W.Id = N_E_lista[i].Id;
-                    //Global.notas_Estudiantes.Add(W);
                 }
                     vlista.Adapter = new Adapter_Docente_Nota_Agregar(Activity);
                     Esperar.Dismiss();//cerramos msj cargando
@@ -72,16 +67,14 @@ namespace eduNICA
             else
                 vlista.Adapter = new Adapter_Docente_Nota_Agregar(Activity);
         }
-
         private async void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            // Global._Notas.Clear();
             bool band = false;
-            List<Lista_Estudiante_Nota> notas = Global._Notas;
+            var notas = Global._Notas;
             int total=0,total_N=0;
             for (int i = 0; i < notas.Count; i++)//contar numero de edittext con nota
             {
-                if (notas[i].nota != null)//cantidad de edittext con nota
+                if (notas[i].nota != "")//cantidad de edittext con nota
                     total++;
             }
             if(total==notas.Count)//cantidad de notas ingresadas sea igual al numero de estudiantes de la lista
@@ -115,23 +108,26 @@ namespace eduNICA
                 Esperar.Window.SetLayout(1000, 800); //aplica tamaño a la alerta
 
                 _Docente_Nota_Guardar = RestService.For<Interface_Docente_Nota_Guardar>("http://www.edunica.somee.com/api/NotasWS");
-                NotasD Notas_D = null;
+                NotasD notasD = new NotasD(notas.Count, notas.Count);
                 for (int i = 0; i < notas.Count; i++)//ingresamos a la clase para guardarla
                 {
-                    Notas_D = new NotasD();
-                    Notas_D.Nota[i] = int.Parse(notas[i].nota);
-                    Notas_D.IdNota[i] = notas[i].id;
+                    notasD.IdNota[i] = notas[i].id;
+                    notasD.Nota[i] = int.Parse(notas[i].nota);
                 }
-                int save = await _Docente_Nota_Guardar.AgregarNotaDocente(Notas_D);
+                int save = await _Docente_Nota_Guardar.AgregarNotaDocente(notasD);
                 Esperar.Dismiss();
                 if (save == 1)
                 {
-                    Toast.MakeText(Activity, "Notas Guardadas con Exito...!", ToastLength.Short).Show();
+                    Toast.MakeText(Activity, "Notas Guardadas con Exito!", ToastLength.Long).Show();
+                    //regresamos a pagina principal luego de guardar notas
+                    toolbar.Title = Global.u.Institucion;
+                    FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                    fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Home());
+                    fragment.DisallowAddToBackStack().Commit();
 
                 }
             }
         }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             context = inflater.Context;
