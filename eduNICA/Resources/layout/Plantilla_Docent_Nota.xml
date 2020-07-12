@@ -26,28 +26,8 @@
 			android:layout_height="match_parent"
 			android:textSize="15dip"
 			android:textStyle="italic"
-			android:paddingTop="11dp"
+			android:paddingTop="13dp"
 			android:layout_marginLeft="5dp"/>
-		<LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-			android:orientation="horizontal">
-		<TextView
-			android:text="Carnet: "
-			android:id="@+id/Texto_Editable"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="13dip"
-			android:paddingLeft="5dip"
-			android:textColor="#006978" />
-			<TextView
-			android:text="Cargando..."
-			android:id="@+id/Asignatura"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="13dip"
-			android:textColor="#006978" />
-		</LinearLayout>>
 	</LinearLayout>>
     <EditText
         android:inputType="number"

@@ -29,10 +29,8 @@ namespace eduNICA.Resources.Model
     public class Lista_Estudiante_Nota//lista para almacenar temporalmente los datos, para luego guardar nota
     {
         public string Nombre { get; set; }
-        public string CodigoEstudinte { get; set; }
-        public int IdMatricula { get; set; }
+        public int  id { get; set; }
         public string nota { get; set; }//checkbox asistencia
-        public int nota_oficial { get; set; }
     }
     public class ListaAsistencia//listado de alumnos para almacenar asistencia
     {

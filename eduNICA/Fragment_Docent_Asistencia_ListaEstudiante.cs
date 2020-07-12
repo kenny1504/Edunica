@@ -105,7 +105,16 @@ namespace eduNICA
             }               
             else
             {
-                Toast.MakeText(Activity, "Asistencia ya Realizada", ToastLength.Short).Show();
+                AlertDialog alert = new AlertDialog.Builder(context).Create();
+                alert.SetTitle("Aviso!");
+                alert.SetIcon(Resource.Drawable.warning);
+                alert.SetMessage("La Asistencia ya ha sido Realizada!");
+                alert.SetButton("Aceptar", (a, b) =>
+                {
+                    alert.Dismiss();
+                });
+                alert.Show();
+                //Toast.MakeText(Activity, "Asistencia ya Realizada", ToastLength.Short).Show();
                 toolbar.Title = Global.u.Institucion;
                 FragmentTransaction fragment = FragmentManager.BeginTransaction();
                 fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docent_Home());

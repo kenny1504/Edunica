@@ -75,5 +75,7 @@ namespace eduNICA
 
         
         public static string Nombre; //variable para almacenar nombre estudiante(docent_ver_Asistencia)
+
+        public static DasboarDocente Docente;//datos de home user Docente
     }
 }

@@ -101,6 +101,13 @@ namespace eduNICA
 
                 fragment.DisallowAddToBackStack().Commit();
             }
+            else if(f is Fragment_Docente_Estudiantes_Detalle)
+            {
+                toolbar.Title = "Estudiantes";
+                FragmentTransaction fragment = FragmentManager.BeginTransaction();
+                fragment.Replace(Resource.Id.relativeLayoutMenu, new Fragment_Docente_Estudiantes());
+                fragment.DisallowAddToBackStack().Commit();
+            }
             else if(f is Fragment_Docent_Asistencia_Estudiantes_Detalle)
             {
 
@@ -195,7 +202,6 @@ namespace eduNICA
                 {
                     case Resource.Id.asistencia_doc:
                         toolbar.Title = "Asistencia";
-
                         Global.Asignaturasdocentes.Clear();//limpiar lista de asignatura de docente                       
                         Global.detallenotas.Clear();//limpiar parciales de nota
                         Global.notas_Estudiantes.Clear();//limpiar lista estudiantes con notas

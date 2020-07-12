@@ -46,7 +46,7 @@ namespace eduNICA
                 view = context.LayoutInflater.Inflate(Resource.Layout.Plantilla_Docent_Nota,null);//aplicamos el formato predefinido
 
                 _nota.nota = view.FindViewById<EditText>(Resource.Id.editText_NotaEstudiante);
-                _nota.codigo = view.FindViewById<TextView>(Resource.Id.Asignatura);
+                _nota.id = vlista[position].id;
                 _nota.nota.Tag = position;//edittext nota
                 view.Tag = _nota;
             }
@@ -54,18 +54,17 @@ namespace eduNICA
             {
                 _nota = view.Tag as _Nota;
                 _nota.nota.Tag = position;
+                _nota.id = vlista[position].id;
             }
             view.FindViewById<TextView>(Resource.Id.Nombre_Estudiante_).Text = item.Nombre;
-            view.FindViewById<TextView>(Resource.Id.Asignatura).Text = item.CodigoEstudinte;
             view.FindViewById<EditText>(Resource.Id.editText_NotaEstudiante).Text = item.nota;
-
 
             _nota.nota.Text = "" + vlista[position].nota;
             _nota.nota.AfterTextChanged += (sender, args) =>
             {
-                if (_nota.codigo.Text == vlista[position].CodigoEstudinte)
+                if (_nota.id == vlista[position].id)
                 {
-                    vlista[position].nota = args.Editable.ToString();
+                    vlista[position].nota =args.Editable.ToString();
                 }
             };
             return view;
@@ -73,8 +72,7 @@ namespace eduNICA
         public class _Nota : Java.Lang.Object
         {
             public EditText nota { get; set; }
-            public TextView codigo { get; set; }
-            public int id1 { get; set; }
+            public int id { get; set; }
         }
     }
 }

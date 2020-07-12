@@ -25,4 +25,16 @@ namespace eduNICA.Resources.Model
         public int Nota { get; set; }
         public string Nombre { get; set; }
     }
+
+    public class VerNotaDocente//parametros para jalar notas docente
+    {
+        public string cedula { get; set; }
+        public int id_detalle_Nota { get; set; }
+        public int idMateria { get; set; }
+    }
+    public class NotasD//notas enviar
+    {
+        public int[] IdNota { get; set; }
+        public int[] Nota { get; set; }
+    }
 }

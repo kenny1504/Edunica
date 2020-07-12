@@ -72,16 +72,8 @@ namespace eduNICA
                     }
                     else
                     {
+                        Toast.MakeText(Activity, "Nota Actualizada con Exito", ToastLength.Short).Show();
                         Dismiss();
-                        AlertDialog alert = new AlertDialog.Builder(context).Create();//************************************************************************************************
-                        alert.SetTitle("Alerta!");
-                        alert.SetIcon(Resource.Drawable.warning);
-                        alert.SetMessage("Estudiante ya posee Nota");
-                        alert.SetButton("Aceptar", (a, b) =>
-                        {
-                            alert.Dismiss();
-                        });
-                        alert.Show();
                     }                      
                 }
                 else

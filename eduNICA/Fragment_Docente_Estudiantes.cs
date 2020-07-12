@@ -76,25 +76,22 @@ namespace eduNICA
 
         private void Vlista_ItemClick1(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-            //toolbar.Title = "Informacion de Estudiante";
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Estudiante";
+            Fragment_Docente_Estudiantes_Detalle _Docente_Estudiantes_Detalle = new Fragment_Docente_Estudiantes_Detalle();
             ListaAsistencia modulo = Buscar[e.Position];
             Global.idmatricula = modulo.IdMatricula;
-            //Global.Nombre = modulo.Nombre;
-            //ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes_Detalle).DisallowAddToBackStack().Commit();
-            Toast.MakeText(Activity, "Proximamente Detalle Estudiante", ToastLength.Short).Show();
+            ft.Replace(Resource.Id.relativeLayoutMenu, _Docente_Estudiantes_Detalle).DisallowAddToBackStack().Commit();
         }
 
         private void Vlista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
-            //toolbar.Title = "Detalle Estudiante";
-            //Fragment_Docent_Asistencia_Estudiantes_Detalle _Estudiantes_Detalle = new Fragment_Docent_Asistencia_Estudiantes_Detalle();
+            FragmentTransaction ft = Activity.FragmentManager.BeginTransaction();
+            toolbar.Title = "Informacion de Estudiante";
+            Fragment_Docente_Estudiantes_Detalle _Docente_Estudiantes_Detalle = new Fragment_Docente_Estudiantes_Detalle();
             ListaAsistencia modulo = Global.ListaAsistencias[e.Position];
             Global.idmatricula = modulo.IdMatricula;
-            //Global.Nombre = modulo.Nombre;
-            //ft.Replace(Resource.Id.relativeLayoutMenu, _Estudiantes_Detalle).DisallowAddToBackStack().Commit();
-            Toast.MakeText(Activity, "Proximamente Detalle Estudiante", ToastLength.Short).Show();
+            ft.Replace(Resource.Id.relativeLayoutMenu, _Docente_Estudiantes_Detalle).DisallowAddToBackStack().Commit();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
